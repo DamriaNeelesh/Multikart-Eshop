@@ -1,0 +1,33 @@
+<router-outlet></router-outlet>
+<div class="headlines"></div>
+<h3>Latest Fashion Blogs <h3>
+<marquee style="font-style:italic; color:red;">For more updated Blogs keep visiting our MultiKart and Shop more latest and branded Products</marquee>
+<header>
+
+  <div>
+    <span class="logo-1">The</span>
+    <span class="logo-2">Fashion </span>
+    <span class="logo-3">Blog</span>
+  </div>
+</header>
+
+<main *ngIf="blogPosts$ | async as blogPosts">
+  <!-- <pre>
+  {{blogPosts| json}}
+</pre> -->
+  <div class="container-fluid mt-3">
+    <div class="row mt-3">
+      <div *ngFor="let blogPost of blogPosts.items" class="col-lg-4 mt-3 mb-3">
+        <div class="box">
+          <img [src]="blogPost.fields.featuredImage.fields.file.url" >
+          <h5 class="mt-3 mb-3">{{blogPost.fields.title}}</h5>
+          <h6 class="author"><b>{{blogPost.fields.author}}</b></h6>
+          <h6 class="summary">{{blogPost.fields.summary}}</h6>
+          <h6 class="content">({{blogPost.fields.content}})</h6>
+          <h6 class="date">{{blogPost.fields.date}}</h6>
+          <a class="btn btn-dark btn-sm" [routerLink]="['/blog',blogPost.sys.id]" style="font-size:medium;">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

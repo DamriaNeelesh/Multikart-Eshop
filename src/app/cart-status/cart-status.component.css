@@ -1,0 +1,10 @@
+.total{
+  clip-path:stroke-box;
+  background-color: blue;
+  height: max-content;
+  width: max-content;
+}
+
+.total span{
+  background-color: aqua;
+}

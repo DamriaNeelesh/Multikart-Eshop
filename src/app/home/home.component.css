@@ -1,0 +1,10 @@
+.clothes_conatiner{
+    display: flex;
+    margin-left: 0;
+}
+
+.women{
+    position: relative;
+}
+
+

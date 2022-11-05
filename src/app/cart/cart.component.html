@@ -1,0 +1,102 @@
+<section class="page-header">
+  <div class="overly"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="content text-center">
+          <h1 class="mb-3">My Shopping Cart</h1>
+          <p>Hath after appear tree great fruitful green dominion moveth sixth abundantly image that midst of god day
+            multiply you'll which</p>
+
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent justify-content-center">
+              <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Cart</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-container *ngIf="cartItems.length !=0">
+<table class="table table-bordered">
+  <tr>
+    <th width="20%">Product Image</th>
+    <th width="50%">Product Detail</th>
+    <th width="30%"></th>
+  </tr>
+  <tr *ngFor="let temCartItem of cartItems">
+    <td>
+      <img src="assets/images/Men_Fashion/TShirts/{{temCartItem.product_img}}" class="img-responsive" width="150px" />
+    </td>
+
+    <td>
+      <p>{{temCartItem.product_name}}</p>
+      <p>{{temCartItem.product_price | currency:'INR':'symbol-narrow':'1.2-2'}}</p>
+    </td>
+
+    <td>
+      <div class="items">
+        <label>Quantity:</label>
+
+        <div class="row no-gutters">
+           <div class="col">
+             <button (click)="incrementQuantity(temCartItem)" class="btn btn-primary btn-sm">
+              <i class="fas fa-plus"></i>
+             </button>
+           </div>
+
+           <div class="col ml-4 mr-2">
+            {{temCartItem.product_quanity}}
+           </div>
+
+           <div class="col">
+            <button (click)="decrementQuantity(temCartItem)" class="btn btn-primary btn-sm">
+             <i class="fas fa-minus"></i>
+            </button>
+          </div>
+          <div class="col-8"></div>
+        </div>
+      </div>
+
+      <p class="mt-2">SubTotal: {{temCartItem.product_quanity * temCartItem.product_price |
+        currency:'INR':'symbol-narrow':'1.2-2'}}</p>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2"></td>
+    <td style="font-weight:bold;">
+      <p>Total Quantity: {{totalQuantity}}</p>
+      <p>Shipping: FREE</p>
+      <p>Total Price: {{totalPrice | currency:'INR':'symbol-narrow':'1.2-2' }}</p>
+      <a routerLink="/checkout" class="btn btn-primary">Checkout</a>
+    </td>
+  </tr>
+
+</table>
+</ng-container>
+
+<!-- Container isiliye daalte hain taaki ham isko jb ham chahe tb show krwa ske isko
+             my cart is empty ko cionatiner mai siliye liya hai taaki jb cart mai kuch na
+            ho tb yeh conatiner show hoga -->
+
+<ng-container *ngIf="cartItems.length == 0">
+  <div class="alert alert-warning col-md-12" role="alert">
+    Your Shopping Cart is Empty.
+  </div>
+    <div class="conatiner">
+        <div class="card">
+            <h4 class="card-title">My Cart</h4>
+        </div>
+        <div class="center">
+            <img src="data:image/png;base64,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" alt="">
+            <h5>Your Cart is Empty!!</h5>
+            <h6>Add items to it now</h6>
+            <button routerLink="/product-list" class="btn btn-primary">Show Now</button>
+        </div>
+    </div>
+
+    </ng-container>

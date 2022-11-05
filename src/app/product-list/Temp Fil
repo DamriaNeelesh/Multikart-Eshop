@@ -1,0 +1,321 @@
+<section class="section" style="padding:0%">
+  <div class="container">
+    <h2 class="title-page">Category products</h2>
+    <form class="pb-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-append">
+          <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+    <nav>
+      <ol class="breadcrumb text-white">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Best category</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Great articles</li>
+      </ol>
+    </nav>
+  </div> <!-- container //  -->
+</section>
+
+
+<div  style="display:flex; padding: 0 3rem;">
+
+<section style="margin: 0;" class="section-content">
+  <div class="container">
+
+
+      <aside class="col-md-10">
+
+        <div class="card">
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Product Category</h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_1">
+              <div class="card-body ">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Men" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Men's Fashion
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Women" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Women's Fashion
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </article>
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Product type</h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_1">
+              <div class="card-body ">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.TShirts" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">T-Shirts
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Shirts" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Shirts
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Top" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Top
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Jackets" (ngModelChange)="filterChange()"
+                    class="custom-control-input" [(ngModel)]="filter.Jackets" (ngModelChange)="filterChange()">
+                  <div class="custom-control-label">Jackets
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Blazers" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Blazers
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+
+              </div> <!-- card-body.// -->
+            </div>
+          </article> <!-- filter-group  .// -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Brands </h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_2">
+              <div class="card-body">
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.WROGN" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">WROGN
+                    <b class="badge badge-pill badge-light float-right">120</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.HIGHLANDER" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">HIGHLANDER
+                    <b class="badge badge-pill badge-light float-right">15</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <div class="custom-control-label">Here&Now
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Denim" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Denim
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <div class="custom-control-label">Levis
+                    <b class="badge badge-pill badge-light float-right">89</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <div class="custom-control-label">Mast & Harbour
+                    <b class="badge badge-pill badge-light float-right">30</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Roadster" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Roadster
+                    <b class="badge badge-pill badge-light float-right">30</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <div class="custom-control-label">Dennis Lingo
+                    <b class="badge badge-pill badge-light float-right">30</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input">
+                  <div class="custom-control-label">HRX
+                    <b class="badge badge-pill badge-light float-right">30</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Mufti" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Mufti
+                    <b class="badge badge-pill badge-light float-right">30</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.Cantabil" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">Cantabil
+                    <b class="badge badge-pill badge-light float-right">30</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" [(ngModel)]="filter.ZARA" (ngModelChange)="filterChange()"
+                    class="custom-control-input">
+                  <div class="custom-control-label">ZARA
+                    <b class="badge badge-pill badge-light float-right">30</b>
+                  </div>
+                </label>
+              </div> <!-- card-body.// -->
+            </div>
+          </article> <!-- filter-group .// -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Price range </h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_3">
+              <div class="card-body">
+                <input type="range" class="custom-range" min="0" max="100" name="">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Min</label>
+                    <input class="form-control" placeholder="$0" type="number">
+                  </div>
+                  <div class="form-group text-right col-md-6">
+                    <label>Max</label>
+                    <input class="form-control" placeholder="$1,0000" type="number">
+                  </div>
+                </div> <!-- form-row.// -->
+                <button class="btn btn-block btn-primary" style="background-color: orange;">Apply</button>
+              </div><!-- card-body.// -->
+            </div>
+          </article> <!-- filter-group .// -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Sizes </h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_4">
+              <div class="card-body">
+                <label class="checkbox-btn">
+                  <input type="checkbox">
+                  <span class="btn btn-light"> XS </span>
+                </label>
+
+                <label class="checkbox-btn">
+                  <input type="checkbox">
+                  <span class="btn btn-light"> SM </span>
+                </label>
+
+                <label class="checkbox-btn">
+                  <input type="checkbox">
+                  <span class="btn btn-light"> LG </span>
+                </label>
+
+                <label class="checkbox-btn">
+                  <input type="checkbox">
+                  <span class="btn btn-light"> XXL </span>
+                </label>
+              </div><!-- card-body.// -->
+            </div>
+          </article> <!-- filter-group .// -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a href="#" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" class="">
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">More filter </h6>
+              </a>
+            </header>
+            <div class="filter-content collapse in" id="collapse_5">
+              <div class="card-body">
+                <label class="custom-control custom-radio">
+                  <input type="radio" name="myfilter_radio" checked="" class="custom-control-input">
+                  <div class="custom-control-label">Any condition</div>
+                </label>
+
+                <label class="custom-control custom-radio">
+                  <input type="radio" name="myfilter_radio" class="custom-control-input">
+                  <div class="custom-control-label">Brand new </div>
+                </label>
+
+                <label class="custom-control custom-radio">
+                  <input type="radio" name="myfilter_radio" class="custom-control-input">
+                  <div class="custom-control-label">Used items</div>
+                </label>
+
+                <label class="custom-control custom-radio">
+                  <input type="radio" name="myfilter_radio" class="custom-control-input">
+                  <div class="custom-control-label">Very old</div>
+                </label>
+              </div><!-- card-body.// -->
+            </div>
+          </article> <!-- filter-group .// -->
+        </div> <!-- card.// -->
+      </aside>
+
+  </div>
+</section>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let product of filteredProducts  let i = index">
+      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
+        <div class="product">
+          <p class="itemdata" [routerLink]="['/products',product.product_id]"><b>{{product.product_name}}</b></p>
+          <a><img class="img-fluid w-100 mb-3 img-first" src="/assets/images/Men_Fashion/TShirts/{{product.product_img}}"
+            [routerLink]="['/products',product.product_id]"/></a>
+          <a><img class="img-fluid w-100 mb-3 img-second" src="/assets/images/Men_Fashion/TShirts/{{product.product_img2}}"
+            [routerLink]="['/products',product.product_id]"></a>
+          <p class="itemdata">{{product.product_description}}</p>
+          <p><strong>Price:</strong>{{product.product_price | currency:'INR':'symbol-narrow':'4.2-2'}}</p>
+          <p>{{product.product_category}}</p>
+          <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+</div>
+
+private baseUrl = 'https://localhost:8080/api/products';
+
+<input class="au-input au-input"
+         placeholder="Search for Product aur brand you Want"
+         (keyup.enter)="doSearch(myInput.value)">
+        <div class="input-group-append">
+          <button (click)="doSearch(myInput.value)" class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
+        </div>

@@ -1,0 +1,22 @@
+<main *ngIf="blogPost$ | async as blogPost">
+<!-- <pre>
+  {{blogPost | json}}
+</pre> -->
+<h1>{{blogPost.name}}</h1>
+<div class="post-container" *ngIf="blogPost.fields">
+  <img [src] = "blogPost.fields.featuredImage.fields.file.url" alt="">
+  <h2>{{blogPost.fields.title}}</h2>
+  <p class="author">{{blogPost.fields.author}}</p>
+  <p class="summary">{{blogPost.fields.summary}} </p>
+
+  <br/>
+  <ng-container *ngFor="let para of blogPost.fields.content.content let i = index" >
+    <p class="date">{{para.content[0].value}}</p>
+    <br/>
+  </ng-container>
+
+
+  <p class="url">{{blogPost.fields.urlHandle}}</p>
+
+</div>
+</main>
