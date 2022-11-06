@@ -42,6 +42,7 @@ import { TopComponent } from './productCategory/top/top.component';
 import { JacketsComponent } from './productCategory/jackets/jackets.component';
 import { PajamasComponent } from './productCategory/pajamas/pajamas.component';
 import { MenComponent } from './productType/men/men.component';
+import { CustomFilterPipe } from './custom-filter.pipe';
 
 
 
@@ -70,9 +71,10 @@ import { MenComponent } from './productType/men/men.component';
     WomenComponent,
     ShirtsComponent,
     TshirtsComponent,
-    TopComponent,
+    TopComponent, 
     JacketsComponent,
     PajamasComponent,
+    CustomFilterPipe,
   ],
   imports: [
     BrowserModule,

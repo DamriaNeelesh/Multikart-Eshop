@@ -42,20 +42,22 @@ export class ProductListComponent implements OnInit {
 
   };
 
+ 
+
   products: IProducts[] = [];
   searchProducts?: IProducts[] = [];
   filteredProducts ?: IProducts[] = [] ;
   currentCategoryId:number | undefined;
   searchMode:boolean | undefined;
   selectedProduct;
-  theKeyword?:string | null;
+  theKeyword?:string | null; 
 
   constructor(private apiService: CartapiService,
     private _productsService: ProductsService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private router:Router,
-    private toastr:ToastrService) { }
+    private toastr:ToastrService) {}
 
 
   ngOnInit() {
@@ -115,7 +117,7 @@ export class ProductListComponent implements OnInit {
       || (x.product_category_type === 'Jackets' && this.filter.Jackets)
       || (x.product_category_type === 'Blazers' && this.filter.Blazers)
       || (x.product_category === 'Men' && this.filter.Men)
-      || (x.product_category === 'Women' && this.filter.Women)
+      || (x.product_category === 'Ladies' && this.filter.Women)
     );
     return this.filteredProducts;
   }

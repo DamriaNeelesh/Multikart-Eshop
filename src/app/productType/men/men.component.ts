@@ -6,7 +6,7 @@ import { CartapiService } from 'src/app/services/cartapi.service';
 import { ProductsService } from 'src/app/services/products.service';
 import { IProducts } from 'src/app/products';
 
-@Component({
+@Component({ 
   selector: 'app-men',
   templateUrl: './men.component.html',
   styleUrls: ['./men.component.css']
@@ -22,10 +22,19 @@ export class MenComponent implements OnInit {
 
   products: IProducts[] = [];
   filteredProducts ?: IProducts[] = [] ;
-
+  searchText!:string;
 
   ngOnInit(): void {
+    this.products = this._productsService.getProducts();
+    this.filteredProducts = this._productsService.getProducts();
+  }
+  
+  addToCart(product: IProducts) {
+    this.apiService.addToCart(product);
+    console.log(`Adding to Cart: ${product.product_name} Price: Rs. ${product.product_price}`);
+    this.toastr.success('Product has been added to cart Successfully!!');
 
   }
+
 
 }
