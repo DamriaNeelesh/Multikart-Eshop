@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
 
   filter = {
     Men: false,
-    Shirts: false,
+    Shirt: false,
     TShirts: false,
     Women: false,
     Top: false,
@@ -111,9 +111,9 @@ export class ProductListComponent implements OnInit {
       || (x.product_name === 'Mufti' && this.filter.Mufti)
       || (x.product_name === 'Dennis Lingo' && this.filter['DennisLingo'])
       || (x.product_name === 'Cantabil' && this.filter.Cantabil)
-      || (x.product_category_type === 'Shirts' && this.filter.Shirts)
+      || (x.product_category_type === 'Shirt' && this.filter.Shirt)
       || (x.product_category_type === 'TShirts' && this.filter.TShirts)
-      || (x.product_category_type === 'Top' && x.product_category === 'Women' && this.filter.Top)
+      || (x.product_category_type === 'Top' && this.filter.Top)
       || (x.product_category_type === 'Jackets' && this.filter.Jackets)
       || (x.product_category_type === 'Blazers' && this.filter.Blazers)
       || (x.product_category === 'Men' && this.filter.Men)

@@ -41,7 +41,7 @@ const routes: Routes = [
   {path:"tshirts",component:TshirtsComponent},
   {path:"top",component:TopComponent},
   {path:"jackets",component:JacketsComponent},
-  {path:"pajamas",component:PajamasComponent},
+  {path:"blazers",component:PajamasComponent},
 ];
 
 @NgModule({

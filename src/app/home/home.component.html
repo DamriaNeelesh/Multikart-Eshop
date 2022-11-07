@@ -1,17 +1,3 @@
-<!-- <div class="clothes_conatiner">
-  <div class="men">
-    <img src="assets/images/Men.gif" routerLink="/men" width="135%" height="50%">
-    <p><b>Men's Fashion</b></p>
-  </div>
-
-  <div class="women">
-    <img src="assets/images/women.gif" routerLink="/women" width="135%" height="50%">
-    <p><b>Women's Fashion</b></p>
-  </div>
-
-</div>
- -->
-
 <ngx-slick-carousel class="main-slider slider" [config]="slideConfig">
   <div ngxSlickItem class="slider-item " data-interval="2000"
     style="background-image: url(assets/images/slideshow1-2.jpg)">
@@ -57,6 +43,10 @@
     </div>
   </div>
 </ngx-slick-carousel>
+<img class="homeImg"
+  src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/7/1e599d37-1ed6-4e39-9057-ffb4065173b51651897264796-Unbelievable-Deals.jpg" />
+
+
 
 <!-------------------------------------Product Slider--------------------------------------------->
 <!-- <ngx-slick-carousel class="main-slider slider" [config]="slideConfig" *ngIf="products">
@@ -80,55 +70,183 @@
 </ngx-slick-carousel> -->
 
 <div class="carousel_products" style="margin-top: 20px;">
-<p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000" data-interval="2000" [responsiveOptions]="responsiveOptions">
-  <ng-template pTemplate="header">
-   <h3><b>Men's Products</b></h3>
-  </ng-template>
-  <ng-template let-products  | filter : women;  pTemplate="item">
+  <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000"
+    data-interval="2000" [responsiveOptions]="responsiveOptions">
+    <ng-template pTemplate="header">
+      <h3><b>Men's Products</b></h3>
+    </ng-template>
+    <ng-template let-products | filter : women; pTemplate="item">
       <div class="product-item">
-          <div class="product-item-content">
-              <div class="p-mb-3">
-                  <img  class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}" alt={{products.product_name} width="200" height="250"></div>
-              <div>
-                  <h4 class="p-mb-1">{{products['product_name']}}</h4>
-                  <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
-                  <div class="car-buttons p-mt-5">
-                      <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
-                      <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star"></p-button>
-                      <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
-                  </div>
-              </div>
+        <div class="product-item-content">
+          <div class="p-mb-3">
+            <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
+              alt={{products.product_name} width="200" height="250">
           </div>
+          <div>
+            <h4 class="p-mb-1">{{products['product_name']}}</h4>
+            <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
+            <div class="car-buttons p-mt-5">
+              <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
+              <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
+              </p-button>
+              <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+            </div>
+          </div>
+        </div>
       </div>
-  </ng-template>
-</p-carousel>
+    </ng-template>
+  </p-carousel>
 </div>
 
 <div class="carousel_products" style="margin-top: 20px;">
-  <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000" data-interval="2000" [responsiveOptions]="responsiveOptions">
+  <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000"
+    data-interval="2000" [responsiveOptions]="responsiveOptions">
     <ng-template pTemplate="header">
-     <h3><b> Men's Products</b></h3>
+      <h3><b> Men's Products</b></h3>
     </ng-template>
-    <ng-template let-products  pTemplate="item">
-        <div class="product-item">
-            <div class="product-item-content">
-                <div class="p-mb-3">
-                    <img  class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}" alt={{products.product_name} width="200" height="250"></div>
-                <div>
-                    <h4 class="p-mb-1">{{products['product_name']}}</h4>
-                    <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
-                    <div class="car-buttons p-mt-5">
-                        <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
-                        <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star"></p-button>
-                        <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
-                    </div>
-                </div>
+    <ng-template let-products pTemplate="item">
+      <div class="product-item">
+        <div class="product-item-content">
+          <div class="p-mb-3">
+            <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
+              alt={{products.product_name} width="200" height="250">
+          </div>
+          <div>
+            <h4 class="p-mb-1">{{products['product_name']}}</h4>
+            <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
+            <div class="car-buttons p-mt-5">
+              <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
+              <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
+              </p-button>
+              <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
             </div>
+          </div>
         </div>
+      </div>
     </ng-template>
   </p-carousel>
-  </div>
+</div>
+
 <!------------------------------------------------------------------------------------------------>
+
+<div class="brand">
+  <h3>Shop By Brand</h3>
+
+  <div class="highlander">
+    <img src="assets/images/brand/highlander.jpg" height="238" width="193" routerLink="/highlander">
+    <h5>Highlander</h5>
+    <h6>Min.40% Off</h6>
+  </div>
+  <div class="worgn">
+    <img src="assets/images/brand/wrogn.jpg" height="238" width="193">
+    <h5>Wrogn</h5>
+    <h6>Upto 60% Off</h6>
+  </div>
+  <div class="dennis">
+    <img src="assets/images/brand/dennislingo.jpg" height="238" width="193">
+    <h5>Dennis Lingo</h5>
+    <h6>Min.50% Off</h6>
+  </div>
+  <div class="here&Now">
+    <img src="assets/images/brand/hereNow.jpg" height="238" width="193">
+    <h5>Here&Now</h5>
+    <h6>30-45% Off</h6>
+  </div>
+  <div class="levis">
+    <img src="assets/images/brand/Levis.jpg" height="238" width="193">
+    <h5>Levi's</h5>
+    <h6>40-60% Off</h6>
+  </div>
+  <div class="mufti">
+    <img src="assets/images/brand/mufti.jpg" height="238" width="193">
+    <h5>Mufti</h5>
+    <h6>Min.55% Off</h6>
+  </div>
+  <div class="zara">
+    <img src="assets/images/brand/Zara.jpg" height="238" width="193">
+    <h5>Zara</h5>
+    <h6>60-70% Off</h6>
+  </div>
+  <div class="roadster">
+    <img src="assets/images/brand/roadster.jpg" height="238" width="193">
+    <h5>Roadster</h5>
+    <h6>Upto 45% Off</h6>
+  </div>
+  <div class="cantabil">
+    <img src="assets/images/brand/canatabil.jpg" height="238" width="193">
+    <h5>Cantabil</h5>
+    <h6>Min.40% Off</h6>
+  </div>
+  <div class="denim">
+    <img src="assets/images/brand/denim.jpg" height="238" width="193">
+    <h5>Denim</h5>
+    <h6>30-50% Off</h6>
+  </div>
+  <div class="hrx">
+    <img src="assets/images/brand/hrx.jpg" height="238" width="193">
+    <h5>HRX</h5>
+    <h6>Upto 55% Off</h6>
+  </div>
+  <div class="mastHarbour">
+    <img src="assets/images/brand/mastharbour.jpg" height="238" width="193">
+    <h5>Mast&Harbour</h5>
+    <h6>Min.50% Off</h6>
+  </div>
+</div>
+
+<!-- <section class="container section1 flex flex-wrap">
+  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/5d1b7ad3-c3ed-4ef9-a654-18231743d3cd1651484798059-Anouk-Inddus.jpg"/>
+  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/f7575784-edbf-411f-acc0-51891ea7f4331651484798329-Inddus-_Varanga.jpg"/>
+  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/ce40419d-6408-404e-9320-96e41aee1b791651484798300-Hrx-_Puma_-_More.jpg"/>
+  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/44192c45-7393-4ede-a926-11f30b0b92a51651484798036-All.jpg"/>
+  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/764761e7-c505-459e-92a2-6c4387f9e2511651484798319-Hush_Puppies-_Arrow.jpg"/> 
+  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/2f424664-e746-4af1-b0e1-366ccb0f2c681651484798552-Red_Tape.jpg"/>
+  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/a802fc48-8f5b-4d69-97ab-e6a3cf3fb70c1651484798800-USPA-_Flying_Machine.jpg"/>
+</section> -->
+
+<h3>Shop by Category</h3>
+
+<div class="homeTop_offerContain__Hf-iK">
+  <a href="/mens">
+    <!-- <a href="/mens"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/13/87487b25-dcb3-437b-9c8c-9f1248a6fbd01657717422767-HP_Desktop_25.jpg" alt="budget" class="homeTop_budgetimg__Z2Ip0" height="350"></a>
+    <a href="/mens"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/13/2b8218df-933e-4353-928d-7a45440a3f6c1657717422614-HP_Desktop_04.jpg" alt="budget" class="homeTop_budgetimg__Z2Ip0" height="350"></a>
+    <a href=""><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/13/e06495f2-121f-4737-91da-7211aeff3abc1657717422606-HP_Desktop_03.jpg" alt="budget" class="homeTop_budgetimg__Z2Ip0" ></a>
+    <a href=""><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/13/fb5631d0-3f92-41b5-b25f-a0406db1c7cb1657717422791-HP_Desktop_28.jpg" alt="budget" class="homeTop_budgetimg__Z2Ip0" height="350"></a>  -->
+  </a>
+</div>
+
+<div class="product_type">
+  <a routerLink="/men"><img
+      src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/f6505a84-c9ad-42e1-9c68-767085cc4fe81657171557392-BudgetBuys_-Loungewear.jpg"
+      alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
+  <a routerLink="/men"><img
+      src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/51a298f5-78d5-4553-b7fc-a76439a9e0f41657171557443-BudgetBuys_T-Shirts.jpg"
+      alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
+  <a routerLink="/men"><img
+      src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/a09d4965-d538-4836-b019-bb33736f1c8b1657171585766-BudgetBuys_Sarees.jpg"
+      alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
+  <a routerLink="/men"><img
+      src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/1d463b37-8041-44d0-af1b-1f23f0770d641657171723720-BudgetBuys_Sandals.jpg"
+      alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
+  <a routerLink="/men"><img
+      src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/e5e8e15f-6d39-41e4-83c2-3943a8714f641657171723691-BudgetBuys_CasualShoes.jpg"
+      alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
+  <a routerLink="/men"><img
+      src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/acadf300-e31c-4494-9909-2dd8478881cf1657171615960-BudgetBuys_Trimmers_Epilators.jpg"
+      alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
+  <a routerLink="/men"><img
+      src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/2d136799-abd8-438d-b10e-8e404dbdcd4f1657171615945-BudgetBuys_Perfumes_BodyMists.jpg"
+      alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
+</div>
+
+
+<img
+  src="https://assets.myntassets.com/w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/11/6b24b9e9-8e64-4481-8653-04d17060e7e21657527673741-3.jpeg"
+  alt="crushImg" class="homeTop_crushimg__5Xj05">
+
+
+
+
 <section class="category section pt-3 pb-0">
   <div class="container">
     <div class="row">
