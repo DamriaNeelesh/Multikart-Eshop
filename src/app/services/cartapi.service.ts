@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, ConnectableObservable, ReplaySubject, Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { IProducts } from '../products';
 import { ToastrService } from 'ngx-toastr';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -46,10 +44,9 @@ totalQuantity:Subject<number> = new BehaviorSubject<number>(0);
 
 // Add to Cart Detail
   addToCart(product:IProducts){
-
+    
     let alreadyExistInCart: boolean = false;
     let existingCartItem:IProducts | undefined ;
-
     // this.Cartitems.push(product);
     // this.productList.next(this.Cartitems);
 // Yeh upr wale ki wajah se ek click mai uske multiple times push ho rha tha product balki mene push wala kaam neeche define kr diya tha already

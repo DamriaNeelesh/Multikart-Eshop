@@ -11,7 +11,9 @@ export class CustomFilterPipe implements PipeTransform {
     if(term === undefined) return people;
     //return updates people array
     return people.filter(function(thisperson){
-        return thisperson.product_category.toLowerCase().includes(term.toLowerCase()) ||  thisperson.product_category_type.toLowerCase().includes(term.toLowerCase()) ;
+        return thisperson.product_category.toLowerCase().includes(term.toLowerCase()) ||  
+               thisperson.product_category_type.toLowerCase().includes(term.toLowerCase()) ||
+               thisperson.product_name.toLowerCase().includes(term.toLowerCase()) ;
      }) 
 
   }

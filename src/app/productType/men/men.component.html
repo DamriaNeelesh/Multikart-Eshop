@@ -12,17 +12,36 @@
     <ng-container *ngFor="let product of products | filter : searchText | customFilter:'Men' ">
       <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product">
-          <p class="itemdata" [routerLink]="['/products',product.product_id]"><b>{{product.product_name}}</b></p>
+          <p class="itemdata" [routerLink]="['/products',product.product_id]" style="color:black;"><b>{{product.product_name}}</b></p>
           <a><img class="img-fluid w-100 mb-3 img-first"
               src="/assets/images/Men_Fashion/TShirts/{{product.product_img}}"
               [routerLink]="['/products',product.product_id]" /></a>
           <a><img class="img-fluid w-100 mb-3 img-second"
               src="/assets/images/Men_Fashion/TShirts/{{product.product_img2}}"
               [routerLink]="['/products',product.product_id]"></a>
-          <p class="itemdata">{{product.product_description}}</p>
+          <p class="itemdata" ><b><strong>{{product.product_description}}</strong></b></p>
           <p><strong>Price:</strong>{{product.product_price | currency:'INR':'symbol-narrow':'4.2-2'}}</p>
-          <p>{{product.product_category}}</p>
-          <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+          <!-- <p>{{product.product_category}}</p> -->
+          <button class="cart-button" (click)="addToCart(product)">
+            <span class="add-to-cart">Add to Cart</span>
+            <span class="added">Added</span>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-box"></i>
+          </button>
+
+
+          <script>
+             const cartButtons = document.querySelectorAll('.cart-button');
+
+             cartButtons.forEach(button=>{
+              button.addEventListener('click',cartClick);
+             });
+
+             function cartClick(){
+              let button = this;
+              button.classList.add('clicked');
+             }
+          </script>
         </div>
       </div>
     </ng-container>

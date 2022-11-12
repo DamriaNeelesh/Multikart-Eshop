@@ -9,6 +9,11 @@ import { CountryStateCityApiService } from '../services/country-state-city-api.s
 import { CustomFormValidator } from '../models/custom-form-Validator';
 import { CartapiService } from '../services/cartapi.service';
 import { ToastrService } from 'ngx-toastr';
+import { CheckoutService } from '../services/checkout.service';
+import { Router } from '@angular/router';
+import { Order } from '../ordersData/order';
+import { OrderItem } from '../ordersData/order-item';
+import { Purchase } from '../ordersData/purchase';
 
 @Component({
   selector: 'app-check-out',
@@ -39,7 +44,9 @@ export class CheckOutComponent implements OnInit {
               private formService:FormService,
               private countryApi:CountryStateCityApiService,
               private cartApi:CartapiService,
-              private toastr:ToastrService) { }
+              private toastr:ToastrService,
+              private checkoutService:CheckoutService,
+              private router:Router) { }
 
   ngOnInit(): void {
 
@@ -67,26 +74,26 @@ export class CheckOutComponent implements OnInit {
       shippingAddress: this.formBuilder.group({
         street:new FormControl('',[Validators.required,
                                   Validators.minLength(3)]),
-        apartment:new FormControl('',[Validators.required,
-                                      Validators.minLength(3)]),
+        // apartment:new FormControl('',[Validators.required,
+        //                               Validators.minLength(3)]),
         city:new FormControl('',[Validators.required,
                                  Validators.minLength(3)]),
-        phone:new FormControl('',[Validators.required,
-                                  Validators.minLength(10)]),
+        // phone:new FormControl('',[Validators.required,
+        //                           Validators.minLength(10)]),
         state:new FormControl('',[Validators.required]), // DropDown and recommendation
         country:new FormControl('',[Validators.required]), // DropDown and recommendation
         zipCode:new FormControl('',[Validators.required,
-                                    Validators.minLength(3)]),
+                                    Validators.minLength(6)]),
       }),
 
       billingAddress:this.formBuilder.group({
         street: new FormControl('', [Validators.required, Validators.minLength(2)]),
-        apartment:new FormControl('', [Validators.required, Validators.minLength(2)]),
+        // apartment:new FormControl('', [Validators.required, Validators.minLength(2)]),
         city: new FormControl('', [Validators.required, Validators.minLength(2)]), // Dropdown and recommendations
-        phone: new FormControl('', [Validators.required, Validators.minLength(10)]),
+        // phone: new FormControl('', [Validators.required, Validators.minLength(10)]),
         state: new FormControl('', [Validators.required]), // DropDown and recommendation
         country:new FormControl('', [Validators.required]), // DropDown and recommendation
-        zipCode:new FormControl('', [Validators.required, Validators.minLength(2)]),
+        zipCode:new FormControl('', [Validators.required, Validators.minLength(6)]),
       }),
 
       creditCard:this.formBuilder.group({
@@ -94,8 +101,8 @@ export class CheckOutComponent implements OnInit {
         nameOnCard:  new FormControl('', [Validators.required, Validators.minLength(2)]),
         cardNumber: new FormControl('', [Validators.required, Validators.pattern('[0-9]{16}')]),
         securityCode: new FormControl('', [Validators.required, Validators.pattern('[0-9]{3}')]),
-        expirationMonth: new FormControl('', [Validators.required]),
-        expirationYear: new FormControl('', [Validators.required]),
+        expirationMonth:[''],
+        expirationYear: ['']
       })
 
     });
@@ -173,17 +180,106 @@ export class CheckOutComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log("Handling the submit button");
-// Touching all fields triggers the display of the error messages
-    if(this.checkoutFormGroup.invalid){
-      this.checkoutFormGroup.markAllAsTouched();
-    }
 
-    // Now we will get the customer data from the checkoutFormGroup
+      // Now we will get the customer data from the checkoutFormGroup
     // We can Also modify according to our need to get the customer responses
     console.log(this.checkoutFormGroup.get('customer')?.value); // we have to use the dsafe navigation to target the customer in the form group to avoid the 'null Object' error
-    console.log("The email address is: "+ this.checkoutFormGroup.get('customer')?.value.email); // We will get the user's email Id
+    console.log("email: "+ this.checkoutFormGroup.get('customer')?.value.email); // We will get the user's email Id
     console.log("The Shipping Country,State and City is"+ this.checkoutFormGroup.get('this.shippingAddressCountry') + this.checkoutFormGroup.get('this.shippingAddressState') + this.checkoutFormGroup.get('this.shippingAddressCity'))
+ 
+// Touching all fields triggers the display of the error messages
+    // if(this.checkoutFormGroup.invalid){
+    //   this.checkoutFormGroup.markAllAsTouched();
+    //   return;
+    // }
+
+    // Set up Order
+    let order = new Order(this.totalQuantity, this.totalPrice);
+    // order.totalPrice = this.totalPrice;
+    // order.totalQuantity = this.totalQuantity
+    
+    // get Cart Items
+    const cartItem = this.cartApi.Cartitems;
+
+    // create orderItems from cartItems
+    // LONG WAY:
+
+/*  let orderItems:OrderItem[] = [];
+    for(let i=0;i<cartItem.length; i++){
+      orderItems[i] = new OrderItem(cartItem[i]);
+    }
+*/    
+    // Short Way of doing above one
+    let orderItems: OrderItem[] = cartItem.map(tempCartItem => new OrderItem(tempCartItem.product_img,tempCartItem.product_price,tempCartItem.product_quanity,tempCartItem.product_id));
+    // console.log(`Order Items are :${orderItems}`);
+    // set up purchase
+    let purchase = new Purchase();
+
+    // populate purchase - customer
+    purchase.customer = this.checkoutFormGroup.controls['customer'].value;
+ 
+
+    // populate puchase - shipping Address
+    purchase.shippingAddress = this.checkoutFormGroup.controls['shippingAddress'].value;  // ShippingAddress ke from ka control hath mai liya vale ke sath
+    const shippingState: State = JSON.parse(JSON.stringify(purchase.shippingAddress.state)); // shippingState ke andr upr wale form se state ki value ko stringify kiya
+    const shippingCountry: Country = JSON.parse(JSON.stringify(purchase.shippingAddress.country)); // same for Country
+    const shippingCity: City = JSON.parse(JSON.stringify(purchase.shippingAddress.city)); // Same for city
+    purchase.shippingAddress.state = shippingState.name; // purchase ki shippingAddress state ko hamne upr wale shippingState se .value ki tarah name acquire kiya
+    purchase.shippingAddress.country = shippingCountry.name; // same as above line for country
+    purchase.shippingAddress.city = shippingCity.name;
+
+    console.log(`Shipping State:${this.shippingAddressState?.value}`);
+    console.log(`Shipping Country:${this.shippingAddressCountry?.value}`);
+    console.log(`Shipping City:${this.shippingAddressCity?.value}`);
+    
+    // populate purchase - billing Address
+    purchase.billingAddress = this.checkoutFormGroup.controls['billingAddress'].value;
+    const billingCountry: Country = JSON.parse(JSON.stringify(purchase.billingAddress.country));
+    const billingState: State = JSON.parse(JSON.stringify(purchase.billingAddress.state));
+    const billingCity: City = JSON.parse(JSON.stringify(purchase.billingAddress.city));
+    purchase.billingAddress.state = billingState.name; 
+    purchase.billingAddress.country = billingCountry.name;
+    purchase.billingAddress.city = billingCity.name;
+    
+    console.log(`Billing State:${this.billingAddressState?.value}`);
+    console.log(`Billing Country:${this.billingAddressCountry?.value}`);
+    console.log(`Billing City:${this.billingAddressCity?.value}`);
+
+
+    // populate purchase - order and orderItems
+    purchase.order = order;
+    purchase.orderItems = orderItems;
+
+    console.log(order);  // Array of Order and Items
+    console.log(orderItems);
+
+    // call API via the CheckoutService
+    this.checkoutService.placeOrder(purchase).subscribe({
+       next:response=>{
+        alert(`Your order has been received./nOrder tracking number: ${response.orderTrackingNumber}`);
+        console.log(response.orderTrackingNumber);
+        //reset the cart
+        this.resetCart();
+        
+      },
+       error: err=>{
+        alert(`There was an error:${err.message}`);
+       }
+    });
+
+   }
+
+  resetCart(){
+    // reset cart data
+    this.cartApi.Cartitems = [];
+    this.cartApi.totalPrice.next(0);
+    this.cartApi.totalQuantity.next(0);
+
+    // reset the form
+    this.checkoutFormGroup.reset();
+
+    // navigate back to product page/home page
+    this.router.navigateByUrl("/product-lis");
   }
 
   // Copying the Shipping data to billing Address
@@ -193,7 +289,7 @@ export class CheckOutComponent implements OnInit {
        .setValue(this.checkoutFormGroup.controls['shippingAddress'].value)
 
        // bug fix for states
-      // this.billingAddressStates = this.shippingAddressState;
+      this.billingAddressState === this.shippingAddressState;
      }
      else{
       this.checkoutFormGroup.controls['billingAddress'].reset(); // Billing Address ke data ko reset kr dega agr checkbox ticked nhi hai toh
@@ -234,7 +330,7 @@ export class CheckOutComponent implements OnInit {
     console.log(`${formGroupName} country code: ${countryCode}`);
     console.log(`${formGroupName} country name: ${countryName}`);
 
-    this.countryApi.getStateOnSelectedCountry(countryCode).subscribe(
+    this.countryApi.getStateOnSelectedCountry(countryName).subscribe(
       data => {
 
         if (formGroupName === 'shippingAddress') {

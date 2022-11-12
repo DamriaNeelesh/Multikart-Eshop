@@ -21,9 +21,9 @@
         <div class="box">
           <img [src]="blogPost.fields.featuredImage.fields.file.url" >
           <h5 class="mt-3 mb-3">{{blogPost.fields.title}}</h5>
-          <h6 class="author"><b>{{blogPost.fields.author}}</b></h6>
+          <h6 class="author"><b>Author:</b> {{blogPost.fields.author}}</h6>
           <h6 class="summary">{{blogPost.fields.summary}}</h6>
-          <h6 class="content">({{blogPost.fields.content}})</h6>
+          <!-- <h6 class="content">({{blogPost.fields.content}})</h6> -->
           <h6 class="date">{{blogPost.fields.date}}</h6>
           <a class="btn btn-dark btn-sm" [routerLink]="['/blog',blogPost.sys.id]" style="font-size:medium;">Read More</a>
         </div>

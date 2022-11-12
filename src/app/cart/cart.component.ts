@@ -26,7 +26,8 @@ export class CartComponent implements OnInit {
 
   addToCart(product){
      this.cartApi.addToCart(product);
-     this.toastr.success('Product Added Successfully');
+     this.toastr.success(`Product Added Successfully: ${{product}}`);
+     
   }
 
   ngOnInit(){

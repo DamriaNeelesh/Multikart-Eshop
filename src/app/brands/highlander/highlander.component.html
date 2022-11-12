@@ -1,0 +1,31 @@
+<img src="https://i.ytimg.com/vi/_gGT4wANq_U/sddefault.jpg" width="70%" height="70%" style=" display: block; width: 60%; margin-left: auto; margin-right: auto;">
+<h1>HIGHLANDER</h1>
+<!-- Search box -->
+<h3 class="title-page">Search products here</h3>
+<input type="text" [(ngModel)]="searchText" placeholder="Search Category" />
+
+<!-- List of categories -->
+<div class="container">
+    <div class="row" *ngIf="products"> 
+      <ng-container *ngFor="let product of products | filter : searchText | customFilter:'highlander' ">
+        <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
+          <div class="product">
+            <p class="itemdata" [routerLink]="['/products',product.product_id]" ><b>{{product.product_name}}</b></p>
+            <a><img class="img-fluid w-100 mb-3 img-first" src="/assets/images/Men_Fashion/TShirts/{{product.product_img}}"
+              [routerLink]="['/products',product.product_id]"/></a>
+            <a><img class="img-fluid w-100 mb-3 img-second" src="/assets/images/Men_Fashion/TShirts/{{product.product_img2}}"
+              [routerLink]="['/products',product.product_id]"></a>
+            <p class="itemdata">{{product.product_description}}</p>
+            <p><strong>Price:</strong>{{product.product_price | currency:'INR':'symbol-narrow':'4.2-2'}}</p>
+            <p>{{product.product_category}}</p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  
+    <div *ngIf="products?.length ==0" class="alert alert-warning col-md-12" role="alert">
+      No Products Found.
+    </div>
+  
+  </div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,8 +25,8 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
 import { MdToHtmlPipe } from './md-to-html.pipe';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {ButtonModule} from 'primeng/button';
-import {CarouselModule} from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { CarouselModule } from 'primeng/carousel';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CartStatusComponent } from './cart-status/cart-status.component';
@@ -43,9 +43,34 @@ import { JacketsComponent } from './productCategory/jackets/jackets.component';
 import { PajamasComponent } from './productCategory/pajamas/pajamas.component';
 import { MenComponent } from './productType/men/men.component';
 import { CustomFilterPipe } from './custom-filter.pipe';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { CantabilComponent } from './brands/cantabil/cantabil.component';
+import { DenimComponent } from './brands/denim/denim.component';
+import { DennisLingoComponent } from './brands/dennis-lingo/dennis-lingo.component';
+import { HereComponent } from './brands/here/here.component';
+import { HighlanderComponent } from './brands/highlander/highlander.component';
+import { HRXComponent } from './brands/hrx/hrx.component';
+import { LevisComponent } from './brands/levis/levis.component';
+import { MastHarbourComponent } from './brands/mast-harbour/mast-harbour.component';
+import { MuftiComponent } from './brands/mufti/mufti.component';
+import { RoadsterComponent } from './brands/roadster/roadster.component';
+import { WrognComponent } from './brands/wrogn/wrogn.component';
+import { ZaraComponent } from './brands/zara/zara.component';
+import { LoginComponent } from './login/login.component';
+import { Router } from '@angular/router';
+import { LoginStatusComponent } from './login-status/login-status.component';
+
+import myAppConfig from './config/my-app-config';
+import { OktaAuthModule, OKTA_CONFIG , OktaCallbackComponent} from '@okta/okta-angular';
+import OktaAuth from '@okta/okta-auth-js';
 
 
+const oktaConfig = myAppConfig.oidc;
 
+const oktaAuth = new OktaAuth(oktaConfig);
+
+
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,10 +96,17 @@ import { CustomFilterPipe } from './custom-filter.pipe';
     WomenComponent,
     ShirtsComponent,
     TshirtsComponent,
-    TopComponent, 
+    TopComponent,
     JacketsComponent,
     PajamasComponent,
     CustomFilterPipe,
+    CountdownTimerComponent,
+    // Brand Component
+    CantabilComponent,DenimComponent,DennisLingoComponent,HereComponent,
+    HighlanderComponent,HRXComponent,LevisComponent,MastHarbourComponent,
+    MuftiComponent,RoadsterComponent,WrognComponent,ZaraComponent, LoginComponent,
+
+    LoginStatusComponent
   ],
   imports: [
     BrowserModule,
@@ -92,9 +124,12 @@ import { CustomFilterPipe } from './custom-filter.pipe';
     CommonModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    OktaAuthModule,
   ],
-  providers: [ProductsService,ContentfulService,FormService,CustomFormValidator,ToastrService],
+  providers: [ProductsService, ContentfulService, FormService, CustomFormValidator, ToastrService,
+    { provide:OKTA_CONFIG, useValue: {oktaAuth}}],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

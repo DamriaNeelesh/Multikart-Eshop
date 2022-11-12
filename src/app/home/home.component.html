@@ -1,3 +1,4 @@
+
 <ngx-slick-carousel class="main-slider slider" [config]="slideConfig">
   <div ngxSlickItem class="slider-item " data-interval="2000"
     style="background-image: url(assets/images/slideshow1-2.jpg)">
@@ -80,7 +81,7 @@
         <div class="product-item-content">
           <div class="p-mb-3">
             <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
-              alt={{products.product_name} width="200" height="250">
+              alt={{products.product_name} width="217" height="250">
           </div>
           <div>
             <h4 class="p-mb-1">{{products['product_name']}}</h4>
@@ -105,11 +106,11 @@
       <h3><b> Men's Products</b></h3>
     </ng-template>
     <ng-template let-products pTemplate="item">
-      <div class="product-item">
+      <div class="product-item2">
         <div class="product-item-content">
           <div class="p-mb-3">
             <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
-              alt={{products.product_name} width="200" height="250">
+              alt={{products.product_name} width="217" height="250">
           </div>
           <div>
             <h4 class="p-mb-1">{{products['product_name']}}</h4>
@@ -129,93 +130,110 @@
 
 <!------------------------------------------------------------------------------------------------>
 
-<div class="brand">
-  <h3>Shop By Brand</h3>
 
+  <img src="assets/images/headers/brandAtSlashedPrice.png" height="150px">
+  <div class="hbrand">
   <div class="highlander">
     <img src="assets/images/brand/highlander.jpg" height="238" width="193" routerLink="/highlander">
-    <h5>Highlander</h5>
-    <h6>Min.40% Off</h6>
+    <h5 routerLink="/highlander">Highlander</h5>
+    <h6 routerLink="/highlander">Min.40% Off</h6>
   </div>
   <div class="worgn">
-    <img src="assets/images/brand/wrogn.jpg" height="238" width="193">
-    <h5>Wrogn</h5>
-    <h6>Upto 60% Off</h6>
+    <img src="assets/images/brand/wrogn.jpg" height="238" width="193" routerLink="/wrogn">
+    <h5 routerLink="/wrogn">Wrogn</h5>
+    <h6 routerLink="/wrogn">Upto 60% Off</h6>
   </div>
   <div class="dennis">
-    <img src="assets/images/brand/dennislingo.jpg" height="238" width="193">
-    <h5>Dennis Lingo</h5>
-    <h6>Min.50% Off</h6>
+    <img src="assets/images/brand/dennislingo.jpg" height="238" width="193" routerLink="/dennisLingo">
+    <h5 routerLink="/dennisLingo">Dennis Lingo</h5>
+    <h6 routerLink="/dennisLingo">Min.50% Off</h6>
   </div>
   <div class="here&Now">
-    <img src="assets/images/brand/hereNow.jpg" height="238" width="193">
-    <h5>Here&Now</h5>
-    <h6>30-45% Off</h6>
+    <img src="assets/images/brand/hereNow.jpg" height="238" width="193" routerLink="/here&Now">
+    <h5 routerLink="/here&Now">Here&Now</h5>
+    <h6 routerLink="/here&Now">30-45% Off</h6>
   </div>
   <div class="levis">
-    <img src="assets/images/brand/Levis.jpg" height="238" width="193">
-    <h5>Levi's</h5>
-    <h6>40-60% Off</h6>
+    <img src="assets/images/brand/Levis.jpg" height="238" width="193" routerLink="/levis">
+    <h5 routerLink="/levis">Levi's</h5>
+    <h6 routerLink="/levis">40-60% Off</h6>
   </div>
   <div class="mufti">
-    <img src="assets/images/brand/mufti.jpg" height="238" width="193">
-    <h5>Mufti</h5>
-    <h6>Min.55% Off</h6>
+    <img src="assets/images/brand/mufti.jpg" height="238" width="193" routerLink="/mufti">
+    <h5 routerLink="/mufti">Mufti</h5>
+    <h6 routerLink="/mufti">Min.55% Off</h6>
   </div>
   <div class="zara">
-    <img src="assets/images/brand/Zara.jpg" height="238" width="193">
-    <h5>Zara</h5>
-    <h6>60-70% Off</h6>
+    <img src="assets/images/brand/Zara.jpg" height="238" width="193" routerLink="/zara">
+    <h5 routerLink="/zara">Zara</h5>
+    <h6 routerLink="/zara">60-70% Off</h6>
   </div>
   <div class="roadster">
-    <img src="assets/images/brand/roadster.jpg" height="238" width="193">
-    <h5>Roadster</h5>
-    <h6>Upto 45% Off</h6>
+    <img src="assets/images/brand/roadster.jpg" height="238" width="193" routerLink="/roadster">
+    <h5 routerLink="/roadster">Roadster</h5>
+    <h6 routerLink="/roadster">Upto 45% Off</h6>
   </div>
   <div class="cantabil">
-    <img src="assets/images/brand/canatabil.jpg" height="238" width="193">
-    <h5>Cantabil</h5>
-    <h6>Min.40% Off</h6>
+    <img src="assets/images/brand/canatabil.jpg" height="238" width="193" routerLink="/cantabil">
+    <h5 routerLink="/cantabil">Cantabil</h5>
+    <h6 routerLink="/cantabil">Min.40% Off</h6>
   </div>
   <div class="denim">
-    <img src="assets/images/brand/denim.jpg" height="238" width="193">
-    <h5>Denim</h5>
-    <h6>30-50% Off</h6>
+    <img src="assets/images/brand/denim.jpg" height="238" width="193" routerLink="/denim">
+    <h5 routerLink="/denim">Denim</h5>
+    <h6 routerLink="/denim">30-50% Off</h6>
   </div>
   <div class="hrx">
-    <img src="assets/images/brand/hrx.jpg" height="238" width="193">
-    <h5>HRX</h5>
-    <h6>Upto 55% Off</h6>
+    <img src="assets/images/brand/hrx.jpg" height="238" width="193" routerLink="/hrx">
+    <h5 routerLink="/hrx">HRX</h5>
+    <h6 routerLink="/hrx">Upto 55% Off</h6>
   </div>
   <div class="mastHarbour">
-    <img src="assets/images/brand/mastharbour.jpg" height="238" width="193">
-    <h5>Mast&Harbour</h5>
-    <h6>Min.50% Off</h6>
+    <img src="assets/images/brand/mastharbour.jpg" height="238" width="193" routerLink="mast&harbour">
+    <h5 routerLink="mast&harbour">Mast&Harbour</h5>
+    <h6 routerLink="mast&harbour">Min.50% Off</h6>
   </div>
 </div>
 
-<!-- <section class="container section1 flex flex-wrap">
-  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/5d1b7ad3-c3ed-4ef9-a654-18231743d3cd1651484798059-Anouk-Inddus.jpg"/>
-  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/f7575784-edbf-411f-acc0-51891ea7f4331651484798329-Inddus-_Varanga.jpg"/>
-  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/ce40419d-6408-404e-9320-96e41aee1b791651484798300-Hrx-_Puma_-_More.jpg"/>
-  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/44192c45-7393-4ede-a926-11f30b0b92a51651484798036-All.jpg"/>
-  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/764761e7-c505-459e-92a2-6c4387f9e2511651484798319-Hush_Puppies-_Arrow.jpg"/> 
-  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/2f424664-e746-4af1-b0e1-366ccb0f2c681651484798552-Red_Tape.jpg"/>
-  <img class="itemImg" src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/a802fc48-8f5b-4d69-97ab-e6a3cf3fb70c1651484798800-USPA-_Flying_Machine.jpg"/>
-</section> -->
+<!------------------------------------------------------------------------------------------------------------->
 
-<h3>Shop by Category</h3>
-
-<div class="homeTop_offerContain__Hf-iK">
-  <a href="/mens">
-    <!-- <a href="/mens"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/13/87487b25-dcb3-437b-9c8c-9f1248a6fbd01657717422767-HP_Desktop_25.jpg" alt="budget" class="homeTop_budgetimg__Z2Ip0" height="350"></a>
-    <a href="/mens"><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/13/2b8218df-933e-4353-928d-7a45440a3f6c1657717422614-HP_Desktop_04.jpg" alt="budget" class="homeTop_budgetimg__Z2Ip0" height="350"></a>
-    <a href=""><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/13/e06495f2-121f-4737-91da-7211aeff3abc1657717422606-HP_Desktop_03.jpg" alt="budget" class="homeTop_budgetimg__Z2Ip0" ></a>
-    <a href=""><img src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/13/fb5631d0-3f92-41b5-b25f-a0406db1c7cb1657717422791-HP_Desktop_28.jpg" alt="budget" class="homeTop_budgetimg__Z2Ip0" height="350"></a>  -->
-  </a>
+<div class="brand ">
+  <img src="assets/images/ProductType/shop by categories.png">
+  <div class="product_category">
+   <div class="shirts">
+      <img src="assets/images/ProductType/Shirt.jpeg" height="238" width="193" routerLink="/shirts">
+      <h5 routerLink="/shirts">Shirts</h5>
+      <h6 routerLink="/shirts">Min.40% Off</h6>
+    </div>
+    <div class="tshirts">
+      <img src="assets/images/ProductType/Tshirt.jpeg" height="238" width="193" routerLink="/tshirts">
+      <h5 routerLink="/tshirts">T-Shirts</h5>
+      <h6 routerLink="/tshirts">Upto 60% Off</h6>
+    </div>
+    <div class="jackets">
+      <img src="assets/images/ProductType/Jacket.jpeg" height="238" width="193" routerLink="/jackets">
+      <h5 routerLink="/jackets">Jackets</h5>
+      <h6 routerLink="/jackets">Min.50% Off</h6>
+    </div>
+    <div class="top">
+      <img src="assets/images/ProductType/Top.jpeg" height="238" width="193" routerLink="/top">
+      <h5 routerLink="/top">Top</h5>
+      <h6 routerLink="/top">30-45% Off</h6>
+    </div>
+    <div class="blazers">
+      <img src="assets/images/brand/Blazer.jpeg" height="238" width="193" routerLink="/blazers">
+      <h5 routerLink="/blazers">Blazers</h5>
+      <h6 routerLink="/blazers">Min.40% Off</h6>
+    </div>
+  </div>
 </div>
 
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+
 <div class="product_type">
+  <h3>Shop by Category</h3>
   <a routerLink="/men"><img
       src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/f6505a84-c9ad-42e1-9c68-767085cc4fe81657171557392-BudgetBuys_-Loungewear.jpg"
       alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
@@ -240,11 +258,86 @@
 </div>
 
 
-<img
+<!-- <img
   src="https://assets.myntassets.com/w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/11/6b24b9e9-8e64-4481-8653-04d17060e7e21657527673741-3.jpeg"
-  alt="crushImg" class="homeTop_crushimg__5Xj05">
+  alt="crushImg" class="homeTop_crushimg__5Xj05"> -->
+
+<!-- ===-------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<div class="dealsOnTopBrands">
+  <img src="assets/images/topBrands/dealsOnTopBrands.png">
+  <div class="hereNow">
+     <img src="assets/images/topBrands/here&now.png" routerLink="/here" width="215px" height="338px">
+   </div>
+  <div class="urbanic">
+    <img src="assets/images/topBrands/urbanic.png" routerLink="/urbanic" width="215px" height="338px">
+  </div>
+  <div class="worgn">
+    <img src="assets/images/topBrands/wrogn.png" routerLink="/wrogn" width="215px" height="338px">
+  </div>
+  <div class="hrx">
+    <img src="assets/images/topBrands/hrx.png" routerLink="/hrx" width="215px" height="338px">
+  </div>
+  <div class="only">
+    <img src="assets/images/topBrands/only.png" routerLink="/zara" width="215px" height="338px">
+  </div>
+  <div class="mastHarbour">
+    <img src="assets/images/topBrands/mast & harbour.png" routerLink="/mast" width="215px" height="338px">
+  </div>
+  <div class="levis">
+    <img src="assets/images/topBrands/leivs.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="forever21">
+    <img src="assets/images/topBrands/forever21.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="dressberry">
+    <img src="assets/images/topBrands/dressberry.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="libas">
+    <img src="assets/images/topBrands/libas.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="biba">
+    <img src="assets/images/topBrands/biba.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="anouk">
+    <img src="assets/images/topBrands/anouk.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="roadster&here&now">
+    <img src="assets/images/topBrands/roadster&here&now.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="puma">
+    <img src="assets/images/topBrands/puma.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="nike">
+    <img src="assets/images/topBrands/nike.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+  <div class="levis">
+    <img src="assets/images/topBrands/vishudh.png" routerLink="/levis" width="215px" height="338px">
+  </div>
+
+</div>
 
 
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+<div class="otherProducts">
+  <h3>Other Products</h3>
+  <section class="container_fluid flex">
+    <img class="itemImg"
+      src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/5d1b7ad3-c3ed-4ef9-a654-18231743d3cd1651484798059-Anouk-Inddus.jpg" />
+    <img class="itemImg"
+      src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/f7575784-edbf-411f-acc0-51891ea7f4331651484798329-Inddus-_Varanga.jpg" />
+    <img class="itemImg"
+      src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/ce40419d-6408-404e-9320-96e41aee1b791651484798300-Hrx-_Puma_-_More.jpg" />
+    <img class="itemImg"
+      src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/44192c45-7393-4ede-a926-11f30b0b92a51651484798036-All.jpg" />
+    <img class="itemImg"
+      src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/764761e7-c505-459e-92a2-6c4387f9e2511651484798319-Hush_Puppies-_Arrow.jpg" />
+    <img class="itemImg"
+      src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/2f424664-e746-4af1-b0e1-366ccb0f2c681651484798552-Red_Tape.jpg" />
+    <img class="itemImg"
+      src="https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/2/a802fc48-8f5b-4d69-97ab-e6a3cf3fb70c1651484798800-USPA-_Flying_Machine.jpg" />
+  </section>
+</div>
 
 
 <section class="category section pt-3 pb-0">
@@ -344,7 +437,7 @@
             <span class="price">
               $29.10
             </span>
-            <!-------------------><button href="#" class="btn btn-primary btn-block">Add to Cart</button>
+            <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
 
           </div>
         </div>
@@ -393,7 +486,7 @@
             <span class="price">
               $249
             </span>
-            <!-------------------><button href="#" class="btn btn-primary btn-block">Add to Cart</button>
+            <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
 
           </div>
         </div>
@@ -417,7 +510,7 @@
             <span class="price">
               $59.10
             </span>
-            <!-------------------><button href="#" class="btn btn-primary btn-block">Add to Cart</button>
+            <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -442,7 +535,7 @@
             <span class="price">
               $3290.10
             </span>
-            <!-------------------><button href="#" class="btn btn-primary btn-block">Add to Cart</button>
+            <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
 
           </div>
         </div>
@@ -472,7 +565,7 @@
             <span class="price">
               $999.00
             </span>
-            <!-------------------><button class="btn btn-primary btn-block">Add to Cart</button>
+            <button class="btn btn-primary btn-block">Add to Cart</button>
           </div>
 
         </div>

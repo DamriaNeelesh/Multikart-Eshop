@@ -4,6 +4,7 @@ import { CartapiService } from '../services/cartapi.service';
 import { ProductsService } from '../services/products.service';
 import { IProducts } from '../products';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,7 +17,7 @@ export class HeaderComponent implements OnInit {
     private apiService:CartapiService
    ,private _productsService:ProductsService) { }  
 
-products:IProducts[];
+products?:IProducts[];
 
   ngOnInit(): void {
     this.products = this._productsService.getProducts();

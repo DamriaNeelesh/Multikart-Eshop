@@ -164,15 +164,43 @@ header{
     margin:5px;
   } */
 
+ /* .brand{
+    border-width: 10px;
+    background-color: #1d1f20; 
+    border-radius: 10px;
+ }  */
+
+ .product_category :after{
+  content: '';
+  position: absolute;
+  background: linear-gradient(60deg,#f79533,#f37055,#ef4e7b,#a166ab,#5073b8,#1098ad,#07b39b,#6fba82);
+  border-radius: calc(2 * 10px);
+  z-index: -1;
+  animation: animate 3s ease alternate infinite;
+  background-size: 300% 300%;
+ }
+
+
   .brand div{
     border:5px solid #ec10dd;  
-    border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+    background: linear-gradient(60deg,#f79533,#f37055,#ef4e7b,#a166ab,#5073b8,#1098ad,#07b39b,#6fba82);
+    /* border-image: linear-gradient(45deg, turquoise, greenyellow) 1; */
     padding:3px; 
     margin:5px;
     text-align: center;
-    display:inline-block;
-    /* justify-content: space-between; */
-  }
+    display:inline-block; 
+}
+
+
+.hbrand div{
+  border:5px solid #ec10dd;  
+  /* background: linear-gradient(60deg,#f79533,#f37055,#ef4e7b,#a166ab,#5073b8,#1098ad,#07b39b,#6fba82); */
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1; 
+  padding:3px; 
+  margin:5px;
+  text-align: center;
+  display:inline-block; 
+}
 
  .brand h5{
     background-color:rgb(17, 210, 175);
@@ -184,4 +212,53 @@ header{
 
  .brand h3{
     text-align: center;
+    background-color:antiquewhite;
  }
+
+ .otherProducts{
+  text-align: center;
+  background-color:antiquewhite;
+ }
+
+ .product_type{
+  text-align: center;
+  background-color:antiquewhite;
+ }
+
+ .container_fluid{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+ .product-item{
+  /* position: absolute; */
+  border: 4px solid transparent;
+  border-image: linear-gradient(60deg,#ff0,#f0f,#f00,#00f,#0f0);
+  border-image-slice: 1;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+ }
+
+ .product-item2{
+  border:5px solid #ec10dd;  
+  border-image:linear-gradient(60deg,#f79533,#f37055,#ef4e7b,#a166ab,#5073b8,#1098ad,#07b39b,#6fba82);
+  border-image-slice: 1;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+ }
+
+ .dealsOnTopBrands div{
+  /* border:5px solid #ec10dd;   */
+  background: linear-gradient(#ff6f69,#ffcc5c,rgb(73, 236, 73));
+  /* border-image: linear-gradient(45deg, turquoise, greenyellow) 1; */
+  padding:3px; 
+  margin:5px;
+  text-align: center;
+  display:inline-block; 
+ }
+ 
+
+ .headerBrand{
+  width: 100vw;
+  height: 12.5vw;
+ }
+ 

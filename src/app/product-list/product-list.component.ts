@@ -13,7 +13,8 @@ import swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
+  
 })
 
 export class ProductListComponent implements OnInit {
