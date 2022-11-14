@@ -1,9 +1,11 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Component, Injector, NgModule } from '@angular/core';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
+import OktaAuth from '@okta/okta-auth-js';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BagComponent } from './bag/bag.component';
+import { BeautyComponent } from './beauty/beauty.component';
 import { BlogHomePageComponent } from './blog-home-page/blog-home-page.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { CantabilComponent } from './brands/cantabil/cantabil.component';
@@ -23,6 +25,7 @@ import { CheckOutComponent } from './check-out/check-out.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { JacketsComponent } from './productCategory/jackets/jackets.component';
@@ -34,6 +37,14 @@ import { ProductsingleComponent } from './productsingle/productsingle.component'
 import { MenComponent } from './productType/men/men.component';
 import { WomenComponent } from './productType/women/women.component';
 import { ShopComponent } from './shop/shop.component';
+
+function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
+  // Use injector to access any service available within your application
+  const router = injector.get(Router);
+
+  // Redirect the user to your custom login page
+  router.navigate(['/login']);
+}
 
 const routes: Routes = [
   {path:"", component: HomeComponent },
@@ -50,8 +61,10 @@ const routes: Routes = [
   {path:"checkout/:payment",component:PaymentGatewayComponent},
 
 // Login and logout using OKTA Integration  
-  {path:"", component: OktaCallbackComponent},
+  {path:'login/callback', component: OktaCallbackComponent}, // canActivate:[OktaAuthGuard]
   {path:'login',component:LoginComponent},
+  {path:'order-history',component:OrderHistoryComponent} ,
+  // canActivate:[OktaAuthGuard]  --> Route Guard
 
 // Product by Category
   {path:"men",component:MenComponent},
@@ -74,7 +87,10 @@ const routes: Routes = [
   {path:"mufti",component:MuftiComponent},
   {path:"roadster",component:RoadsterComponent},
   {path:"wrogn",component:WrognComponent},
-  {path:"zara",component:ZaraComponent}
+  {path:"zara",component:ZaraComponent},
+
+// Beauty Products Page
+  {path:'beauty-products',component:BeautyComponent}  
 ];
 
 @NgModule({

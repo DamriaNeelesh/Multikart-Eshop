@@ -1,23 +1,16 @@
 import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import myAppConfig from '../config/my-app-config';
 import { OktaSignIn } from '@okta/okta-signin-widget';
-import { OktaAuthStateService, OKTA_AUTH } from '@okta/okta-angular';
-import OktaAuth, { SigninWithRedirectOptions } from '@okta/okta-auth-js';
-import { Okta } from '../services/okta.service';
+import { OKTA_AUTH } from '@okta/okta-angular';
+import { OktaAuth } from '@okta/okta-auth-js';
 
-const oidc = {
-  clientId:'0oa7813bx2t9ukEk75d7',
-  issuer:'https://dev-23535757.okta.com/oauth2/default',
-  redirectUri:'https://localhost:4200/login/callback',
-  scopes:['openid','profile','email']
-}
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit{
   
   oktaSignin: any;
 
@@ -51,9 +44,4 @@ export class LoginComponent implements OnInit, OnDestroy {
       }
     );
   }
-
-  ngOnDestroy(): void {
-    
-  }
-
 }

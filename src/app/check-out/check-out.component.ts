@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormService } from '../services/form.service';
-import { CommonModule } from '@angular/common';
 import { Country } from '../models/country.model';
 import { State } from '../models/state.model';
 import { City } from '../models/city.model';
 import { CountryStateCityApiService } from '../services/country-state-city-api.service';
-import { CustomFormValidator } from '../models/custom-form-Validator';
 import { CartapiService } from '../services/cartapi.service';
 import { ToastrService } from 'ngx-toastr';
 import { CheckoutService } from '../services/checkout.service';
@@ -39,6 +37,7 @@ export class CheckOutComponent implements OnInit {
   shippingAddressStates: State[] = [];
   billingAddressStates: State[] = [];
 
+  storage: Storage = sessionStorage;
 
   constructor(private formBuilder:FormBuilder,
               private formService:FormService,
@@ -56,6 +55,8 @@ export class CheckOutComponent implements OnInit {
 
     this.reviewCartDetails();
 
+    // read the user's email address from browser storage
+    const theEmail = JSON.parse(this.storage.getItem('userEmail')!);
 
     this.checkoutFormGroup = this.formBuilder.group({
 
@@ -67,7 +68,7 @@ export class CheckOutComponent implements OnInit {
         lastName: new FormControl('',[Validators.required,
                                       Validators.minLength(3)]),
 
-        email: new FormControl ('',  [Validators.required,
+        email: new FormControl ('theEmail',  [Validators.required,
                                       Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")] ),
       }),
 

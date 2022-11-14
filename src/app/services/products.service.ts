@@ -14,7 +14,7 @@ export class ProductsService {
   products: IProducts[] = [];
   filteredProducts: IProducts[] = [];
   @Output() event = new EventEmitter();
-  private baseUrl = 'https://localhost:8080/api/products';
+  private baseUrl = 'https://localhost:4200/products';
 
   searchProducts(thekeyword:string): Observable<IProducts[] | undefined>
  {

@@ -1,4 +1,3 @@
-
 <ngx-slick-carousel class="main-slider slider" [config]="slideConfig">
   <div ngxSlickItem class="slider-item " data-interval="2000"
     style="background-image: url(assets/images/slideshow1-2.jpg)">
@@ -70,126 +69,139 @@
 </div>
 </ngx-slick-carousel> -->
 
-<div class="carousel_products" style="margin-top: 20px;">
-  <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000"
-    data-interval="2000" [responsiveOptions]="responsiveOptions">
-    <ng-template pTemplate="header">
-      <h3><b>Men's Products</b></h3>
-    </ng-template>
-    <ng-template let-products | filter : women; pTemplate="item">
-      <div class="product-item">
-        <div class="product-item-content">
-          <div class="p-mb-3">
-            <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
-              alt={{products.product_name} width="217" height="250">
-          </div>
-          <div>
-            <h4 class="p-mb-1">{{products['product_name']}}</h4>
-            <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
-            <div class="car-buttons p-mt-5">
-              <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
-              <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
-              </p-button>
-              <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+<div class="middle-banner">
+  <div class="mens-banner">
+    <img src="assets/images/men-hrx-nike.png" width="100%" height="auto">
+  </div>
+  <div class="carousel_products" style="margin-top: 20px;">
+    <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000"
+      data-interval="2000" [responsiveOptions]="responsiveOptions">
+      <ng-template pTemplate="header">
+        <h3><b>Men's Products</b></h3>
+      </ng-template>
+      <ng-template let-products | filter : women; pTemplate="item">
+        <div class="product-item">
+          <div class="product-item-content">
+            <div class="p-mb-3">
+              <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
+                alt={{products.product_name} width="217" height="250">
+            </div>
+            <div>
+              <h4 class="p-mb-1">{{products['product_name']}}</h4>
+              <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
+              <div class="car-buttons p-mt-5">
+                <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
+                <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
+                </p-button>
+                <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </ng-template>
-  </p-carousel>
+      </ng-template>
+    </p-carousel>
+  </div>
+  
 </div>
 
-<div class="carousel_products" style="margin-top: 20px;">
-  <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000"
-    data-interval="2000" [responsiveOptions]="responsiveOptions">
-    <ng-template pTemplate="header">
-      <h3><b> Men's Products</b></h3>
-    </ng-template>
-    <ng-template let-products pTemplate="item">
-      <div class="product-item2">
-        <div class="product-item-content">
-          <div class="p-mb-3">
-            <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
-              alt={{products.product_name} width="217" height="250">
-          </div>
-          <div>
-            <h4 class="p-mb-1">{{products['product_name']}}</h4>
-            <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
-            <div class="car-buttons p-mt-5">
-              <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
-              <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
-              </p-button>
-              <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+
+<div class="women-banner">
+  <img src="assets/images/women-banner.png" width="100%" height="auto">
+  <div class="carousel_products" style="margin-top: 20px;">
+    <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000"
+      data-interval="2000" [responsiveOptions]="responsiveOptions">
+      <ng-template pTemplate="header">
+        <h3><b> Women's Products </b></h3>
+      </ng-template>
+      <ng-template let-products pTemplate="item">
+        <div class="product-item2">
+          <div class="product-item-content">
+            <div class="p-mb-3">
+              <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
+                alt={{products.product_name} width="217" height="250">
+            </div>
+            <div>
+              <h4 class="p-mb-1">{{products['product_name']}}</h4>
+              <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
+              <div class="car-buttons p-mt-5">
+                <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
+                <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
+                </p-button>
+                <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </ng-template>
-  </p-carousel>
+      </ng-template>
+    </p-carousel>
+  </div>
 </div>
+
 
 <!------------------------------------------------------------------------------------------------>
 
 
-  <img src="assets/images/headers/brandAtSlashedPrice.png" height="150px">
-  <div class="hbrand">
+
+
+<img src="assets/images/headers/brandAtSlashedPrice.png" height="150px">
+<div class="hbrand">
   <div class="highlander">
-    <img src="assets/images/brand/highlander.jpg" height="238" width="193" routerLink="/highlander">
+    <img src="assets/images/brand/highlander.jpg" height="238" width="217.5" routerLink="/highlander">
     <h5 routerLink="/highlander">Highlander</h5>
     <h6 routerLink="/highlander">Min.40% Off</h6>
   </div>
   <div class="worgn">
-    <img src="assets/images/brand/wrogn.jpg" height="238" width="193" routerLink="/wrogn">
+    <img src="assets/images/brand/wrogn.jpg" height="238" width="217.5" routerLink="/wrogn">
     <h5 routerLink="/wrogn">Wrogn</h5>
     <h6 routerLink="/wrogn">Upto 60% Off</h6>
   </div>
   <div class="dennis">
-    <img src="assets/images/brand/dennislingo.jpg" height="238" width="193" routerLink="/dennisLingo">
+    <img src="assets/images/brand/dennislingo.jpg" height="238" width="217.5" routerLink="/dennisLingo">
     <h5 routerLink="/dennisLingo">Dennis Lingo</h5>
     <h6 routerLink="/dennisLingo">Min.50% Off</h6>
   </div>
   <div class="here&Now">
-    <img src="assets/images/brand/hereNow.jpg" height="238" width="193" routerLink="/here&Now">
+    <img src="assets/images/brand/hereNow.jpg" height="238" width="217.5" routerLink="/here&Now">
     <h5 routerLink="/here&Now">Here&Now</h5>
     <h6 routerLink="/here&Now">30-45% Off</h6>
   </div>
   <div class="levis">
-    <img src="assets/images/brand/Levis.jpg" height="238" width="193" routerLink="/levis">
+    <img src="assets/images/brand/Levis.jpg" height="238" width="217.5" routerLink="/levis">
     <h5 routerLink="/levis">Levi's</h5>
     <h6 routerLink="/levis">40-60% Off</h6>
   </div>
   <div class="mufti">
-    <img src="assets/images/brand/mufti.jpg" height="238" width="193" routerLink="/mufti">
+    <img src="assets/images/brand/mufti.jpg" height="238" width="217.5" routerLink="/mufti">
     <h5 routerLink="/mufti">Mufti</h5>
     <h6 routerLink="/mufti">Min.55% Off</h6>
   </div>
   <div class="zara">
-    <img src="assets/images/brand/Zara.jpg" height="238" width="193" routerLink="/zara">
+    <img src="assets/images/brand/Zara.jpg" height="238" width="217.5" routerLink="/zara">
     <h5 routerLink="/zara">Zara</h5>
     <h6 routerLink="/zara">60-70% Off</h6>
   </div>
   <div class="roadster">
-    <img src="assets/images/brand/roadster.jpg" height="238" width="193" routerLink="/roadster">
+    <img src="assets/images/brand/roadster.jpg" height="238" width="217.5" routerLink="/roadster">
     <h5 routerLink="/roadster">Roadster</h5>
     <h6 routerLink="/roadster">Upto 45% Off</h6>
   </div>
   <div class="cantabil">
-    <img src="assets/images/brand/canatabil.jpg" height="238" width="193" routerLink="/cantabil">
+    <img src="assets/images/brand/canatabil.jpg" height="238" width="217.5" routerLink="/cantabil">
     <h5 routerLink="/cantabil">Cantabil</h5>
     <h6 routerLink="/cantabil">Min.40% Off</h6>
   </div>
   <div class="denim">
-    <img src="assets/images/brand/denim.jpg" height="238" width="193" routerLink="/denim">
+    <img src="assets/images/brand/denim.jpg" height="238" width="217.5" routerLink="/denim">
     <h5 routerLink="/denim">Denim</h5>
     <h6 routerLink="/denim">30-50% Off</h6>
   </div>
   <div class="hrx">
-    <img src="assets/images/brand/hrx.jpg" height="238" width="193" routerLink="/hrx">
+    <img src="assets/images/brand/hrx.jpg" height="238" width="217.5" routerLink="/hrx">
     <h5 routerLink="/hrx">HRX</h5>
     <h6 routerLink="/hrx">Upto 55% Off</h6>
   </div>
   <div class="mastHarbour">
-    <img src="assets/images/brand/mastharbour.jpg" height="238" width="193" routerLink="mast&harbour">
+    <img src="assets/images/brand/mastharbour.jpg" height="238" width="217.5" routerLink="mast&harbour">
     <h5 routerLink="mast&harbour">Mast&Harbour</h5>
     <h6 routerLink="mast&harbour">Min.50% Off</h6>
   </div>
@@ -198,9 +210,9 @@
 <!------------------------------------------------------------------------------------------------------------->
 
 <div class="brand ">
-  <img src="assets/images/ProductType/shop by categories.png">
+  <img src="assets/images/ProductType/shop by categories.png" style="width:100%; height: auto; border: 2px solid red;">
   <div class="product_category">
-   <div class="shirts">
+    <div class="shirts">
       <img src="assets/images/ProductType/Shirt.jpeg" height="238" width="193" routerLink="/shirts">
       <h5 routerLink="/shirts">Shirts</h5>
       <h6 routerLink="/shirts">Min.40% Off</h6>
@@ -232,6 +244,7 @@
 <!-- ------------------------------------------------------------------------------------------------------------------------------------------ -->
 
 
+
 <div class="product_type">
   <h3>Shop by Category</h3>
   <a routerLink="/men"><img
@@ -256,8 +269,6 @@
       src="https://assets.myntassets.com/w_122,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/7/2d136799-abd8-438d-b10e-8e404dbdcd4f1657171615945-BudgetBuys_Perfumes_BodyMists.jpg"
       alt="budget" class="homeTop_budgetimg__Z2Ip0" height="250" width="190"></a>
 </div>
-
-
 <!-- <img
   src="https://assets.myntassets.com/w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/11/6b24b9e9-8e64-4481-8653-04d17060e7e21657527673741-3.jpeg"
   alt="crushImg" class="homeTop_crushimg__5Xj05"> -->
@@ -265,54 +276,54 @@
 <!-- ===-------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <div class="dealsOnTopBrands">
-  <img src="assets/images/topBrands/dealsOnTopBrands.png">
+  <img src="assets/images/topBrands/dealsOnTopBrands.png" style="width:100%; height: auto; border: 2px solid red;">
   <div class="hereNow">
-     <img src="assets/images/topBrands/here&now.png" routerLink="/here" width="215px" height="338px">
-   </div>
+    <img src="assets/images/topBrands/here&now.png" routerLink="/here" width="227.85px" height="338px">
+  </div>
   <div class="urbanic">
-    <img src="assets/images/topBrands/urbanic.png" routerLink="/urbanic" width="215px" height="338px">
+    <img src="assets/images/topBrands/urbanic.png" routerLink="/urbanic" width="227.85px" height="338px">
   </div>
   <div class="worgn">
-    <img src="assets/images/topBrands/wrogn.png" routerLink="/wrogn" width="215px" height="338px">
+    <img src="assets/images/topBrands/wrogn.png" routerLink="/wrogn" width="227.85px" height="338px">
   </div>
   <div class="hrx">
-    <img src="assets/images/topBrands/hrx.png" routerLink="/hrx" width="215px" height="338px">
+    <img src="assets/images/topBrands/hrx.png" routerLink="/hrx" width="227.85px" height="338px">
   </div>
   <div class="only">
-    <img src="assets/images/topBrands/only.png" routerLink="/zara" width="215px" height="338px">
+    <img src="assets/images/topBrands/only.png" routerLink="/zara" width="227.85px" height="338px">
   </div>
   <div class="mastHarbour">
-    <img src="assets/images/topBrands/mast & harbour.png" routerLink="/mast" width="215px" height="338px">
+    <img src="assets/images/topBrands/mast & harbour.png" routerLink="/mast" width="227.85px" height="338px">
   </div>
   <div class="levis">
-    <img src="assets/images/topBrands/leivs.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/leivs.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="forever21">
-    <img src="assets/images/topBrands/forever21.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/forever21.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="dressberry">
-    <img src="assets/images/topBrands/dressberry.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/dressberry.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="libas">
-    <img src="assets/images/topBrands/libas.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/libas.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="biba">
-    <img src="assets/images/topBrands/biba.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/biba.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="anouk">
-    <img src="assets/images/topBrands/anouk.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/anouk.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="roadster&here&now">
-    <img src="assets/images/topBrands/roadster&here&now.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/roadster&here&now.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="puma">
-    <img src="assets/images/topBrands/puma.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/puma.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="nike">
-    <img src="assets/images/topBrands/nike.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/nike.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
   <div class="levis">
-    <img src="assets/images/topBrands/vishudh.png" routerLink="/levis" width="215px" height="338px">
+    <img src="assets/images/topBrands/vishudh.png" routerLink="/levis" width="227.85px" height="338px">
   </div>
 
 </div>

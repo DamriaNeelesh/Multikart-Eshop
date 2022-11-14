@@ -308,10 +308,9 @@
     </ng-container>
   </div>
 </div>
-
 </div>
 
-private baseUrl = 'https://localhost:8080/api/products';
+private baseUrl = 'https://localhost:4200/api/products';
 
 <input class="au-input au-input"
          placeholder="Search for Product aur brand you Want"

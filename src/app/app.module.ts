@@ -27,7 +27,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CartStatusComponent } from './cart-status/cart-status.component';
 import { CheckOutComponent } from './check-out/check-out.component';
@@ -63,6 +63,10 @@ import { LoginStatusComponent } from './login-status/login-status.component';
 import myAppConfig from './config/my-app-config';
 import { OktaAuthModule, OKTA_CONFIG , OktaCallbackComponent} from '@okta/okta-angular';
 import OktaAuth from '@okta/okta-auth-js';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { OAuthModule } from 'angular-oauth2-oidc';
+import { BeautyComponent } from './beauty/beauty.component';
 
 
 const oktaConfig = myAppConfig.oidc;
@@ -70,7 +74,7 @@ const oktaConfig = myAppConfig.oidc;
 const oktaAuth = new OktaAuth(oktaConfig);
 
 
- 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,7 +110,9 @@ const oktaAuth = new OktaAuth(oktaConfig);
     HighlanderComponent,HRXComponent,LevisComponent,MastHarbourComponent,
     MuftiComponent,RoadsterComponent,WrognComponent,ZaraComponent, LoginComponent,
 
-    LoginStatusComponent
+    LoginStatusComponent,
+     OrderHistoryComponent,
+     BeautyComponent
   ],
   imports: [
     BrowserModule,
@@ -126,10 +132,16 @@ const oktaAuth = new OktaAuth(oktaConfig);
     Ng2SearchPipeModule,
     ToastrModule.forRoot(),
     OktaAuthModule,
+    OAuthModule,
   ],
+  bootstrap: [AppComponent],
   providers: [ProductsService, ContentfulService, FormService, CustomFormValidator, ToastrService,
-    { provide:OKTA_CONFIG, useValue: {oktaAuth}}],
+    { provide:OKTA_CONFIG, useValue: {oktaAuth}},
+    {provide :HTTP_INTERCEPTORS ,   // token for HTTP interceptor
+    useClass:AuthInterceptorService, // Register our AuthenticationService as an HTTP interceptor
+     multi:true}  // Informs Angular that HTTP_INTERCEPTOR is a token for injecting an array of values
+    ], 
   
-  bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
