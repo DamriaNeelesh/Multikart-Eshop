@@ -73,6 +73,14 @@ const oktaConfig = myAppConfig.oidc;
 
 const oktaAuth = new OktaAuth(oktaConfig);
 
+function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
+  // Use injector to access any service available within your application
+  const router = injector.get(Router);
+
+  // Redirect the user to your custom login page
+  router.navigate(['/login']);
+}
+
 
 
 @NgModule({
@@ -136,7 +144,6 @@ const oktaAuth = new OktaAuth(oktaConfig);
   ],
   bootstrap: [AppComponent],
   providers: [ProductsService, ContentfulService, FormService, CustomFormValidator, ToastrService,
-    { provide:OKTA_CONFIG, useValue: {oktaAuth}},
     {provide :HTTP_INTERCEPTORS ,   // token for HTTP interceptor
     useClass:AuthInterceptorService, // Register our AuthenticationService as an HTTP interceptor
      multi:true}  // Informs Angular that HTTP_INTERCEPTOR is a token for injecting an array of values

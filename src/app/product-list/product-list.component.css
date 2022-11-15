@@ -9,7 +9,7 @@
 
 /*--------------------------ADD TO CART Button Design---------------- */
 
-body {
+/* body {
 	margin: 0;
 	padding: 0;
 	height: 100vh;
@@ -17,7 +17,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background-color: #ebe8ff;
-}
+} */
 
 .cart-button {
 	position: relative;

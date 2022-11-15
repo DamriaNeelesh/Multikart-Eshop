@@ -23,6 +23,7 @@ import { ZaraComponent } from './brands/zara/zara.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import myAppConfig from './config/my-app-config';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
@@ -37,6 +38,11 @@ import { ProductsingleComponent } from './productsingle/productsingle.component'
 import { MenComponent } from './productType/men/men.component';
 import { WomenComponent } from './productType/women/women.component';
 import { ShopComponent } from './shop/shop.component';
+
+
+const oktaConfig = myAppConfig.oidc;
+
+const oktaAuth = new OktaAuth(oktaConfig);
 
 function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
   // Use injector to access any service available within your application
@@ -63,7 +69,8 @@ const routes: Routes = [
 // Login and logout using OKTA Integration  
   {path:'login/callback', component: OktaCallbackComponent}, // canActivate:[OktaAuthGuard]
   {path:'login',component:LoginComponent},
-  {path:'order-history',component:OrderHistoryComponent} ,
+  // {path:'login/callback',component:OktaCallbackComponent},
+  {path:'order-history',component:OrderHistoryComponent,canActivate:[OktaAuthGuard],data: {onAuthRequired: sendToLoginPage}} ,
   // canActivate:[OktaAuthGuard]  --> Route Guard
 
 // Product by Category
@@ -99,4 +106,5 @@ const routes: Routes = [
   SlickCarouselModule],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
