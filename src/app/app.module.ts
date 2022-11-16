@@ -67,7 +67,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { OAuthModule } from 'angular-oauth2-oidc';
 import { BeautyComponent } from './beauty/beauty.component';
-
+import { OktaAuthGuard } from '@okta/okta-angular';
 
 const oktaConfig = myAppConfig.oidc;
 
@@ -143,7 +143,9 @@ function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
     OAuthModule,
   ],
   bootstrap: [AppComponent],
+
   providers: [ProductsService, ContentfulService, FormService, CustomFormValidator, ToastrService,
+    { provide: OKTA_CONFIG, useValue: { oktaAuth }},
     {provide :HTTP_INTERCEPTORS ,   // token for HTTP interceptor
     useClass:AuthInterceptorService, // Register our AuthenticationService as an HTTP interceptor
      multi:true}  // Informs Angular that HTTP_INTERCEPTOR is a token for injecting an array of values

@@ -43,11 +43,15 @@
     </div>
   </div>
 </ngx-slick-carousel>
-<img class="homeImg"
-  src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/7/1e599d37-1ed6-4e39-9057-ffb4065173b51651897264796-Unbelievable-Deals.jpg" />
 
 
 
+<img class="homeImg" src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/7/1e599d37-1ed6-4e39-9057-ffb4065173b51651897264796-Unbelievable-Deals.jpg" />
+
+
+<div class="50%OffBanner">
+  <img  src= "src/assests/images/big sale offer.png" width="100%" height="auto%">
+  </div>
 <!-------------------------------------Product Slider--------------------------------------------->
 <!-- <ngx-slick-carousel class="main-slider slider" [config]="slideConfig" *ngIf="products">
 <div class="container-fluid">
@@ -408,7 +412,7 @@
 
     <div class="row">
       <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product">
+        <div class="product" *ngFor="let products of products" >
           <div class="product-wrap">
             <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
             <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg"
@@ -426,234 +430,15 @@
             <span class="price">
               $329.10
             </span>
-            <!-------------------><button href="#" class="btn btn-primary btn-block">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product">
-          <div class="product-wrap">
-            <a><img class="img-fluid w-100 mb-3 img-first" src="assets/images/111.jpg" alt="product-img" /></a>
-            <a><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg" alt="product-img" /></a>
-          </div>
-
-          <div class="product-hover-overlay">
-            <a href="./cart"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Open knit switer</a></h2>
-            <span class="price">
-              $29.10
-            </span>
             <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product">
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/222.jpg" alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/322.jpg"
-                alt="product-img" /></a>
-          </div>
-
-          <span class="onsale">Sale</span>
-          <div class="product-hover-overlay">
-            <a href="#"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Official trendy</a></h2>
-            <span class="price">
-              $350.00
-            </span>
-            <!-------------------><button href="#" class="btn btn-primary btn-block">Add to Cart</button>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product">
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/111.jpg"
-                alt="product-img" /></a>
-          </div>
-
-          <div class="product-hover-overlay">
-            <a href="#"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Frock short</a></h2>
-            <span class="price">
-              $249
-            </span>
-            <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product">
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/444.jpg" alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/222.jpg"
-                alt="product-img" /></a>
-          </div>
-
-          <div class="product-hover-overlay">
-            <a href="#"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Sleeve dress</a></h2>
-            <span class="price">
-              $59.10
-            </span>
-            <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product">
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/luggage-1.jpg"
-                alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/luggage-2.jpg"
-                alt="product-img" /></a>
-          </div>
-
-          <span class="onsale">Sale</span>
-          <div class="product-hover-overlay">
-            <a href="#"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">FLora Luggages</a></h2>
-            <span class="price">
-              $3290.10
-            </span>
-            <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product">
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/mug-1.jpg"
-                alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/mug-2.jpg"
-                alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/mug-3.jpg"
-                alt="product-img" /></a>
-
-          </div>
-
-          <span class="onsale">Sale</span>
-          <div class="product-hover-overlay">
-            <a><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Alican Mugs</a></h2>
-            <h3>Combo of 2 Mugs</h3>
-            <span class="price">
-              $999.00
-            </span>
-            <button class="btn btn-primary btn-block">Add to Cart</button>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product">
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/222.jpg"
-                alt="product-img" /></a>
-          </div>
-
-          <div class="product-hover-overlay">
-            <a href="#"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Stylish dress</a></h2>
-            <span class="price">
-              $99.00
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5 ">
-        <div class="product">
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/111.jpg" alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg"
-                alt="product-img" /></a>
-          </div>
-
-          <div class="product-hover-overlay">
-            <a href="#"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Body suite</a></h2>
-            <span class="price">
-              $329.10
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5 ">
-        <div class="product">
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/222.jpg" alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/322.jpg"
-                alt="product-img" /></a>
-          </div>
-
-          <div class="product-hover-overlay">
-            <a href="#"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Sleeve linen shirt</a></h2>
-            <span class="price">
-              <del>60
-                <pre wp-pre-tag-5=""></pre>lt;
-              </del>
-              $50.10
-            </span>
           </div>
         </div>
       </div>
     </div>
+
+
   </div>
 </section>
-<!-- /portfolio -->
 
 <section class="ads section">
   <div class="container">

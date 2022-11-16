@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component, Injector, NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
-import OktaAuth from '@okta/okta-auth-js';
+import {OktaAuth} from '@okta/okta-auth-js';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { BagComponent } from './bag/bag.component';
 import { BeautyComponent } from './beauty/beauty.component';
@@ -38,7 +38,6 @@ import { ProductsingleComponent } from './productsingle/productsingle.component'
 import { MenComponent } from './productType/men/men.component';
 import { WomenComponent } from './productType/women/women.component';
 import { ShopComponent } from './shop/shop.component';
-
 
 const oktaConfig = myAppConfig.oidc;
 
