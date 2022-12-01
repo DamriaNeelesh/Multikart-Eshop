@@ -1,0 +1,47 @@
+{
+  "seller": [
+    {
+      "name": "Neelesh Meena",
+      "email": "damrianeelesh@gmail.com",
+      "password": "abc@123",
+      "id": 1
+    },
+    {
+      "name": "Shalini Meena",
+      "email": "meenashalu57@gmail.com",
+      "password": "abc@123",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "name": "Shalini Meena",
+      "email": "shalinimeena@gmail.com",
+      "password": "shaliniism",
+      "id": 1
+    },
+    {
+      "name": "shaneelu",
+      "email": "shaneelu@gmail.com",
+      "password": "shaneelu",
+      "id": 2
+    },
+    {
+      "name": "NEELESH MEENA",
+      "email": "damrianeelesh@gmail.com",
+      "password": "abc123",
+      "id": 3
+    }
+  ],
+  "products": [
+    {
+      "name": "Wrogn"
+    }
+  ],
+  "cart": [
+    {}
+  ],
+  "localCart": [
+    {}
+  ]
+}

@@ -3,6 +3,10 @@
     margin-left: 0;
 }
 
+.bigBannerOnNeel{
+  position: relative;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 html, body {
   height: 100%;
@@ -261,4 +265,293 @@ header{
   width: 100vw;
   height: 12.5vw;
  }
- 
+
+
+ /* ----------------------------------------Animation Sale Circle---------------------------------------- */
+
+ .offer{
+  position: absolute;
+  top: 100%;
+}
+
+.off{
+  font-size: 50px;
+  color: #f7d71e;
+  line-height: 30px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+
+.off span{
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.off span:before{
+  content: "%";
+  display: block;
+  font-size: 30px;
+}
+
+.rotate{
+  animation:rotation 5% infinite linear;
+}
+
+@keyframes rotation {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+     transform: rotate(359deg);
+  }
+}
+
+#offers{
+  background: url(/assets/images/offer_img.jpg) center/cover no-repeat;
+}
+
+#offers .row{
+  min-height: 60vh;
+}
+.offers-content span{
+  font-size: 28px;
+}
+
+.offers-content{
+  margin-right:auto;
+}
+
+.offers-content h2{
+  font-size: 60px;
+  font-family: var(--lg-font);
+}
+.offers-content .btn{
+  border-color: transparent!important;
+  color: white;
+  background-color: #ef4e7b;
+}
+
+.categories {
+  position: relative;
+  overflow: hidden;
+}
+
+.categories .categories_item{
+  position: relative;
+  height: 314px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.categories .categories_large_item{
+  height: 638px;
+}
+
+.categories .categories_text{
+  position: absolute;
+  left: 50px;
+}
+
+.categories .categories_large_item .categories_text{
+  position: absolute;
+  left:50px;
+  max-width:300px;
+}
+
+.categories .categories_large_item .categories_text p{
+  margin-bottom: 15px;
+}
+
+.categories .categories_text h1{
+  color: #000;
+  margin-bottom: 5px; 
+}
+
+.categories .categories_text p{
+  margin-bottom: 10px;
+}
+
+.categories .categories_text a{
+  font-size: 14px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+  padding: 0 0 3px;
+  display: inline-block;
+}
+
+.categories .categories_text a:after{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ff7200;
+  content: '';
+}
+
+.banner-slider{
+  position: relative;
+  height: 500px;
+}
+
+/* .banner-slider .bg-img{
+  background-image:url(assets/images/);
+  background-repeat:no-repeat;
+  background-size: cover;
+} */
+
+.container-discount-spad{
+  
+}
+
+.discount_pic img{
+  min-width: 100%;
+  height: 390px;
+}
+
+.discount_text{
+   background-color: #f4f4f4;
+   height: 390px;
+   padding: 75px 90px 50px;
+   text-align: center;
+}
+
+.banner_text a,
+.discount_text a{
+  font-size: 14px;
+  color: #000;
+  text-transform:uppercase;
+  font-weight: 700;
+  position: relative;
+  padding: 0 0 3px;
+  display: inline-block;
+}
+
+.discount_text .discount_text_title{
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 60px;
+}
+
+.discount_text .discount_text_title:after{
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: -38px;
+  height: 183px;
+  width: 183px;
+  background-color:#fff;
+  z-index: -1;
+  margin-left: -90px;
+}
+
+.discount_text .discount_text_title span{
+  font-size: 20px;
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.discount_text .discount_text_title h2{
+   font-size: 55px;
+   color: #ff7200;
+   margin-bottom: 10px;
+}
+
+.discount_text .discount_text_title h5{
+   color: #ff7200;
+   font-weight: 700;
+}
+
+.discount_text .discount_text_title h5 span{
+  font-size: 18px;
+  color: #000;
+  margin-right: 5px;
+}
+
+.discount_countdown{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.discount_countdown .countdown_item{
+  margin-bottom: 15px;
+  float: left;
+  width: 25%;
+}
+
+.discount_countdown .countdown_item:last-child{
+  margin-right: 0;
+}
+
+.discount_countdown .countdown_item span{
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  display: inline-block;
+}
+
+.discount_countdown .countdown_item p{
+  color: #000;
+  margin-bottom: 0;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/*Subscribing Post NewsLetter */
+.newsletter-area{
+  background-color: #f4f4f4;
+  height: 1.5fr;
+}
+
+
+
+.newsletter-area form{
+  margin:0 auto;
+  width: 60%;
+}
+
+.newsletter-area p{
+  font-size: 18px;
+  margin-bottom: 32px;
+  color: #777;
+  font-weight: 600;
+}
+
+.subscribe-sec input{
+  padding: 25px;
+  color: #495057;
+  border-radius: 50px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  letter-spacing: 2px;
+  box-shadow: 1px 3px 8px rgba(0,0,0,0.15);
+} 
+
+.btn.submit{
+  background-color: #ff7200;
+  color: #fff;
+  padding: 15px 40px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.btn.submit:hover{
+  background-color: #e46d0c;
+}

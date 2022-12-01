@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { IProducts } from '../products';
 import { ToastrService } from 'ngx-toastr';
+import { order } from './data-types';
+import { product } from '../data-types';
+import { data } from 'jquery';
 @Injectable({
   providedIn: 'root'
 })
@@ -80,6 +83,8 @@ totalQuantity:Subject<number> = new BehaviorSubject<number>(0);
       // Just add the item to the Array
       // theCartItem == product
       this.Cartitems.push(product);
+      this.http.post('http://localhost:3000/localCart',this.getProductData());
+      // we have to post the product cart detail inside the json server 
     }
 
     // Compute the Cart total price and total quantity
@@ -107,6 +112,12 @@ totalQuantity:Subject<number> = new BehaviorSubject<number>(0);
 
   logCartData(totalPriceValue:number,totalQuantityValue:number){
     console.log('Content of the Cart');
+    this.http.post('http://localhost:3000/localCart',this.Cartitems,{observe:'response'}).subscribe((result)=>{
+      if(result){
+        localStorage.setItem('cart',JSON.stringify(result.body));
+      }
+    });
+
     for(let tempCartItems of this.Cartitems){
       const subTotalPrice = tempCartItems.product_quanity * tempCartItems.product_price;
       console.log(`Name: ${tempCartItems.product_name}, Quantity: ${tempCartItems.product_quanity},
@@ -114,10 +125,14 @@ totalQuantity:Subject<number> = new BehaviorSubject<number>(0);
     }
 
     console.log(`Total Price: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue}`);
-    console.log('----------');
+    console.log('----------------');
 
   }
 
+  saveCartToLocalStorage(){
+     localStorage.setItem('cart',JSON.stringify(this.Cartitems));
+     
+  }
 
 
   // remove Cart data One by One
@@ -125,10 +140,35 @@ totalQuantity:Subject<number> = new BehaviorSubject<number>(0);
     this.Cartitems.map((a:any,index:any)=>{
       if(product.id == a.id){
         this.Cartitems.splice(index,1);
+        this.http.delete('http://localhost:3000/localCart/' + product)
       }
     })
     this.productList.next(this.Cartitems);
   }
+
+  orderNow(data:order){
+    return this.http.post('http://localhost:3000/orders',data);
+  }
+
+  orderList(){
+    let userStore = localStorage.getItem('user');
+    let userData = userStore && JSON.parse(userStore);
+    return this.http.get<order[]>('http://localhost:3000/orders?userId='+userData.id);
+  }
+
+  cancelOrder(orderId:number){
+    return this.http.delete('http://localhost:3000/orders/'+orderId)
+  }
+  
+
+  // localAddToCart(data:string){
+  //   let cartData = [];
+  //   let localCart = localStorage.setItem('logCartData',JSON.stringify(this.logCartData));
+  //   if(!localCart){
+  //     localStorage.setItem('localCart',JSON.stringify([data]));
+  //     this
+  //   }
+  // }
 
   removeAllCart(){
     this.Cartitems=[] // Empty array assign kr denge

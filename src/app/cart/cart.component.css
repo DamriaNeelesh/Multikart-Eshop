@@ -12,35 +12,17 @@
     position: absolute;
     margin-top: 25%;
 }
-/*
-.center.img{
-    color: inherit;
-    border:none;
-    outline: none;
-    width: 60px;
-    height: 75px;
-    text-decoration: none;
-    margin:20px 0px;
-} */
 
-/* .card-table{
-    display: flex;
-    min-width: none;
-    position: relative;
-    word-wrap: break-word;
-    background-color: white;
-    border: 1px solid black ;
-    border-radius: .25rem;
-    flex-direction: column;
-} */
 
-/* .center .btn{
-    margin-top:25px !important;
-    font-size: 25px !important;
-    font-weight: 400;
-    padding:10px 70px;
-    border-radius: 3px;
-} */
+ .col .btn { 
+    font-size:10px !important;
+    letter-spacing: .5px !important;  
+    text-transform: capitalize !important;
+    font-weight: 600 !important;
+    border-radius: 2px !important;
+    border: 2px solid transparent !important;
+}
+
 .table{
   margin:0
 }

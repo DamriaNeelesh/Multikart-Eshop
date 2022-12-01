@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OAuthService } from 'angular-oauth2-oidc';
 import { Order } from '../ordersData/order';
 import { OrderHistory } from '../ordersData/OrderHistory';
 import { OrderHistoryService } from '../services/order-history.service';
@@ -11,12 +12,18 @@ import { OrderHistoryService } from '../services/order-history.service';
 export class OrderHistoryComponent implements OnInit {
   
   orderHistoryList:OrderHistory[] = [];
-  storage:Storage = sessionStorage;  // Reference to web browser storage
+  storage:Storage = localStorage;  // Reference to web browser storage
 
-  constructor(private orderHistoryService:OrderHistoryService) { }
+  constructor(private orderHistoryService:OrderHistoryService,
+              private oauthService:OAuthService) { }
 
   ngOnInit(): void {
     this.handleOrderHistory();
+  }
+
+  get token(){
+    let claims:any = this.oauthService.getIdentityClaims();
+    return claims ? claims : null;
   }
 
   handleOrderHistory(){

@@ -9,7 +9,7 @@ import { OrderHistory } from '../ordersData/OrderHistory';
 })
 export class OrderHistoryService {
   // OrderHistory:any[] | undefined;
-  private orderUrl = 'http:localhost:8080/api/orders';
+  private orderUrl = 'http:localhost:3000/orders';
   // for making rest api call we will inject httpclient in constructor
   constructor(private httpClient:HttpClient) {}
 

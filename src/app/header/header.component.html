@@ -1,6 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white w-100 navigation" id="navbar">
   <div class="container">
-    <a class="navbar-brand font-weight-bold" routerLink="/">MultiKart</a>
+    <a class="navbar-brand font-weight-bold" routerLink="/">
+      <div class="wave">
+        <span style="--item:1">N</span>
+        <span style="--item:2">e</span>
+        <span style="--item:3">e</span>
+        <span style="--item:4">l</span>
+        <span style="--item:5">S</span>
+        <span style="--item:6">h</span>
+        <span style="--item:7">o</span>
+        <span style="--item:8">p</span>
+      </div>     
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
       aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,27 +62,46 @@
         <li class="nav-item dropdown dropdown-slide">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-delay="350"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Account.
+            User Account
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
             <li><a href="#">Dahsboard</a></li>
             <li><a href="#">Orders</a></li>
-            <li><a href="#">Downloads</a></li>
             <li><a href="#">Address</a></li>
             <li><a href="#">Profile Details</a></li>
-            <li><a href="#">Login Page</a></li>
-            <li><a href="#">SignUp Page</a></li>
-            <li><a href="#">Forgot Password</a></li>
+            <li><a routerLink="user-auth">Login/SignUp</a></li>
+            <li><a (click)="userLogout()" style="cursor:pointer;">User Logout</a></li>
           </ul>
         </li><!-- / Account -->
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
+        <li class="nav-item dropdown dropdown-slide">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-delay="350"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Seller
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
+            <li><a routerLink="seller-auth">Seller</a></li>
+            <li><a>{{sellerName | titlecase}}</a></li>
+            <li><a (click)="logout()">Logout</a></li>
+            <li><a routerLink="my-orders">My Orders</a></li>
+          </ul>
         </li>
+
+        <li class="nav-item">
+          <!-- <a class="nav-link" *ngSwitchCase='"user"' href="user-auth">{{userName | titlecase}}</a> -->
+          
+        </li>
+
       </ul>
     </div>
     <!-- Navbar-collapse -->
-<app-login-status></app-login-status>
+
+
+
+      <!-- <app-login-status></app-login-status> -->
+
+    
+      
 
     <ul class="top-menu list-inline mb-0 d-none d-lg-block" id="top-menu">
       <li class="list-inline-item">
@@ -95,6 +125,8 @@
             <a routerLink="/check-out" class="btn btn-small btn-main btn-block">Checkout</a>
           </div>
         </div>
+
+
       </li>
       <li class="list-inline-item"><a href="#"><i class="tf-ion-ios-person mr-3"></i></a></li>
     </ul>

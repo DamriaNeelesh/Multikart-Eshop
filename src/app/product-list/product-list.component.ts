@@ -5,9 +5,10 @@ import { ProductsService } from '../services/products.service';
 import { FormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, switchAll } from 'rxjs';
+// import { filter, switchAll } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import swal from 'sweetalert2/dist/sweetalert2.js';
+import { product } from '../data-types';
+// import swal from 'sweetalert2/dist/sweetalert2.js';
 
 
 @Component({
@@ -19,6 +20,11 @@ import swal from 'sweetalert2/dist/sweetalert2.js';
 
 export class ProductListComponent implements OnInit {
   // @Input() Num = []; Isse mere paas faltu ka error aa gya tha
+
+   productData:undefined | product;
+   productQuantity:number = 1;
+   removeCart=false;
+   cartData:product|undefined;
 
   filter = {
     Men: false,
@@ -64,8 +70,11 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.products = this._productsService.getProducts();
     this.filteredProducts = this._productsService.getProducts();
+    
   }
 
+  
+ 
   listProducts(){
     this.searchMode=this.route.snapshot.paramMap.has('keyword');
     this.handleListProducts();
@@ -83,18 +92,24 @@ export class ProductListComponent implements OnInit {
   }
 
   handleSearchProducts(){
-     this.theKeyword = this.route.snapshot.paramMap.get('keyword');
-      // Now search for the prodcurs using the keyword
-    this._productsService.searchProducts('theKeyword').subscribe(
-      data => {
-        this.searchProducts = data;
-      }
-    );
+    //  this.theKeyword = this.route.snapshot.paramMap.get('keyword');
+    //   // Now search for the prodcurs using the keyword
+    // this._productsService.searchProducts('theKeyword').subscribe(
+    //   data => {
+    //     this.searchProducts = data;
+    //   }
+    // );
   }
 
   handleListProducts(){
     // Check if 'id' parameter is available
   }
+
+  // AddToCart(){
+  //   if(this._productsService){
+      
+  //   }
+  // }
 
   filterChange() {
     console.log(this.filter)
@@ -129,6 +144,7 @@ export class ProductListComponent implements OnInit {
     this.apiService.addToCart(product);
     console.log(`Adding to Cart: ${product.product_name} Price: Rs. ${product.product_price}`);
     this.toastr.success('Product has been added to cart Successfully!!');
+    // localStorage.setItem('product',JSON.stringify(this.products));
 
   }
 

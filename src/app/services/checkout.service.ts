@@ -8,7 +8,7 @@ import { Purchase } from '../ordersData/purchase';
 })
 export class CheckoutService {
 
-  private purchaseUrl = 'http://localhost:8080/api/checkout/purchase';
+  private purchaseUrl = 'http://localhost:3000/checkout/purchase';
   
   constructor(private httpClient:HttpClient) { }
   

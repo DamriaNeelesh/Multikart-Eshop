@@ -27,6 +27,7 @@ export class CartComponent implements OnInit {
   addToCart(product){
      this.cartApi.addToCart(product);
      this.toastr.success(`Product Added Successfully: ${{product}}`);
+     localStorage.setItem('product',JSON.stringify(this.Cartitems));
      
   }
 

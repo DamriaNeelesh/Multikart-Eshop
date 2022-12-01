@@ -1,4 +1,4 @@
-import { Injector, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ShopComponent } from './shop/shop.component';
 import { BagComponent } from './bag/bag.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ToastRef, ToastrModule, ToastrService } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarRatingModule } from 'ngx-bar-rating';
 import { FilterPipe } from './filter.pipe';
@@ -27,7 +27,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CartStatusComponent } from './cart-status/cart-status.component';
 import { CheckOutComponent } from './check-out/check-out.component';
@@ -57,29 +57,21 @@ import { RoadsterComponent } from './brands/roadster/roadster.component';
 import { WrognComponent } from './brands/wrogn/wrogn.component';
 import { ZaraComponent } from './brands/zara/zara.component';
 import { LoginComponent } from './login/login.component';
-import { Router } from '@angular/router';
 import { LoginStatusComponent } from './login-status/login-status.component';
 
-import myAppConfig from './config/my-app-config';
-import { OktaAuthModule, OKTA_CONFIG , OktaCallbackComponent} from '@okta/okta-angular';
-import OktaAuth from '@okta/okta-auth-js';
 import { OrderHistoryComponent } from './order-history/order-history.component';
-import { AuthInterceptorService } from './services/auth-interceptor.service';
-import { OAuthModule } from 'angular-oauth2-oidc';
+import { OAuthModule, OAuthService } from 'angular-oauth2-oidc';
 import { BeautyComponent } from './beauty/beauty.component';
-import { OktaAuthGuard } from '@okta/okta-angular';
+import { LoginUserComponent } from './login-user/login-user.component';
 
-const oktaConfig = myAppConfig.oidc;
-
-const oktaAuth = new OktaAuth(oktaConfig);
-
-function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
-  // Use injector to access any service available within your application
-  const router = injector.get(Router);
-
-  // Redirect the user to your custom login page
-  router.navigate(['/login']);
-}
+import { CustomerHomeComponent } from './customer-home/customer-home.component';
+import { SellerHomeComponent } from './seller-home/seller-home.component';
+import { SellerAuthComponent } from './seller-auth/seller-auth.component';
+import { SellerService } from './services/seller.service';
+import { UserAuthComponent } from './user-auth/user-auth.component';
+import { UserService } from './services/user.service';
+import { PaymentComponent } from './payment/payment.component';
+import { BeautyService } from './services/beauty.service';
 
 
 
@@ -120,7 +112,14 @@ function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
 
     LoginStatusComponent,
      OrderHistoryComponent,
-     BeautyComponent
+     BeautyComponent,
+     LoginUserComponent,
+     CustomerHomeComponent,
+     SellerHomeComponent,
+     SellerAuthComponent,
+     UserAuthComponent,
+     PaymentComponent,
+     BeautyComponent,
   ],
   imports: [
     BrowserModule,
@@ -135,21 +134,18 @@ function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
     NgbCarouselModule,
     ButtonModule,
     CarouselModule,
+    
     CommonModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     ToastrModule.forRoot(),
-    OktaAuthModule,
-    OAuthModule,
+    OAuthModule.forRoot(),
+    
   ],
   bootstrap: [AppComponent],
 
-  providers: [ProductsService, ContentfulService, FormService, CustomFormValidator, ToastrService,
-    { provide: OKTA_CONFIG, useValue: { oktaAuth }},
-    {provide :HTTP_INTERCEPTORS ,   // token for HTTP interceptor
-    useClass:AuthInterceptorService, // Register our AuthenticationService as an HTTP interceptor
-     multi:true}  // Informs Angular that HTTP_INTERCEPTOR is a token for injecting an array of values
-    ], 
+  providers: [ProductsService, ContentfulService, FormService, CustomFormValidator, ToastrService,SellerService,
+  OAuthService,UserService,BeautyService], 
   
   
 })

@@ -5,13 +5,47 @@ import { CartapiService } from '../services/cartapi.service';
 import { ContentfulService } from '../services/contentful.service';
 import { ProductsService } from '../services/products.service';
 import { Button } from 'primeng/button';
-import { filter } from 'rxjs';
+import { filter, interval, Subscription } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  private subscription?: Subscription;
+  
+    public dateNow = new Date('Nov 7 2022 00:00:00');
+    public dDay = new Date('Dec 31 2022 03:00:00');
+    milliSecondsInASecond = 1000;
+    hoursInADay = 24;
+    minutesInAnHour = 60;
+    SecondsInAMinute  = 60;
+
+    public timeDifference;
+    public secondsToDday;
+    public minutesToDday;
+    public hoursToDday;
+    public daysToDday;
+
+    private getTimeDifference () {
+      this.timeDifference = this.dDay.getTime() - new  Date().getTime();
+      this.allocateTimeUnits(this.timeDifference);
+  }
+
+  private allocateTimeUnits (timeDifference) {
+    this.secondsToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond) % this.SecondsInAMinute);
+    this.minutesToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour) % this.SecondsInAMinute);
+    this.hoursToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute) % this.hoursInADay);
+    this.daysToDday = Math.floor((timeDifference) / (this.milliSecondsInASecond * this.minutesInAnHour * this.SecondsInAMinute * this.hoursInADay));
+}
+
+
+
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
+  }
 
   filterCaraousel = {
     'Men':false,
@@ -24,7 +58,8 @@ export class HomeComponent implements OnInit {
   responsiveOptions;
   filteredProducts : IProducts[] = [];
   constructor(private apiService: CartapiService,
-    private _productsService: ProductsService) {
+    private _productsService: ProductsService,
+    private toastr:ToastrService) {
       this.responsiveOptions = [
         {
             breakpoint: '1024px',
@@ -49,6 +84,8 @@ export class HomeComponent implements OnInit {
     this.products = this._productsService.getProducts();
     this.filteredProducts = this._productsService.getProducts();
 
+    this.subscription = interval(1000)
+  .subscribe(x => { this.getTimeDifference(); });
   }
 
   slideConfig = {"slidesToShow": 1, "slidesToScroll": 1} ;
@@ -61,5 +98,13 @@ export class HomeComponent implements OnInit {
         }
       })
   }
+
+  addToCart(product: IProducts) {
+    this.apiService.addToCart(product);
+    console.log(`Adding to Cart: ${product.product_name} Price: Rs. ${product.product_price}`);
+    this.toastr.success('Product has been added to cart Successfully!!');
+    // localStorage.setItem('product',JSON.stringify(this.products));
+  }
+
 
 }

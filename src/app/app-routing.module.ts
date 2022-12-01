@@ -1,9 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component, Injector, NgModule } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
-import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
-import {OktaAuth} from '@okta/okta-auth-js';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { AuthGuard } from './auth.guard';
 import { BagComponent } from './bag/bag.component';
 import { BeautyComponent } from './beauty/beauty.component';
 import { BlogHomePageComponent } from './blog-home-page/blog-home-page.component';
@@ -23,11 +22,13 @@ import { ZaraComponent } from './brands/zara/zara.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import myAppConfig from './config/my-app-config';
+import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { HomeComponent } from './home/home.component';
+import { LoginUserComponent } from './login-user/login-user.component';
 import { LoginComponent } from './login/login.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
+import { PaymentComponent } from './payment/payment.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { JacketsComponent } from './productCategory/jackets/jackets.component';
 import { PajamasComponent } from './productCategory/pajamas/pajamas.component';
@@ -37,19 +38,11 @@ import { TshirtsComponent } from './productCategory/tshirts/tshirts.component';
 import { ProductsingleComponent } from './productsingle/productsingle.component';
 import { MenComponent } from './productType/men/men.component';
 import { WomenComponent } from './productType/women/women.component';
+import { SellerAuthComponent } from './seller-auth/seller-auth.component';
+import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { ShopComponent } from './shop/shop.component';
+import { UserAuthComponent } from './user-auth/user-auth.component';
 
-const oktaConfig = myAppConfig.oidc;
-
-const oktaAuth = new OktaAuth(oktaConfig);
-
-function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
-  // Use injector to access any service available within your application
-  const router = injector.get(Router);
-
-  // Redirect the user to your custom login page
-  router.navigate(['/login']);
-}
 
 const routes: Routes = [
   {path:"", component: HomeComponent },
@@ -64,13 +57,20 @@ const routes: Routes = [
   {path:"blog/:id",component:BlogPostComponent},
   {path:"search/:keyword",component:ProductListComponent},
   {path:"checkout/:payment",component:PaymentGatewayComponent},
-
-// Login and logout using OKTA Integration  
-  {path:'login/callback', component: OktaCallbackComponent}, // canActivate:[OktaAuthGuard]
+  {path:"payment",component:PaymentComponent},
+  {path:'order-history',component:OrderHistoryComponent},
+ 
   {path:'login',component:LoginComponent},
-  // {path:'login/callback',component:OktaCallbackComponent},
-  {path:'order-history',component:OrderHistoryComponent,canActivate:[OktaAuthGuard],data: {onAuthRequired: sendToLoginPage}} ,
-  // canActivate:[OktaAuthGuard]  --> Route Guard
+
+  {path:'login-user',component:LoginUserComponent},
+
+  {path:'customer-home',component:CustomerHomeComponent,canActivate:[AuthGuard]},
+
+  {path:'seller-home',component:SellerHomeComponent,canActivate:[AuthGuard]},
+
+  {path:'seller-auth',component:SellerAuthComponent}, // SignUp page
+  
+  {path:'user-auth',component:UserAuthComponent},  // Login Page
 
 // Product by Category
   {path:"men",component:MenComponent},

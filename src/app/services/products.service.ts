@@ -4,25 +4,27 @@ import { FormGroup } from '@angular/forms';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { IProducts } from '../products';
 import { Filter } from '../filter';
+import { product } from '../data-types';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+  searchProducts(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
   form =  FormGroup;
   // filter: import("/home/neelesh/Desktop/Project-3/myShop/src/app/filter").Filter;
   constructor(private http:HttpClient) { }
   products: IProducts[] = [];
   filteredProducts: IProducts[] = [];
   @Output() event = new EventEmitter();
-  private baseUrl = 'https://localhost:4200/products';
+  private baseUrl = 'https://localhost:4200/product-list';
 
-  searchProducts(thekeyword:string): Observable<IProducts[] | undefined>
- {
-  // Need to build URL based on the Keyword
-  const searchUrl=`${this.baseUrl}/search/findbyNameContaining?name=${thekeyword}`;
-  return this.http.get<IProducts[]>(searchUrl).pipe(map((res:any)=>res.embedded.products));
- }
-
+  // searchProducts(query: string) {
+  //   return this.http.get<product[]>(
+  //     `http://localhost:4200/product-list?q=${query}`
+  //   );
+  // }
   private readonly _filter = new BehaviorSubject<Filter>({name: "", categories:[]});
   readonly filter$ = this._filter.asObservable();
 

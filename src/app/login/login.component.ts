@@ -1,9 +1,6 @@
-import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import myAppConfig from '../config/my-app-config';
-import { OktaSignIn } from '@okta/okta-signin-widget';
-import { OKTA_AUTH } from '@okta/okta-angular';
-import { OktaAuth } from '@okta/okta-auth-js';
-
+import { Component, OnInit } from '@angular/core';
+import { JwksValidationHandler, OAuthService } from 'angular-oauth2-oidc';
+import { authCodeFlowConfig } from '../sso.config';
 
 @Component({
   selector: 'app-login',
@@ -12,36 +9,53 @@ import { OktaAuth } from '@okta/okta-auth-js';
 })
 export class LoginComponent implements OnInit{
   
-  oktaSignin: any;
+  // oktaSignin: any;
+  constructor(
+            //  @Inject(OKTA_AUTH) private oktaAuth: OktaAuth
+             private oauthService:OAuthService ) {
 
-  constructor(@Inject(OKTA_AUTH) private oktaAuth: OktaAuth) {
-
-    this.oktaSignin = new OktaSignIn({
-      logo: 'assets/images/logo.png',
-      baseUrl: myAppConfig.oidc.issuer.split('/oauth2')[0],
-      clientId: myAppConfig.oidc.clientId,
-      redirectUri: myAppConfig.oidc.redirectUri,
-      authParams: {
-        pkce: true,
-        issuer: myAppConfig.oidc.issuer,
-        scopes: myAppConfig.oidc.scopes
-      }
-    });
+    // this.oktaSignin = new OktaSignIn({
+    //   logo: 'assets/images/logo.png',
+    //   baseUrl: myAppConfig.oidc.issuer.split('/oauth2')[0],
+    //   clientId: myAppConfig.oidc.clientId,
+    //   redirectUri: myAppConfig.oidc.redirectUri,
+    //   authParams: {
+    //     pkce: true,
+    //     issuer: myAppConfig.oidc.issuer,
+    //     scopes: myAppConfig.oidc.scopes
+    //   }
+    // });
+    this.configureSingleSignOn();
    }
 
-  ngOnInit(): void {
-    this.oktaSignin.remove();
+   configureSingleSignOn(){
+    this.oauthService.configure(authCodeFlowConfig);
+    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+    this.oauthService.loadDiscoveryDocumentAndTryLogin();
+   }
 
-    this.oktaSignin.renderEl({
-      el: '#okta-sign-in-widget'}, // this name should be same as div tag id in login.component.html
-      (response: any) => {
-        if (response.status === 'SUCCESS') {
-          this.oktaAuth.signInWithRedirect();
-        }
-      },
-      (error: any) => {
-        throw error;
-      }
-    );
+   login(){
+    this.oauthService.initImplicitFlow();
+  }
+
+  logout(){
+   this.oauthService.logOut();
+  }
+
+
+  ngOnInit(): void {
+    // this.oktaSignin.remove();
+
+    // this.oktaSignin.renderEl({
+    //   el: '#okta-sign-in-widget'}, // this name should be same as div tag id in login.component.html
+    //   (response: any) => {
+    //     if (response.status === 'SUCCESS') {
+    //       this.oktaAuth.signInWithRedirect();
+    //     }
+    //   },
+    //   (error: any) => {
+    //     throw error;
+    //   }
+    // );
   }
 }

@@ -1,0 +1,31 @@
+{
+  "seller": [
+    {
+      "id": 1,
+      "name": "Neelesh Meena",
+      "email": "damrianeelesh@gmail.com", 
+      "password": "abc@123"
+    }
+  ],
+
+  
+  "users": [
+    {
+      "name": "Shalini Meena",
+      "email": "shalinimeena@gmail.com",
+      "password": "shaliniism",
+      "id": 1
+    }
+  ],
+
+  "orders":[
+    
+  ],
+
+  "cart":[
+    {
+     
+    }
+  ]
+  
+}

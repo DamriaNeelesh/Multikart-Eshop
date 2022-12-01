@@ -46,12 +46,88 @@
 
 
 
-<img class="homeImg" src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/7/1e599d37-1ed6-4e39-9057-ffb4065173b51651897264796-Unbelievable-Deals.jpg" />
+<div class="offer">
+  <img  claa="rotate" src="assets/images/circle.jpg" width="170px">
+    <div class="off">
+      50<span>OFF</span>
+    </div>
+</div> 
+<div class="bigBannerOnNeel">
+  <img src="assets/images/50off banner.jpg" width="100%" height="30%">
+</div>
+
+<img class="homeImg"
+  src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/7/1e599d37-1ed6-4e39-9057-ffb4065173b51651897264796-Unbelievable-Deals.jpg" />
 
 
-<div class="50%OffBanner">
-  <img  src= "src/assests/images/big sale offer.png" width="100%" height="auto%">
+<img src="assets/images/big sale offer.png" width="auto%" height="50%%">
+
+
+<!-- New Second header design below home poage  -->
+<section class="categories">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 p-0">
+        <div class="categories_item categories_large_item">
+          <img src="assets/images/womenCategory.jpg" alt="" class="img-fluid">
+          <div class="categories_text">
+            <h1>Women's fashion</h1>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            <a href="/women">Buy now</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 p-0">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-12 p-0">
+            <div class="categories_item">
+              <img src="assets/images/menFashion.jpg" alt="" class="img-fluid">
+              <div class="categories_text">
+                <h4>Men's fashion</h4>
+                <p>358 items</p>
+                <a href="/men">Buy now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-12 p-0">
+            <div class="categories_item">
+              <img src="assets/images/kidsFashion.jpg" alt="" class="img-fluid">
+              <div class="categories_text">
+                <h4>Kid's fashion</h4>
+                <p>273 items</p>
+                <a href="#">Buy now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-12 p-0">
+            <div class="categories_item">
+              <img src="assets/images/cosmetics.jpg" alt="" class="img-fluid">
+              <div class="categories_text">
+                <h4>Cosmetics</h4>
+                <p>159 items</p>
+                <a href="#">Buy now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-12 p-0">
+            <div class="categories_item">
+              <img src="assets/images/accessories.jpg" alt="" class="img-fluid">
+              <div class="categories_text">
+                <h4>Accessory</h4>
+                <p>792 items</p>
+                <a href="#">Buy now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
   </div>
+</section>
+
+
 <!-------------------------------------Product Slider--------------------------------------------->
 <!-- <ngx-slick-carousel class="main-slider slider" [config]="slideConfig" *ngIf="products">
 <div class="container-fluid">
@@ -78,8 +154,8 @@
     <img src="assets/images/men-hrx-nike.png" width="100%" height="auto">
   </div>
   <div class="carousel_products" style="margin-top: 20px;">
-    <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000"
-      data-interval="2000" [responsiveOptions]="responsiveOptions">
+    <p-carousel [value]="products" [numVisible]="6" [numScroll]="1" [circular]="false" [autoplayInterval]="2000"
+      data-interval="4000" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
         <h3><b>Men's Products</b></h3>
       </ng-template>
@@ -87,17 +163,15 @@
         <div class="product-item">
           <div class="product-item-content">
             <div class="p-mb-3">
-              <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
+              <img class="product_image" 
+              [routerLink]="['/products',products.product_id]" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
                 alt={{products.product_name} width="217" height="250">
             </div>
             <div>
               <h4 class="p-mb-1">{{products['product_name']}}</h4>
               <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
               <div class="car-buttons p-mt-5">
-                <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
-                <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
-                </p-button>
-                <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+                <p-button type="button" styleClass="p-button-help p-button-rounded" [routerLink]="['/products',products.product_id]">View Product</p-button>
               </div>
             </div>
           </div>
@@ -105,15 +179,55 @@
       </ng-template>
     </p-carousel>
   </div>
-  
+
 </div>
+
+<script>
+  
+
+</script>
+
+<section class="discount spad">
+  <div class="container-discount-spad">
+    <div class="row">
+      <div class="col-lg-4 p-0">
+        <div class="discount_pic">
+          <img src="assets/images/discountMan.jpg" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-4 p-0">
+        <div class="discount_text">
+          <div class="discount_text_title">
+            <span>Discount</span>
+            <h2>Winter 2020</h2>
+            <h5><span>Sale</span> 60% OFF</h5>
+          </div>
+          <div class="discount_countdown" id="countdown-time">
+            <div class="countdown_item">
+              <span id="days"> {{daysToDday}} </span> <p>Day</p> 
+            </div>
+            <div class="countdown_item">
+              <span id="hours">{{hoursToDday}} </span> <p>Hour</p> 
+            </div>
+            <div class="countdown_item">
+              <span id="minutes">{{minutesToDday}}</span> <p>Min</p> 
+            </div><div class="countdown_item">
+              <span id="seconds">{{secondsToDday}}</span> <p>Sec</p> 
+            </div>
+          </div>
+          <a href="#">Buy now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <div class="women-banner">
   <img src="assets/images/women-banner.png" width="100%" height="auto">
   <div class="carousel_products" style="margin-top: 20px;">
-    <p-carousel [value]="products" [numVisible]="6" [numScroll]="3" [circular]="false" [autoplayInterval]="2000"
-      data-interval="2000" [responsiveOptions]="responsiveOptions">
+    <p-carousel [value]="products" [numVisible]="6" [numScroll]="1" [circular]="false" [autoplayInterval]="2000"
+      data-interval="4000" [responsiveOptions]="responsiveOptions">
       <ng-template pTemplate="header">
         <h3><b> Women's Products </b></h3>
       </ng-template>
@@ -122,16 +236,13 @@
           <div class="product-item-content">
             <div class="p-mb-3">
               <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
-                alt={{products.product_name} width="217" height="250">
+              [routerLink]="['/products',products.product_id]" alt={{products.product_name} width="217" height="250">
             </div>
             <div>
               <h4 class="p-mb-1">{{products['product_name']}}</h4>
               <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
               <div class="car-buttons p-mt-5">
-                <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
-                <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star">
-                </p-button>
-                <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+                <p-button type="button" styleClass="p-button-help p-button-rounded" [routerLink]="['/products',products.product_id]">View Product</p-button>
               </div>
             </div>
           </div>
@@ -141,9 +252,20 @@
   </div>
 </div>
 
+<section id = "offers" class = "py-5">
+  <div class = "container_offer">
+      <div class = "row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
+          <div class = "offers-content">
+              <span class = "text-white">Discount Up To 40%</span>
+              <h2 class = "mt-2 mb-4 text-white">&nbsp; Grand Sale Offer!</h2>
+              <h3 class="mt-2 mb-4 text-white">On NeelShop</h3>
+              <a href = "#" class = "btn" routerLink="/women">Shop Now</a>
+          </div>
+      </div>
+  </div>
+</section>
 
 <!------------------------------------------------------------------------------------------------>
-
 
 
 
@@ -410,31 +532,7 @@
     </div>
 
 
-    <div class="row">
-      <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
-        <div class="product" *ngFor="let products of products" >
-          <div class="product-wrap">
-            <a href="#"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
-            <a href="#"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg"
-                alt="product-img" /></a>
-          </div>
-
-          <span class="onsale">Sale</span>
-          <div class="product-hover-overlay">
-            <a href="./cart"><i class="tf-ion-android-cart"></i></a>
-            <a href="#"><i class="tf-ion-ios-heart"></i></a>
-          </div>
-
-          <div class="product-info">
-            <h2 class="product-title h5 mb-0"><a href="#">Floral Kirby</a></h2>
-            <span class="price">
-              $329.10
-            </span>
-            <button href="#" class="btn btn-primary btn-block">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
 
   </div>
@@ -456,6 +554,30 @@
     </div>
   </div>
 </section>
+
+<!-- NewsLetter for sending the mail to the customers thanking you for visiting the website -->
+<section></section>
+
+<section class="newsletter-area spad">
+  <div class="container">
+    <form method="post" action="#">
+      <p class="text-center">
+        Subscribe to us for mailing list to receive updates on new arrivals, specials offers and other discount information.
+      </p>
+      <div class="row subscribe-sec">
+        <div class="col-md-9">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email..." required="">
+        </div>
+        <div class="col-md-3">
+          <button type="submit" class="btn submit">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+                                              <!-- News letter ends -->
 
 <section class="section products-list">
   <div class="container">

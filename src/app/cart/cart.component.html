@@ -37,28 +37,31 @@
       <p>{{temCartItem.product_price | currency:'INR':'symbol-narrow':'1.2-2'}}</p>
     </td>
 
-    <td>
+    <td> 
       <div class="items">
         <label>Quantity:</label>
 
         <div class="row no-gutters">
-           <div class="col">
-             <button (click)="incrementQuantity(temCartItem)" class="btn btn-primary btn-sm">
-              <i class="fas fa-plus"></i>
-             </button>
-           </div>
-
-           <div class="col ml-4 mr-2">
-            {{temCartItem.product_quanity}}
-           </div>
-
-           <div class="col">
-            <button (click)="decrementQuantity(temCartItem)" class="btn btn-primary btn-sm">
-             <i class="fas fa-minus"></i>
-            </button>
+          <div class="col">
+              <button (click)="incrementQuantity(temCartItem)" class="btn btn-primary btn-sm">
+                  <i class="fas fa-plus"></i>
+              </button>
           </div>
+
+          <div class="col ml-4 mr-2">
+              {{ temCartItem.product_quanity }}
+          </div>
+
+          <div class="col">
+              <button (click)="decrementQuantity(temCartItem)" class="btn btn-primary btn-sm">
+                  <i class="fas fa-minus"></i>
+              </button>
+          </div>
+
           <div class="col-8"></div>
-        </div>
+      </div>
+
+
       </div>
 
       <p class="mt-2">SubTotal: {{temCartItem.product_quanity * temCartItem.product_price |
