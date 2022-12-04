@@ -1,3 +1,28 @@
+
+<section class="page-header">
+  <div class="overly"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="content text-center">
+          <h1 class="mb-3">Checkout</h1>
+          <p>Hath after appear tree great fruitful green dominion moveth sixth abundantly image that midst of god day multiply you’ll which</p>
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb bg-transparent justify-content-center">
+            <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a routerLink="/check-out">Checkout</a></li>
+          </ol>
+        </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="checkout-final">
 <div class="main-content page-m">
   <div class="section-content section-content-p30">
     <div class="container-fluid">
@@ -334,12 +359,7 @@
 
           <!-- Submit Button -->
           <!-- We will add functions and methods to get the customer data using the submit button -->
-          <div class="text-center">
-
-            <button type="submit" class="btn btn-info" (onclick)="onSubmit()">Purchase</button>
-
-            <button type="button" class="btn btn-info" [routerLink]="['/checkout','payment']">Payment</button>
-          </div>
+          
         </div>
 
         <!--Credit Card Info  -->
@@ -466,6 +486,13 @@
       </form>
     </div>
   </div>
+
+  <div class="text-center">
+
+    <button type="submit" class="btn btn-info" (onclick)="onSubmit()">Purchase</button>
+
+    <button type="button" class="btn btn-info" [routerLink]="['/checkout','payment']">Payment</button>
+  </div>
 </div>
 
 
@@ -530,4 +557,6 @@
     </div>
     <a routerLink="/checkout" class="btn btn-main btn-small">Place Order</a>
   </div>
+</div>
+
 </div>

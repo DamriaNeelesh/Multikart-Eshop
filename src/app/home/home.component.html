@@ -46,21 +46,46 @@
 
 
 
-<div class="offer">
+<!-- <div class="offer">
   <img  claa="rotate" src="assets/images/circle.jpg" width="170px">
     <div class="off">
       50<span>OFF</span>
     </div>
-</div> 
-<div class="bigBannerOnNeel">
-  <img src="assets/images/50off banner.jpg" width="100%" height="30%">
+</div>  -->
+
+<!-- CSS TYPING EFFECT STARTS HERE -->
+<!-- 
+ <div class="wrapper">
+  <div class="static-txt">I'm</div>
+  <ul class="dynamic-txts">
+    <li><span>Neelesh</span></li>
+    <li><span>Developer</span></li>
+    <li><span>Neelesh</span></li>
+    <li><span>Developer</span></li>
+  </ul>
+</div> -->
+
+<div class="wrapper">
+  <h1 aria-label="Hi! I'm a developer">
+    Hi! I'm &nbsp;<span class="typewriter"></span>
+  </h1>
+
+  <!-- <h1 aria-label="Hi! I'm a developer">
+    Hi! I'm a&nbsp;<span class="typewriter thick"></span>
+  </h1>
+
+  <h1 aria-label="Hi! I'm a developer">
+    Hi! I'm a&nbsp;<span class="typewriter nocaret"></span>
+  </h1> -->
 </div>
 
 <img class="homeImg"
   src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/7/1e599d37-1ed6-4e39-9057-ffb4065173b51651897264796-Unbelievable-Deals.jpg" />
 
 
-<img src="assets/images/big sale offer.png" width="auto%" height="50%%">
+
+
+<!-- <img src="assets/images/big sale offer.png" width="auto%" height="50%%"> -->
 
 
 <!-- New Second header design below home poage  -->
@@ -72,7 +97,8 @@
           <img src="assets/images/womenCategory.jpg" alt="" class="img-fluid">
           <div class="categories_text">
             <h1>Women's fashion</h1>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+              looking at its layout.</p>
             <a href="/women">Buy now</a>
           </div>
         </div>
@@ -106,7 +132,7 @@
               <div class="categories_text">
                 <h4>Cosmetics</h4>
                 <p>159 items</p>
-                <a href="#">Buy now</a>
+                <a href="/beauty">Buy now</a>
               </div>
             </div>
           </div>
@@ -114,18 +140,29 @@
             <div class="categories_item">
               <img src="assets/images/accessories.jpg" alt="" class="img-fluid">
               <div class="categories_text">
-                <h4>Accessory</h4>
-                <p>792 items</p>
-                <a href="#">Buy now</a>
+                <h4>Fashion Blogs</h4>
+                <p>Latest</p>
+                <a href="/blog-home">View Now</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 </section>
+
+
+<!-- 50% off Banner Design -->
+<div class="banneroff">
+  <div class="content">
+    <h1>Get Up To 50% Off</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, animi?</p>
+    <div id="bannerbtn"><button>SHOP NOW</button></div>
+  </div>
+</div>
+<!--  -->
 
 
 <!-------------------------------------Product Slider--------------------------------------------->
@@ -163,15 +200,16 @@
         <div class="product-item">
           <div class="product-item-content">
             <div class="p-mb-3">
-              <img class="product_image" 
-              [routerLink]="['/products',products.product_id]" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
-                alt={{products.product_name} width="217" height="250">
+              <img class="product_image" [routerLink]="['/products',products.product_id]"
+                src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}" alt={{products.product_name}
+                width="217" height="250">
             </div>
             <div>
               <h4 class="p-mb-1">{{products['product_name']}}</h4>
               <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
               <div class="car-buttons p-mt-5">
-                <p-button type="button" styleClass="p-button-help p-button-rounded" [routerLink]="['/products',products.product_id]">View Product</p-button>
+                <p-button type="button" styleClass="p-button-help p-button-rounded"
+                  [routerLink]="['/products',products.product_id]">View Product</p-button>
               </div>
             </div>
           </div>
@@ -183,7 +221,7 @@
 </div>
 
 <script>
-  
+
 
 </script>
 
@@ -204,18 +242,25 @@
           </div>
           <div class="discount_countdown" id="countdown-time">
             <div class="countdown_item">
-              <span id="days"> {{daysToDday}} </span> <p>Day</p> 
+              <span id="days"> {{daysToDday}} </span>
+              <p>Day</p>
             </div>
             <div class="countdown_item">
-              <span id="hours">{{hoursToDday}} </span> <p>Hour</p> 
+              <span id="hours">{{hoursToDday}} </span>
+              <p>Hour</p>
             </div>
             <div class="countdown_item">
-              <span id="minutes">{{minutesToDday}}</span> <p>Min</p> 
-            </div><div class="countdown_item">
-              <span id="seconds">{{secondsToDday}}</span> <p>Sec</p> 
+              <span id="minutes">{{minutesToDday}}</span>
+              <p>Min</p>
+            </div>
+            <div class="countdown_item">
+              <span id="seconds">{{secondsToDday}}</span>
+              <p>Sec</p>
             </div>
           </div>
-          <a href="#">Buy now</a>
+          <div id="countdownTimerButton">
+            <button>Buy now</button>
+          </div>
         </div>
       </div>
     </div>
@@ -236,13 +281,14 @@
           <div class="product-item-content">
             <div class="p-mb-3">
               <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
-              [routerLink]="['/products',products.product_id]" alt={{products.product_name} width="217" height="250">
+                [routerLink]="['/products',products.product_id]" alt={{products.product_name} width="217" height="250">
             </div>
             <div>
               <h4 class="p-mb-1">{{products['product_name']}}</h4>
               <h6 class="p-mt-0 p-mb-3">{{products['product_price'] | currency:'INR':'symbol-narrow':'4.2-2'}}</h6>
               <div class="car-buttons p-mt-5">
-                <p-button type="button" styleClass="p-button-help p-button-rounded" [routerLink]="['/products',products.product_id]">View Product</p-button>
+                <p-button type="button" styleClass="p-button-help p-button-rounded"
+                  [routerLink]="['/products',products.product_id]">View Product</p-button>
               </div>
             </div>
           </div>
@@ -252,16 +298,17 @@
   </div>
 </div>
 
-<section id = "offers" class = "py-5">
-  <div class = "container_offer">
-      <div class = "row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
-          <div class = "offers-content">
-              <span class = "text-white">Discount Up To 40%</span>
-              <h2 class = "mt-2 mb-4 text-white">&nbsp; Grand Sale Offer!</h2>
-              <h3 class="mt-2 mb-4 text-white">On NeelShop</h3>
-              <a href = "#" class = "btn" routerLink="/women">Shop Now</a>
-          </div>
+<section id="offers" class="py-5">
+  <div class="container_offer">
+    <div
+      class="row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
+      <div class="offers-content">
+        <span class="text-white">Discount Up To 40%</span>
+        <h2 class="mt-2 mb-4 text-white">&nbsp; Grand Sale Offer!</h2>
+        <h3 class="mt-2 mb-4 text-white">On NeelShop</h3>
+        <a href="#" class="btn" routerLink="/women">Shop Now</a>
       </div>
+    </div>
   </div>
 </section>
 
@@ -332,6 +379,96 @@
     <h6 routerLink="mast&harbour">Min.50% Off</h6>
   </div>
 </div>
+
+
+<!-- ----Animated Product Category ----------->
+
+<div class="offers1">
+  <div class="containerOffer">
+    <div class="row" style="width:80%; display: flex; margin-left: auto; margin-right: auto;">
+      <!-- Offer Box One -->
+      <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4">
+        <a href="#">
+          <div class="offer-box text-center position-relative mb-4 mb-sm-0 mb-lg-0">
+            <div class="offer-inner">
+              <div class="offer-image position-relative overflow-hidden">
+                <img src="assets/images/offer1.jpg" alt="Offers" class="img-fluid">
+                <div class="offer-overlay"></div>
+              </div>
+              <div class="offer-info">
+                <div class="offer-info-inner">
+                  <p class="heading-bigger text-capitalize">Sale 30%</p>
+                  <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>
+                  <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- offer Box Two -->
+      <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4 d-flex flex-column justify-content-between">
+        <a href="#">
+          <div class="offer-box text-center position-relative mb-4 mb-sm-0 mb-lg-0">
+            <div class="offer-inner">
+              <div class="offer-image position-relative overflow-hidden">
+                <img src="assets/images/offer2.jpg" alt="Offers" class="img-fluid">
+                <div class="offer-overlay"></div>
+              </div>
+              <div class="offer-info">
+                <div class="offer-info-inner">
+                  <p class="heading-bigger text-capitalize">Sale 70%</p>
+                  <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>
+                  <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="offer-box text-center position-relative">
+            <div class="offer-inner">
+              <div class="offer-image position-relative overflow-hidden">
+                <img src="assets/images/offer3.jpg" alt="Offers" class="img-fluid">
+                <div class="offer-overlay"></div>
+              </div>
+              <div class="offer-info">
+                <div class="offer-info-inner">
+                  <p class="heading-bigger text-capitalize">Sale 50%</p>
+                  <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>
+                  <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- offer Box Three -->
+      <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4">
+        <a href="#">
+          <div class="offer-box text-center position-relative">
+            <div class="offer-inner">
+              <div class="offer-image position-relative overflow-hidden">
+                <img src="assets/images/offer4.jpg" alt="Offers" class="img-fluid">
+                <div class="offer-overlay"></div>
+              </div>
+              <div class="offer-info">
+                <div class="offer-info-inner">
+                  <p class="heading-bigger text-capitalize">Sale 25%</p>
+                  <p class="offer-title-1 text-uppercase font-weight-bold">Don't Miss This Chance</p>
+                  <button type="button" class="btn btn-outline-danger text-uppercase mt-4">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <!------------------------------------------------------------------------------------------------------------->
 
@@ -520,6 +657,10 @@
   </div>
 </section>
 
+<div class="bigBannerOnNeel">
+  <img src="assets/images/50off banner.jpg" width="100%" height="30%">
+</div>
+
 <section class="section products-main">
   <div class="container">
     <div class="row justify-content-center">
@@ -532,7 +673,7 @@
     </div>
 
 
-    
+
 
 
   </div>
@@ -556,17 +697,19 @@
 </section>
 
 <!-- NewsLetter for sending the mail to the customers thanking you for visiting the website -->
-<section></section>
+
 
 <section class="newsletter-area spad">
   <div class="container">
     <form method="post" action="#">
       <p class="text-center">
-        Subscribe to us for mailing list to receive updates on new arrivals, specials offers and other discount information.
+        Subscribe to us for mailing list to receive updates on new arrivals, specials offers and other discount
+        information.
       </p>
       <div class="row subscribe-sec">
         <div class="col-md-9">
-          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email..." required="">
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email..."
+            required="">
         </div>
         <div class="col-md-3">
           <button type="submit" class="btn submit">
@@ -577,7 +720,7 @@
     </form>
   </div>
 </section>
-                                              <!-- News letter ends -->
+<!-- News letter ends -->
 
 <section class="section products-list">
   <div class="container">

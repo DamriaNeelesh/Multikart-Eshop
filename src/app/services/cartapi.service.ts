@@ -112,11 +112,11 @@ totalQuantity:Subject<number> = new BehaviorSubject<number>(0);
 
   logCartData(totalPriceValue:number,totalQuantityValue:number){
     console.log('Content of the Cart');
-    this.http.post('http://localhost:3000/localCart',this.Cartitems,{observe:'response'}).subscribe((result)=>{
-      if(result){
-        localStorage.setItem('cart',JSON.stringify(result.body));
-      }
-    });
+    // this.http.post('http://localhost:3000/localCart',this.Cartitems,{observe:'response'}).subscribe((result)=>{
+    //   if(result){
+    //     localStorage.setItem('cart',JSON.stringify(result.body));
+    //   }
+    // });
 
     for(let tempCartItems of this.Cartitems){
       const subTotalPrice = tempCartItems.product_quanity * tempCartItems.product_price;

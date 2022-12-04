@@ -4,6 +4,8 @@ import { signUp, login } from '../data-types';
 import { CartapiService } from '../services/cartapi.service';
 import { ProductsService } from '../services/products.service';
 import { UserService } from '../services/user.service';
+import { Toast } from 'ngx-toastr';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-auth',
@@ -30,19 +32,45 @@ export class UserAuthComponent implements OnInit {
     this.user.userSignUp(data);
   }
 
+  // Toast = Swal.mixin({
+  //   toast: true,
+  //   position: 'top-end',
+  //   showConfirmButton: false,
+  //   timer: 3000,
+  //   timerProgressBar: true,
+  //   didOpen: (toast) => {
+  //     toast.addEventListener('mouseenter', Swal.stopTimer)
+  //     toast.addEventListener('mouseleave', Swal.resumeTimer)
+  //   },
+  //   icon:'success',
+  //   title:'Signed in siccessfully'
+  // })
+
   login(data: login) {
     this.user.userLogin(data)
     this.user.invalidUserAuth.subscribe((result) => {
       // console.warn(result);
       if (result) {
         this.authError = "User not found";
-        console.warn(this.authError);
+        // console.warn(this.authError);
         this.toastr.warning("User Not Found");
         
         // alert(this.authError);
       } else{
         this.localCartToRemoteCart();
-        this.toastr.success("Welcome to NeelShop");
+        Swal.fire({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          },
+          icon:'success',
+          title:'Signed in successfully'
+        })
       }
 
     })

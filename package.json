@@ -29,6 +29,7 @@
     "@popperjs/core": "^2.11.6",
     "angular-oauth2-oidc": "^13.0.1",
     "angular-oauth2-oidc-jwks": "^13.0.1",
+    "angular-sweetalert-2": "^1.0.1",
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.2",
     "carousel": "^0.0.3",
@@ -53,7 +54,7 @@
     "rxjs": "~7.5.0",
     "rxjs-compat": "^6.6.7",
     "slick-carousel": "^1.8.1",
-    "sweetalert2": "^11.4.8",
+    "sweetalert2": "^11.6.15",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

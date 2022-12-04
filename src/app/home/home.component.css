@@ -122,6 +122,169 @@ header{
   }
 }
 
+.wrapper{
+  background: #f5fbfb;
+  display: flex;
+  height: 20vh;
+  margin: 0;
+}
+
+.wrapper h1{
+  font-size: 9vmin;
+  color: #8bf;
+  text-align: left;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  margin: 1rem 0 1rem 2rem;
+}
+
+@keyframes typing {
+
+  0.0000%, 27.3488% { content: ""; }
+  0.0020%,27.000% {content: "a d";}
+  1.1395%, 26.2093% { content: "a d"; }
+  2.2791%, 25.0698% { content: "a de"; }
+  3.4186%, 23.9302% { content: "a dev"; }
+  4.5581%, 22.7907% { content: "a deve"; }
+  5.6977%, 21.6512% { content: "a devel"; }
+  6.8372%, 20.5116% { content: "a develo"; }
+  7.9767%, 19.3721% { content: "a develop"; }
+  9.1163%, 18.2326% { content: "a develope"; }
+  10.2558%, 17.0930% { content:"a developer"; }
+
+  30.7674%, 51.2791% { content: ""; }
+  31.9070%, 50.1395% { content: "N"; }
+  33.0465%, 49.0000% { content: "Ne"; }
+  34.1860%, 47.8605% { content: "Nee"; }
+  35.3256%, 46.7209% { content: "Neel"; }
+  36.4651%, 45.5814% { content: "Neele"; }
+  37.6047%, 44.4419% { content: "Neeles"; }
+  38.6047%, 43.4419% { content: "Neelesh"; }
+
+  54.6977%, 75.2093% { content: ""; }
+  55.8372%, 74.0698% { content: "a "; }
+  56.9767%, 72.9302% { content: "a d"; }
+  58.1163%, 71.7907% { content: "a de"; }
+  59.2558%, 70.6512% { content: "a dev"; }
+  60.3953%, 69.5116% { content: "a deve"; }
+  61.5349%, 68.3721% { content: "a devel"; }
+  62.5010%, 67.3356% { content: "a develo";}
+  63.2010%, 66.3356% { content: "a develop";}
+  64.3010%, 65.3356% { content: "a develope";}
+  65.4010%, 64.3356% { content: "a developer";}
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+  
+  @keyframes sequencePopup {
+    0%, 100% { content: "Neelesh"; }
+    25% { content: "developer"; }
+    50% { content: "reader"; }
+  }
+
+  .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+
+/* CSS TYPING EFFECT STARTs */
+/* 
+.wrapper{
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #082032; 
+}
+
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: "poppins",sans-serif;
+}
+
+.wrapper .static-txt{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.dynamic-txts li{
+  list-style: none;
+  color: #ff4c29;
+  font-size: 60px;
+  font-weight: 500;
+  top: 0;
+  position: relative;
+  animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide{
+  100%{
+    top:-360px;
+  }
+}
+
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
+  
+}
+
+.dynamic-txts li{
+  position: relative;
+}
+
+.dynamic-txts li::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  background-color: #082032; 
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid #ff4c29;
+  animation: typing 3s steps(10) infinite;
+
+}
+
+@keyframes typings{
+  40%,
+  60%{
+    left:calc(100%+30px);
+  }
+  100%{
+    left:0;
+  }
+} */
 
 .flex{
     display:flex;
@@ -336,6 +499,8 @@ header{
   background-color: #ef4e7b;
 }
 
+/* Header Categories */
+
 .categories {
   position: relative;
   overflow: hidden;
@@ -372,6 +537,10 @@ header{
 .categories .categories_text h1{
   color: #000;
   margin-bottom: 5px; 
+}
+
+.categories .categories_text h4{
+  margin-left:0;
 }
 
 .categories .categories_text p{
@@ -425,15 +594,20 @@ header{
    text-align: center;
 }
 
+
 .banner_text a,
 .discount_text a{
-  font-size: 14px;
-  color: #000;
-  text-transform:uppercase;
-  font-weight: 700;
-  position: relative;
-  padding: 0 0 3px;
-  display: inline-block;
+  font-size: 14px !important;
+  color: #000 !important;
+  text-transform:uppercase !important;
+  font-weight: 700 !important;
+  position: relative !important;
+  padding: 0 0 3px !important;
+  display: inline-block !important;
+}
+
+.discount_text a{
+
 }
 
 .discount_text .discount_text_title{
@@ -473,6 +647,22 @@ header{
    font-weight: 700;
 }
 
+#countdownTimerButton button{
+  width: 150px;
+  height: 38px;
+  background: transparent;
+  color: white;
+  border: 2px solid black;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+#countdownTimerButton button:hover{
+  background-color: #ff7200;
+  border: black                                                                                                                                                                                            ;
+}
+
+
 .discount_text .discount_text_title h5 span{
   font-size: 18px;
   color: #000;
@@ -509,7 +699,7 @@ header{
 }
 
 /*Subscribing Post NewsLetter */
-.newsletter-area{
+.newsletter-area{ 
   background-color: #f4f4f4;
   height: 1.5fr;
 }
@@ -554,4 +744,125 @@ header{
 
 .btn.submit:hover{
   background-color: #e46d0c;
+}
+
+/* Banner off CSS starts here */
+.banneroff{
+  width: 100%;
+  height: 50vh;
+  margin-top: 50px;
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(/assets/images/bannerOff.jpg);
+}
+.banneroff .content{
+  text-align: center;
+  padding-top: 100px;
+}
+.banneroff .content h1{
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 3px;
+}
+.banneroff .content p{
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 3px;
+}
+
+#bannerbtn button{
+  width: 150px;
+  height: 38px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+#bannerbtn button:hover{
+  background-color: #1c1c50;
+  border: none;
+}
+
+
+
+/* Offer CSS */
+/* Offer CSS */
+
+.offers1{
+  padding-top:8.75rem;
+}
+.offers1 .offer-box .offer-image::before{
+  position:absolute;
+  content:'';
+  top:0;
+  left:-100%;
+  z-index: 2;
+  display:block;
+  width:50%;
+  height:100%;
+  background:-webkit-linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+  background:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+  transform:skewX(-25deg);
+}
+.offers1 .offer-box .offer-image img{
+  transform:scale(1.02);
+  width:100%;
+  height:100%;
+  object-fit: cover;
+}
+.offers1 .offer-box:hover .offer-image::before{
+  animation:effect_shine 1s;
+}
+@keyframes effect_shine{
+  100%{
+      left:150%;
+  }
+}
+.offers1 .offer-overlay::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  z-index: 1;
+}
+.offers1 .offer-box .offer-info{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  z-index: 1;
+  transition:all 250ms ease-out;
+  justify-content:center;
+  align-items:center;
+}
+.offers1 .offer-box .offer-info .heading-bigger{
+  font-size: 4.375rem;
+  line-height: 1;
+  text-transform: uppercase; 
+  font-weight: 400;
+  margin-bottom:0;
+  color:white !important;
+}
+.offers1 .offer-box .offer-info .offer-title-1{
+  color:white !important;
+  font-size: 1.125rem;
+  font-weight: 300;
+  margin-bottom: 0;
+  letter-spacing:2px;
+}
+.offers1 .offer-box .offer-info .btn-outline-danger{
+  color:white !important;
+  border-color:var(--bg-white) !important;
+  transition:all 0.3s ease-in-out !important;
+}
+.offers1 .offer-box .offer-info .btn-outline-danger:hover{
+  border-color: white !important;
+  background-color:rgb(188, 57, 57) !important;
 }

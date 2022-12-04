@@ -72,6 +72,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
 import { UserService } from './services/user.service';
 import { PaymentComponent } from './payment/payment.component';
 import { BeautyService } from './services/beauty.service';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 
@@ -120,6 +121,7 @@ import { BeautyService } from './services/beauty.service';
      UserAuthComponent,
      PaymentComponent,
      BeautyComponent,
+     OrderSummaryComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 import { Order } from '../ordersData/order';
 import { OrderItem } from '../ordersData/order-item';
 import { Purchase } from '../ordersData/purchase';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-check-out',
@@ -267,8 +268,8 @@ export class CheckOutComponent implements OnInit {
         alert(`There was an error:${err.message}`);
        }
     });
-
    }
+
 
   resetCart(){
     // reset cart data
@@ -280,7 +281,7 @@ export class CheckOutComponent implements OnInit {
     this.checkoutFormGroup.reset();
 
     // navigate back to product page/home page
-    this.router.navigateByUrl("/product-lis");
+    this.router.navigateByUrl("/product-list");
   }
 
   // Copying the Shipping data to billing Address
@@ -358,5 +359,7 @@ export class CheckOutComponent implements OnInit {
       totalPrice => this.totalPrice = totalPrice
     );
   }
+
+  
 
 }

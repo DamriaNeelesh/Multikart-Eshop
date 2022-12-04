@@ -27,6 +27,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { LoginComponent } from './login/login.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { PaymentGatewayComponent } from './payment-gateway/payment-gateway.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -46,6 +47,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
 
 const routes: Routes = [
   {path:"", component: HomeComponent },
+  {path:"home",component:HomeComponent},
   {path:"products/:product_id", component: ProductsingleComponent },
   {path:"cart", component: CartComponent},
   {path:"check-out", component:CheckoutComponent},
@@ -59,6 +61,7 @@ const routes: Routes = [
   {path:"checkout/:payment",component:PaymentGatewayComponent},
   {path:"payment",component:PaymentComponent},
   {path:'order-history',component:OrderHistoryComponent},
+  {path:'order-summary',component:OrderSummaryComponent},
  
   {path:'login',component:LoginComponent},
 

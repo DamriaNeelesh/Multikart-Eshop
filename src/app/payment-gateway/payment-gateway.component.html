@@ -75,12 +75,14 @@
                       <input type="text" placeholder="1234">
                   </div>
               </div>
-
+              <div class="finalAmount">
+              <b><strong>Total Amount:</strong></b>
+              {{totalPrice | currency:'INR':'symbol-narrow':'4.2-2'}}  
+            </div>
           </div>
-
+      
       </div>
-
-      <input type="submit" value="proceed to checkout" class="submit-btn">
+      <input type="submit" value="Place Order" (click)="placeOrder()" class="submit-btn">
 
   </form>
 
