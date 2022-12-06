@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { Order } from '../ordersData/order';
 import { OrderHistory } from '../ordersData/OrderHistory';
+import { IProducts } from '../products';
+import { CartapiService } from '../services/cartapi.service';
 import { OrderHistoryService } from '../services/order-history.service';
 
 @Component({
@@ -14,11 +16,32 @@ export class OrderHistoryComponent implements OnInit {
   orderHistoryList:OrderHistory[] = [];
   storage:Storage = localStorage;  // Reference to web browser storage
 
+  items = this.cartApi.getProductData();
+  Cartitems:IProducts[] = [];
+  cartItems:IProducts[]=[];
+  totalPrice:number=0;
+  totalQuantity: number=0;
+  
   constructor(private orderHistoryService:OrderHistoryService,
-              private oauthService:OAuthService) { }
+              private oauthService:OAuthService,
+              private cartApi:CartapiService) { }
 
   ngOnInit(): void {
-    this.handleOrderHistory();
+    
+  }
+
+  reviewCartDetails(){
+    // Subscribe to cartService.totalQuantity
+    this.cartApi.totalQuantity.subscribe(
+      totalQuantity => this.totalQuantity = totalQuantity
+    );
+    
+    // Subscribe to cartservice.totalPrice
+    this.cartApi.totalPrice.subscribe(
+      totalPrice => this.totalPrice = totalPrice
+    );
+
+    this.cartApi.Cartitems === this.orderHistoryList;
   }
 
   get token(){
@@ -26,18 +49,8 @@ export class OrderHistoryComponent implements OnInit {
     return claims ? claims : null;
   }
 
-  handleOrderHistory(){
-    
-    // read the user's email address from the browser storage
-    const theEmail = JSON.parse(this.storage.getItem('userEmail')!);
-    console.log(theEmail);
-    // retrieve data from the service
-    this.orderHistoryService.getOrderHistory(theEmail).subscribe(
-      data=>{
-        this.orderHistoryList = data._embedded.orders;
-        console.log(this.orderHistoryList);
-      }
-    );
-  }
+
+
+ 
 
 }

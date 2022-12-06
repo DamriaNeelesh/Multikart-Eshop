@@ -7,6 +7,7 @@
   border-color: blue !important;
 }
 
+
 /*--------------------------ADD TO CART Button Design---------------- */
 
 /* body {
@@ -26,7 +27,7 @@
 	height: 60px;
 	border: 0;
 	border-radius: 10px;
-	background-color: #4834d4;
+	background-color: #d46134;
 	outline: none;
 	cursor: pointer;
 	color: #fff;
@@ -314,234 +315,155 @@
 
 
 /* -------------------------------------------------------------------------------------------------------- */
-
-
-/* .app-btn {
-    height: 32px;
-    width: 110px;
-    background:blue;
-    border: none;
-    color: #fff;
-    outline: none;
-    cursor: pointer;
-    border-radius: 2px;
+:root {
+	--animate-duration: 1s;
+	--animate-delay: 1s;
+	--animate-repeat: 1;
+  }
+  .animate__animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-duration: var(--animate-duration);
+	animation-duration: var(--animate-duration);
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+  }
+  .animate__animated.animate__infinite {
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+  }
+  .animate__animated.animate__repeat-1 {
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+	-webkit-animation-iteration-count: var(--animate-repeat);
+	animation-iteration-count: var(--animate-repeat);
+  }
+  .animate__animated.animate__repeat-2 {
+	-webkit-animation-iteration-count: calc(1 * 2);
+	animation-iteration-count: calc(1 * 2);
+	-webkit-animation-iteration-count: calc(var(--animate-repeat) * 2);
+	animation-iteration-count: calc(var(--animate-repeat) * 2);
+  }
+  .animate__animated.animate__repeat-3 {
+	-webkit-animation-iteration-count: calc(1 * 3);
+	animation-iteration-count: calc(1 * 3);
+	-webkit-animation-iteration-count: calc(var(--animate-repeat) * 3);
+	animation-iteration-count: calc(var(--animate-repeat) * 3);
+  }
+  .animate__animated.animate__delay-1s {
+	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
+	-webkit-animation-delay: var(--animate-delay);
+	animation-delay: var(--animate-delay);
+  }
+  .animate__animated.animate__delay-2s {
+	-webkit-animation-delay: calc(1s * 2);
+	animation-delay: calc(1s * 2);
+	-webkit-animation-delay: calc(var(--animate-delay) * 2);
+	animation-delay: calc(var(--animate-delay) * 2);
+  }
+  .animate__animated.animate__delay-3s {
+	-webkit-animation-delay: calc(1s * 3);
+	animation-delay: calc(1s * 3);
+	-webkit-animation-delay: calc(var(--animate-delay) * 3);
+	animation-delay: calc(var(--animate-delay) * 3);
+  }
+  .animate__animated.animate__delay-4s {
+	-webkit-animation-delay: calc(1s * 4);
+	animation-delay: calc(1s * 4);
+	-webkit-animation-delay: calc(var(--animate-delay) * 4);
+	animation-delay: calc(var(--animate-delay) * 4);
+  }
+  .animate__animated.animate__delay-5s {
+	-webkit-animation-delay: calc(1s * 5);
+	animation-delay: calc(1s * 5);
+	-webkit-animation-delay: calc(var(--animate-delay) * 5);
+	animation-delay: calc(var(--animate-delay) * 5);
+  }
+  .animate__animated.animate__faster {
+	-webkit-animation-duration: calc(1s / 2);
+	animation-duration: calc(1s / 2);
+	-webkit-animation-duration: calc(var(--animate-duration) / 2);
+	animation-duration: calc(var(--animate-duration) / 2);
+  }
+  .animate__animated.animate__fast {
+	-webkit-animation-duration: calc(1s * 0.8);
+	animation-duration: calc(1s * 0.8);
+	-webkit-animation-duration: calc(var(--animate-duration) * 0.8);
+	animation-duration: calc(var(--animate-duration) * 0.8);
+  }
+  .animate__animated.animate__slow {
+	-webkit-animation-duration: calc(1s * 2);
+	animation-duration: calc(1s * 2);
+	-webkit-animation-duration: calc(var(--animate-duration) * 2);
+	animation-duration: calc(var(--animate-duration) * 2);
+  }
+  .animate__animated.animate__slower {
+	-webkit-animation-duration: calc(1s * 3);
+	animation-duration: calc(1s * 3);
+	-webkit-animation-duration: calc(var(--animate-duration) * 3);
+	animation-duration: calc(var(--animate-duration) * 3);
+  }
+  @media print, (prefers-reduced-motion: reduce) {
+	.animate__animated {
+	  -webkit-animation-duration: 1ms !important;
+	  animation-duration: 1ms !important;
+	  -webkit-transition-duration: 1ms !important;
+	  transition-duration: 1ms !important;
+	  -webkit-animation-iteration-count: 1 !important;
+	  animation-iteration-count: 1 !important;
+	}
+  
+	.animate__animated[class*='Out'] {
+	  opacity: 0;
+	}
   }
 
-  *{
-	box-sizing: border-box;
+
+  @-webkit-keyframes backOutRight {
+	0% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  
+	20% {
+	  -webkit-transform: translateX(0px) scale(0.7);
+	  transform: translateX(0px) scale(0.7);
+	  opacity: 0.7;
+	}
+  
+	100% {
+	  -webkit-transform: translateX(2000px) scale(0.7);
+	  transform: translateX(2000px) scale(0.7);
+	  opacity: 0.7;
+	}
+  }
+  @keyframes backOutRight {
+	0% {
+	  -webkit-transform: scale(1);
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  
+	20% {
+	  -webkit-transform: translateX(0px) scale(0.7);
+	  transform: translateX(0px) scale(0.7);
+	  opacity: 0.7;
+	}
+  
+	100% {
+	  -webkit-transform: translateX(2000px) scale(0.7);
+	  transform: translateX(2000px) scale(0.7);
+	  opacity: 0.7;
+	}
+  }
+  .animate__backOutRight {
+	-webkit-animation-name: backOutRight;
+	animation-name: backOutRight;
   }
 
-  #grid-selector{
-	height: 10px;
-	width: 1291px;
-	padding: 40px 0 40px 30px;
-	float: left;
-	color: #5d5f68;
-	font-size: 14px;
-}
-#grid-menu{
-	float:right;
-	width:105px;
-}
-#grid-menu ul{
-  width: 65px;
-  float: right;
-  position: relative;
-  top: -1px;}
-#grid-menu li{
-	 float:right;
-	 width:25px;
-	 height:25px;
-	 list-style:none;
-}
-#grid-menu li a{
-  	 display:block;
-	 width:25px;
-	 height:25px;
-	 background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/grid-menu.png") 0 0  no-repeat;
-}
-#grid-menu li.smallGrid{margin-right:7px;}
-#grid-menu li.smallGrid a{background-position:0 -33px;}
-#grid-menu li.largeGrid a{background-position:-37px 0;}
 
-#grid-menu li.smallGrid a.active{background-position:0 0;}
-#grid-menu li.largeGrid a.active{background-position:-37px -33px;}
-
-
-#grid{
-	width: 1335px;
-	position: absolute;
-	left: 340px;
-	height: 1200px;
-	top: 180px;
-}
-#sidebar{
-	float:left;
-	background:#fff;
-	width:275px;
-	padding:13px 0 0 45px;
-	height:1400px;
-	border-right:1px solid #eee;
-}
-#sidebar h3{
-	color:#262626;
-	text-transform:uppercase;
-	font-size:14px;
-	font-weight:700;
-	padding:35px 0 10px 0;
-	letter-spacing:1px;
-	clear:both;
-}
-#cart{padding:0px;}
-#cart .empty{
-	font-style:italic;
-	color:#a0a3ab;
-	font-size:14px;
-	letter-spacing:1px;
-}
-#sidebar .checklist{
-	padding:0;
-}
-
-.checklist ul li{
-	font-size:14px;
-	font-weight:400;
-	list-style:none;
-	padding: 7px 0 7px 23px;
-}
-.checklist li span{
-	float:left;
-	width:11px;
-	height:11px;
-	margin-left:-23px;
-	margin-top:4px;
-	border: 1px solid #d1d3d7;
-	position:relative;
-}
-.sizes li span, .categories .sizes li{
-	-webkit-transition: all 300ms ease-out;
-	   -moz-transition: all 300ms ease-out;
-	    -ms-transition: all 300ms ease-out;
-	     -o-transition: all 300ms ease-out;
-	        transition: all 300ms ease-out;
-}
-.checklist li a{
-	color:#676a74;
-	text-decoration:none;
-	-webkit-transition: all 300ms ease-out;
-	   -moz-transition: all 300ms ease-out;
-	    -ms-transition: all 300ms ease-out;
-	     -o-transition: all 300ms ease-out;
-	        transition: all 300ms ease-out;
-}
-.checklist li a:hover{
-	color:#222;
-	-webkit-transition: all 300ms ease-out;
-	   -moz-transition: all 300ms ease-out;
-	    -ms-transition: all 300ms ease-out;
-	     -o-transition: all 300ms ease-out;
-	        transition: all 300ms ease-out;
-}
-.checklist a:hover span{
-	border-color:#a6aab3;
-}
-
-.sizes a:hover span, .categories a:hover span{
-	border-color:#a6aab3;
-	-webkit-transition: all 300ms ease-out;
-	   -moz-transition: all 300ms ease-out;
-	    -ms-transition: all 300ms ease-out;
-	     -o-transition: all 300ms ease-out;
-	        transition: all 300ms ease-out;
-}
-.checklist a span span{border:none;margin:0;float:none; position:absolute;top:0;left:0;}
-.checklist a .x{
-	display:block;
-	width:0;
-	height:2px;
-	background:#3717c9;
-	top:6px;
-	left:2px;
-	-ms-transform: rotate(45deg);
-   	-webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-.checklist a .x.animate{
-	width:4px;
-	-webkit-transition: all 100ms ease-in;
-	   -moz-transition: all 100ms ease-in;
-	    -ms-transition: all 100ms ease-in;
-	     -o-transition: all 100ms ease-in;
-	        transition: all 100ms ease-in;
-}
-.checklist a .y{
-	display:block;
-	width:0px;
-	height:2px;
-	background:#3717c9;
-	top:4px;
-	left:3px;
-	-ms-transform: rotate(13deg);
-   	-webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-}
-.checklist a .y.animate{
-	width:8px;
-	-webkit-transition: all 100ms ease-out;
-	   -moz-transition: all 100ms ease-out;
-	    -ms-transition: all 100ms ease-out;
-	     -o-transition: all 100ms ease-out;
-	        transition: all 100ms ease-out;
-}
-.checklist .checked span{
-	border-color:#3717c9;
-}
-
-
-.items{
-    margin:0px 15px;
-    text-align: center;
-}
-
-.items img{
-    width:65px;
-}
-
-.items a:hover{
-    color: blue !important;
-}
-
-.itemdata{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100ch;
-
-}
-
-
-.card img{
-    width: 200px;
-    height: 200px;
-    margin-bottom: 15px;
-    transition: 0.3s ease-in-out;
-}
-
-.card img:hover{
-    transition: 0.3s ease-in-out;
-    transform:scale(1.1);
-}
-
-.card-body checkbox{
-  background-color: #3717c9;
-}
-
-.ul_checkbox{
-	background-color: #3717c9;
-}
-
-
-*/
 .section-pagetop{
   width: 100% !important;
 }

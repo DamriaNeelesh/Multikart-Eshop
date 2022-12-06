@@ -972,7 +972,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "76.1.jpg",
       product_img2: "76.2.jpg",
-      product_rating:4.2,
+      product_rating:4.7,
       product_quanity: 1,
     },
 
@@ -997,7 +997,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "78.1.jpg",
       product_img2: "78.2.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1009,7 +1009,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "79.1.jpg",
       product_img2: "79.2.jpg",
-      product_rating:4.2,
+      product_rating:3.2,
       product_quanity: 1,
     },
     {
@@ -1021,7 +1021,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "80.1.jpg",
       product_img2: "80.2.jpg",
-      product_rating:4.2,
+      product_rating:3.8,
       product_quanity: 1,
     },
     {
@@ -1033,7 +1033,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "81.1.jpg",
       product_img2: "81.2.jpg",
-      product_rating:4.2,
+      product_rating:4.1,
       product_quanity: 1,
     },
     {
@@ -1045,7 +1045,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "82.1.jpg",
       product_img2: "82.2.jpg",
-      product_rating:4.2,
+      product_rating:4.9,
       product_quanity: 1,
     },
     {
@@ -1057,7 +1057,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "83.1.jpg",
       product_img2: "83.2.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1069,7 +1069,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "84.1.jpg",
       product_img2: "84.2.jpg",
-      product_rating:4.2,
+      product_rating:3.9,
       product_quanity: 1,
     },
     {
@@ -1093,7 +1093,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "86.1.jpg",
       product_img2: "86.2.jpg",
-      product_rating:4.2,
+      product_rating:4.6,
       product_quanity: 1,
     },
     {
@@ -1117,7 +1117,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "88.1.jpg",
       product_img2: "88.2.jpg",
-      product_rating:4.2,
+      product_rating:4.8,
       product_quanity: 1,
     },
     {
@@ -1129,7 +1129,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "89.1.jpg",
       product_img2: "89.2.jpg",
-      product_rating:4.2,
+      product_rating:3.9,
       product_quanity: 1,
     },
     {
@@ -1141,7 +1141,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "90.1.jpg",
       product_img2: "90.2.jpg",
-      product_rating:4.2,
+      product_rating:3.0,
       product_quanity: 1,
     },
     {
@@ -1153,7 +1153,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "91.1.jpg",
       product_img2: "91.1.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1177,7 +1177,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "93.1.jpg",
       product_img2: "93.2.jpg",
-      product_rating:4.2,
+      product_rating:3.5,
       product_quanity: 1,
     },
     {
@@ -1189,7 +1189,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "94.1.jpg",
       product_img2: "94.2.jpg",
-      product_rating:4.2,
+      product_rating:4.7,
       product_quanity: 1,
     },
     {
@@ -1201,7 +1201,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "95.1.jpg",
       product_img2: "95.2.jpg",
-      product_rating:4.2,
+      product_rating:4.5,
       product_quanity: 1,
     },
     {
@@ -1225,7 +1225,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "97.1.jpg",
       product_img2: "97.2.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1237,7 +1237,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "98.1.jpg",
       product_img2: "98.2.jpg",
-      product_rating:4.2,
+      product_rating:3.9,
       product_quanity: 1,
     },
     {
@@ -1249,7 +1249,7 @@ export class ProductsService {
       product_category_type: "Top",
       product_img: "99.1.jpg",
       product_img2: "99.2.jpg",
-      product_rating:4.2,
+      product_rating:3.6,
       product_quanity: 1,
     },
     {
@@ -1275,7 +1275,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "101.1.jpg",
       product_img2: "101.2.jpg",
-      product_rating:4.2,
+      product_rating:4.1,
       product_quanity: 1,
     },
     {
@@ -1287,7 +1287,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "102.1.jpg",
       product_img2: "102.2.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1299,7 +1299,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "103.1.jpg",
       product_img2: "103.2.jpg",
-      product_rating:4.2,
+      product_rating:4.9,
       product_quanity: 1,
     },
     {
@@ -1311,7 +1311,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "104.1.jpg",
       product_img2: "104.2.jpg",
-      product_rating:4.2,
+      product_rating:3.8,
       product_quanity: 1,
     },
     {
@@ -1323,7 +1323,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "105.1.jpg",
       product_img2: "105.2.jpg",
-      product_rating:4.2,
+      product_rating:3.0,
       product_quanity: 1,
     },
     {
@@ -1347,7 +1347,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "107.1.jpg",
       product_img2: "107.1.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1359,7 +1359,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "108.1.jpg",
       product_img2: "108.2.jpg",
-      product_rating:4.2,
+      product_rating:4.6,
       product_quanity: 1,
     },
     {
@@ -1371,7 +1371,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "109.1.jpg",
       product_img2: "109.2.jpg",
-      product_rating:4.2,
+      product_rating:3.6,
       product_quanity: 1,
     },
     {
@@ -1383,7 +1383,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "110.1.jpg",
       product_img2: "110.2.jpg",
-      product_rating:4.2,
+      product_rating:3.8,
       product_quanity: 1,
     },
     {
@@ -1407,7 +1407,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "112.1.jpg",
       product_img2: "112.2.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1419,7 +1419,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "113.1.jpg",
       product_img2: "113.1.jpg",
-      product_rating:4.2,
+      product_rating:4.4,
       product_quanity: 1,
     },
     {
@@ -1431,7 +1431,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "114.1.jpg",
       product_img2: "114.1.jpg",
-      product_rating:4.2,
+      product_rating:4.1,
       product_quanity: 1,
     },
     {
@@ -1443,7 +1443,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "115.1.jpg",
       product_img2: "115.2.jpg",
-      product_rating:4.2,
+      product_rating:3.9,
       product_quanity: 1,
     },
     {
@@ -1455,7 +1455,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "116.1.jpg",
       product_img2: "116.2.jpg",
-      product_rating:4.2,
+      product_rating:3.5,
       product_quanity: 1,
     },
     {
@@ -1467,7 +1467,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "117.1.jpg",
       product_img2: "117.2.jpg",
-      product_rating:4.2,
+      product_rating:4.5,
       product_quanity: 1,
     },
     {
@@ -1491,7 +1491,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "119.1.jpg",
       product_img2: "119.2.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1503,7 +1503,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "120.1.jpg",
       product_img2: "120.2.jpg",
-      product_rating:4.2,
+      product_rating:3.8,
       product_quanity: 1,
     },
     {
@@ -1515,7 +1515,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "121.1.jpg",
       product_img2: "121.2.jpg",
-      product_rating:4.2,
+      product_rating:4.4,
       product_quanity: 1,
     },
     {
@@ -1527,7 +1527,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "122.1.jpg",
       product_img2: "122.2.jpg",
-      product_rating:4.2,
+      product_rating:4.8,
       product_quanity: 1,
     },
     {
@@ -1539,7 +1539,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "123.1.jpg",
       product_img2: "123.2.jpg",
-      product_rating:4.2,
+      product_rating:3.9,
       product_quanity: 1,
     },
     {
@@ -1551,7 +1551,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "124.1.jpg",
       product_img2: "124.2.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
     {
@@ -1563,7 +1563,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "125.1.jpg",
       product_img2: "125.2.jpg",
-      product_rating:4.2,
+      product_rating:4.5,
       product_quanity: 1,
     },
     {
@@ -1575,7 +1575,7 @@ export class ProductsService {
       product_category_type: "Jackets",
       product_img: "126.1.jpg",
       product_img2: "126.2.jpg",
-      product_rating:4.2,
+      product_rating:4.0,
       product_quanity: 1,
     },
 

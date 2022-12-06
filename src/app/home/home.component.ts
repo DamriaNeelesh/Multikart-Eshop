@@ -7,6 +7,7 @@ import { ProductsService } from '../services/products.service';
 import { Button } from 'primeng/button';
 import { filter, interval, Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -102,7 +103,7 @@ export class HomeComponent implements OnInit {
   addToCart(product: IProducts) {
     this.apiService.addToCart(product);
     console.log(`Adding to Cart: ${product.product_name} Price: Rs. ${product.product_price}`);
-    this.toastr.success('Product has been added to cart Successfully!!');
+    // this.toastr.success('Product has been added to cart Successfully!!');
     // localStorage.setItem('product',JSON.stringify(this.products));
   }
 

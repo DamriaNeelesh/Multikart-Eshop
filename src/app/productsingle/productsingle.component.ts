@@ -41,7 +41,7 @@ export class ProductsingleComponent implements OnInit {
     addToCart(product: IProducts) {
       this.apiService.addToCart(product);
       console.log(`Adding to Cart: ${product.product_name} Price: Rs. ${product.product_price}`);
-      this.toastr.success('Product Added Successfully');
+      // this.toastr.success('Product Added Successfully');
 
     }
 

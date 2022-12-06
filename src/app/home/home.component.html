@@ -65,18 +65,13 @@
   </ul>
 </div> -->
 
+
+
+
 <div class="wrapper">
   <h1 aria-label="Hi! I'm a developer">
-    Hi! I'm &nbsp;<span class="typewriter"></span>
+    Hi! I'm  &nbsp;<span class="typewriter"></span>
   </h1>
-
-  <!-- <h1 aria-label="Hi! I'm a developer">
-    Hi! I'm a&nbsp;<span class="typewriter thick"></span>
-  </h1>
-
-  <h1 aria-label="Hi! I'm a developer">
-    Hi! I'm a&nbsp;<span class="typewriter nocaret"></span>
-  </h1> -->
 </div>
 
 <img class="homeImg"
@@ -89,7 +84,8 @@
 
 
 <!-- New Second header design below home poage  -->
-<section class="categories">
+
+ <section class="categories">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6 p-0">
@@ -105,7 +101,7 @@
       </div>
       <div class="col-lg-6 p-0">
         <div class="row">
-          <div class="col-lg-6 col-md-6 col-12 p-0">
+          <div class="col-lg-6 col-md-6 col-12 p-0" style="padding:0;">
             <div class="categories_item">
               <img src="assets/images/menFashion.jpg" alt="" class="img-fluid">
               <div class="categories_text">
@@ -116,7 +112,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6 col-md-6 col-12 p-0">
+          <div class="col-lg-6 col-md-6 col-12 p-0" style="padding:0;">
             <div class="categories_item">
               <img src="assets/images/kidsFashion.jpg" alt="" class="img-fluid">
               <div class="categories_text">
@@ -126,7 +122,9 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-12 p-0">
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-12 p-0" style="padding:0;">
             <div class="categories_item">
               <img src="assets/images/cosmetics.jpg" alt="" class="img-fluid">
               <div class="categories_text">
@@ -136,7 +134,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 col-12 p-0">
+          <div class="col-lg-6 col-md-6 col-12 p-0" style="padding:0;">
             <div class="categories_item">
               <img src="assets/images/accessories.jpg" alt="" class="img-fluid">
               <div class="categories_text">
@@ -146,12 +144,12 @@
               </div>
             </div>
           </div>
+        </div> 
         </div>
       </div>
 
     </div>
-  </div>
-</section>
+</section> 
 
 
 <!-- 50% off Banner Design -->
@@ -159,7 +157,7 @@
   <div class="content">
     <h1>Get Up To 50% Off</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, animi?</p>
-    <div id="bannerbtn"><button>SHOP NOW</button></div>
+    <div id="bannerbtn" routerLink="/product-list"><button>SHOP NOW</button></div>
   </div>
 </div>
 <!--  -->
@@ -187,9 +185,11 @@
 </ngx-slick-carousel> -->
 
 <div class="middle-banner">
+
   <div class="mens-banner">
-    <img src="assets/images/men-hrx-nike.png" width="100%" height="auto">
+    <img src="assets/images/men-hrx-nike.png" width="100%" height="auto" routerLink="/tshirts">
   </div>
+
   <div class="carousel_products" style="margin-top: 20px;">
     <p-carousel [value]="products" [numVisible]="6" [numScroll]="1" [circular]="false" [autoplayInterval]="2000"
       data-interval="4000" [responsiveOptions]="responsiveOptions">
@@ -226,14 +226,13 @@
 </script>
 
 <section class="discount spad">
-  <div class="container-discount-spad">
-    <div class="row">
-      <div class="col-lg-4 p-0">
+    <div class="row" style="padding-left:10rem;">
+      <div class="col-lg-12 col-4 p-0">
         <div class="discount_pic">
           <img src="assets/images/discountMan.jpg" class="img-fluid">
         </div>
       </div>
-      <div class="col-lg-4 p-0">
+      <div class="col-lg-12 col-6 p-0">
         <div class="discount_text">
           <div class="discount_text_title">
             <span>Discount</span>
@@ -259,17 +258,17 @@
             </div>
           </div>
           <div id="countdownTimerButton">
-            <button>Buy now</button>
+            <button routerLink="/product-list"><b><strong>Buy now</strong></b></button>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </section>
 
 
 <div class="women-banner">
-  <img src="assets/images/women-banner.png" width="100%" height="auto">
+  <img src="assets/images/women-banner.png" routerLink="/women" width="100%" height="auto">
+
   <div class="carousel_products" style="margin-top: 20px;">
     <p-carousel [value]="products" [numVisible]="6" [numScroll]="1" [circular]="false" [autoplayInterval]="2000"
       data-interval="4000" [responsiveOptions]="responsiveOptions">
@@ -306,7 +305,7 @@
         <span class="text-white">Discount Up To 40%</span>
         <h2 class="mt-2 mb-4 text-white">&nbsp; Grand Sale Offer!</h2>
         <h3 class="mt-2 mb-4 text-white">On NeelShop</h3>
-        <a href="#" class="btn" routerLink="/women">Shop Now</a>
+        <a href="#" class="btn" routerLink="/top">Shop Now</a>
       </div>
     </div>
   </div>
@@ -472,7 +471,7 @@
 
 <!------------------------------------------------------------------------------------------------------------->
 
-<div class="brand ">
+<div class="brand">
   <img src="assets/images/ProductType/shop by categories.png" style="width:100%; height: auto; border: 2px solid red;">
   <div class="product_category">
     <div class="shirts">
@@ -496,7 +495,7 @@
       <h6 routerLink="/top">30-45% Off</h6>
     </div>
     <div class="blazers">
-      <img src="assets/images/brand/Blazer.jpeg" height="238" width="193" routerLink="/blazers">
+      <img src="assets/images/ProductType/Blazer.jpeg" height="238" width="193" routerLink="/blazers">
       <h5 routerLink="/blazers">Blazers</h5>
       <h6 routerLink="/blazers">Min.40% Off</h6>
     </div>

@@ -22,7 +22,7 @@
 
 
 
-<div class="checkout-final">
+<div class="checkout-final" style="border: 2px solid #fb5c42;">
 <div class="main-content page-m">
   <div class="section-content section-content-p30">
     <div class="container-fluid">
@@ -489,9 +489,9 @@
 
   <div class="text-center">
 
-    <button type="submit" class="btn btn-info" (onclick)="onSubmit()">Purchase</button>
+    <!-- <button type="submit" class="btn btn-info" (onclick)="onSubmit()">Purchase</button> -->
 
-    <button type="button" class="btn btn-info" [routerLink]="['/checkout','payment']">Payment</button>
+    <button type="button" class="btn btn-info" routerLink ='/order-summary'>Order Summary</button>
   </div>
 </div>
 

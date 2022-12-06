@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { order } from './data-types';
 import { product } from '../data-types';
 import { data } from 'jquery';
+import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
@@ -91,6 +92,20 @@ totalQuantity:Subject<number> = new BehaviorSubject<number>(0);
     this.computeCartTotals();
     // console.log(this.Cartitems.length);
     // console.log(this.Cartitems);
+    Swal.fire({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      },
+      icon:'success',
+      // background:'#e7853f',
+      title:'Product has been added Successfully'
+    })
 
   }
 

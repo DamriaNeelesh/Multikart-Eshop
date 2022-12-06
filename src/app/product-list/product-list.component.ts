@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { product } from '../data-types';
 // import swal from 'sweetalert2/dist/sweetalert2.js';
-
+import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-product-list',
@@ -25,6 +25,8 @@ export class ProductListComponent implements OnInit {
    productQuantity:number = 1;
    removeCart=false;
    cartData:product|undefined;
+   currentRate:number = 3;
+
 
   filter = {
     Men: false,
@@ -43,9 +45,9 @@ export class ProductListComponent implements OnInit {
     HRX: false,
     Mufti: false,
     Cantabil: false,
-    'Here&Now': false,
-    'Mast & Harbour': false,
-    'Dennis Lingo': false,
+    Here: false,
+    Mast: false,
+    Dennis: false,
 
   };
 
@@ -120,12 +122,12 @@ export class ProductListComponent implements OnInit {
       || (x.product_name === 'Denim' && this.filter.Denim)
       || (x.product_name === 'HIGHLANDER' && this.filter.HIGHLANDER)
       || (x.product_name === 'Levis' && this.filter.Levis)
-      || (x.product_name === 'Here&Now' && this.filter['Here&Now'])
-      || (x.product_name === 'Mast & Harbour' && this.filter['Mast & Harbour'])
+      || (x.product_name === 'Here&Now' && this.filter.Here)
+      || (x.product_name === 'Mast' && this.filter.Mast)
       || (x.product_name === 'Roadster' && this.filter.Roadster)
       || (x.product_name === 'HRX' && this.filter.HRX)
       || (x.product_name === 'Mufti' && this.filter.Mufti)
-      || (x.product_name === 'Dennis Lingo' && this.filter['DennisLingo'])
+      || (x.product_name === 'Dennis' && this.filter.Dennis)
       || (x.product_name === 'Cantabil' && this.filter.Cantabil)
       || (x.product_category_type === 'Shirt' && this.filter.Shirt)
       || (x.product_category_type === 'TShirts' && this.filter.TShirts)
@@ -143,7 +145,7 @@ export class ProductListComponent implements OnInit {
   addToCart(product: IProducts) {
     this.apiService.addToCart(product);
     console.log(`Adding to Cart: ${product.product_name} Price: Rs. ${product.product_price}`);
-    this.toastr.success('Product has been added to cart Successfully!!');
+    // this.toastr.success('Product has been added to cart Successfully!!');
     // localStorage.setItem('product',JSON.stringify(this.products));
 
   }

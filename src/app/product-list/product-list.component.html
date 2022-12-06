@@ -304,24 +304,30 @@
     <ng-container *ngFor="let product of filteredProducts">
       <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product">
-          <p class="itemdata" [routerLink]="['/products',product.product_id]" ><b style="color:black;"><strong>{{product.product_name}}</strong></b></p>
+          <span class="itemdata" [routerLink]="['/products',product.product_id]" ><b style="color:black;"><strong>{{product.product_name}}</strong></b></span>
           <a><img class="img-fluid w-100 mb-3 img-first" src="/assets/images/Men_Fashion/TShirts/{{product.product_img}}"
             [routerLink]="['/products',product.product_id]"/></a>
           <a><img class="img-fluid w-100 mb-3 img-second" src="/assets/images/Men_Fashion/TShirts/{{product.product_img2}}"
             [routerLink]="['/products',product.product_id]"></a>
-          <p class="itemdata">{{product.product_description}}</p>
-          <p><strong>Price:</strong>{{product.product_price | currency:'INR':'symbol-narrow':'4.2-2'}}</p>
-          <p>{{product.product_category}}</p>
-          
-          <button class="button" (click)="addToCart(product)">
+
+            <span class="rating" style="color: orange; font-size: 25px;">
+              <i _ngcontent-wdh-c94 class="tf-ion-android-star">{{product.product_rating}}</i>
+              <!-- <i _ngcontent-wdh-c94 class="tf-ion-android-star"></i>
+              <i _ngcontent-wdh-c94 class="tf-ion-android-star"></i>
+              <i _ngcontent-wdh-c94 class="tf-ion-android-star"></i> -->
+             </span><br>
+
+          <span class="itemdata">{{product.product_description}}</span>
+
+          <span><p><strong>Price:</strong>{{product.product_price | currency:'USD':'symbol-narrow':'4.2-2'}}</p></span>
+         
+          <span><p>{{product.product_category}}</p></span><br>
+
+         
+           <button class="animate__backOutRight button" (click)="addToCart(product)">
             <span>Add to cart</span>
-            <!-- <div class="cart">
-            <svg viewBox="0 0 36 26">
-            <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
-            <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
-            </svg>
-            </div> -->
           </button>
+        
       </div>
       </div>
     </ng-container>

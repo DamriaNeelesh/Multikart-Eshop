@@ -63,7 +63,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
 import { OAuthModule, OAuthService } from 'angular-oauth2-oidc';
 import { BeautyComponent } from './beauty/beauty.component';
 import { LoginUserComponent } from './login-user/login-user.component';
-
+ 
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
@@ -74,7 +74,11 @@ import { PaymentComponent } from './payment/payment.component';
 import { BeautyService } from './services/beauty.service';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
-
+// Angular Material Modules 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 
 @NgModule({
   declarations: [
@@ -136,13 +140,16 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     NgbCarouselModule,
     ButtonModule,
     CarouselModule,
-    
     CommonModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     ToastrModule.forRoot(),
     OAuthModule.forRoot(),
-    
+// Angular MAterial Module for Toggle Switch Manually imported
+    MatCardModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    NgxStarRatingModule
   ],
   bootstrap: [AppComponent],
 

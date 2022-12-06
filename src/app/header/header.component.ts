@@ -19,24 +19,24 @@ export class HeaderComponent implements OnInit {
   searchResult:undefined|IProducts[];
   cartItems=0;
   constructor(
-              private apiService: CartapiService,
-              private _productsService: ProductsService,
-              private router:Router) { }
-
-  products?: IProducts[];
-
-  ngOnInit(): void {
-    this.products = this._productsService.getProducts();
+    private apiService: CartapiService,
+    private _productsService: ProductsService,
+    private router:Router) { }
+    
+    products?: IProducts[];
+    
+    ngOnInit(): void {
+      this.products = this._productsService.getProducts();
     this.filterCategory = this.products;
     // Hamne wo cartApi wali service mai jo getProductData wala fxn banaya tha usme se wo totla no. wale ki length li hai kaam mai
-  
+    
     this.router.events.subscribe((val: any) => {
       if (val.url) {
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
          let sellerStore=localStorage.getItem('seller');
          let sellerData =sellerStore && JSON.parse(sellerStore)[0];
          this.sellerName=sellerData.name;
-          this.menuType = 'seller';
+         this.menuType = 'seller';
         }
         else if(localStorage.getItem('user')){
           let userStore = localStorage.getItem('user');
@@ -53,23 +53,27 @@ export class HeaderComponent implements OnInit {
     let cartData= localStorage.getItem('localCart');
     // if(cartData){
       // this.cartItems= JSON.parse(cartData).length
-    // }
-    // this.product.cartData.subscribe((items)=>{
-      // this.cartItems= items.length }) 
-  }
-
-  public filterCategory: any;
-
-  logout() {
-    localStorage.removeItem('seller');
+      // }
+      // this.product.cartData.subscribe((items)=>{
+        // this.cartItems= items.length }) 
+      }
+      
+      public filterCategory: any;
+      
+      logout() {
+        localStorage.removeItem('seller');
     this.router.navigate(['/seller-auth'])
   }
-
+  
   userLogout(){
     localStorage.removeItem('user');
     localStorage.removeItem('users');
     this.router.navigate(['/user-auth'])
     // this.product.cartData.emit([])
+  }
+
+  toggleDarkTheme(): void {
+    document.body.classList.toggle('dark-theme');
   }
 
 

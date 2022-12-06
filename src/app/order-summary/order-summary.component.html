@@ -4,16 +4,16 @@
                       <h4 class="mb-4 border-bottom pb-4" style="color: #fb5c42;"><b>Order Summary</b></h4>
 
                       <div class="media product-card">
-                          <p>Kirby Shirt</p>
+                          <h3><b>Details</b></h3>
                          <div class="media-body text-right">
-                            <p class="h5">1 x $249</p>
+                            <p class="h5"></p>
                          </div>
                       </div>
 
                       <ul class="summary-prices list-unstyled mb-4">
                          <li class="d-flex justify-content-between">
                             <span >Quantity:</span>
-                            <span class="h5">${{totalQuantity}}</span>
+                            <span class="h5">{{totalQuantity}}</span>
                          </li>
                          <li class="d-flex justify-content-between">
                             <span >Shipping:</span>
@@ -21,7 +21,7 @@
                          </li>
                          <li class="d-flex justify-content-between">
                             <span>Total</span>
-                            <span class="h5">${{totalPrice}}</span>
+                            <span class="h5">{{totalPrice | currency:'USD':'symbol-narrow':'4.2-2'}} </span>
                          </li>
                       </ul>
 
@@ -53,6 +53,19 @@
                       <div class="info mt-4 border-top pt-4 mb-5">
                          Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="#">privacy policy</a>.
                       </div>
-                      <a routerLink="/orderSuccess" class="btn btn-main btn-small">Place Order</a>
+                      <a [routerLink]="['/order-summary','/payment']" class="btn btn-main btn-small">Place Order</a>
                 </div>
+             </div>
+
+
+             <div class="col-md-6 col-lg-4">
+               <div class="shippingDetails mt-5 mt-lg-0">
+                  <h4 class="mb-4 border-bottom pb-4" style="color: #fb5c42;"><b>Shipping Details</b></h4>
+                  <div class="media product-card">
+                     <h3><b>Address</b></h3>
+                    <div class="media-body text-right">
+                       <p class="h5"></p>
+                    </div>
+                 </div>
+               </div>
              </div>

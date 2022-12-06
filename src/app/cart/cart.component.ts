@@ -57,7 +57,7 @@ export class CartComponent implements OnInit {
   incrementQuantity(product:IProducts){
         // product => theCartItem
      this.cartApi.addToCart(product);
-     this.toastr.success('Product Added Successfully');
+    //  this.toastr.success('Product Added Successfully');
 
   }
 
