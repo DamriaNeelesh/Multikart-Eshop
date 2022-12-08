@@ -23,6 +23,7 @@ export class TshirtsComponent implements OnInit {
 products: IProducts[] = [];
 filteredProducts ?: IProducts[] = [] ;
 searchText!:string;
+p: number = 1;
 
 ngOnInit(): void {
 this.products = this._productsService.getProducts();

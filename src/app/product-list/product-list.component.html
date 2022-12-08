@@ -301,7 +301,9 @@
 
 <div class="container">
   <div class="row" *ngIf="products">
-    <ng-container *ngFor="let product of filteredProducts">
+    <!-- <ng-container *ngFor="let product of products | paginate: { itemsPerPage: 12, currentPage: p }"> -->
+      <ng-container *ngFor="let product of filteredProducts">
+
       <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product">
           <span class="itemdata" [routerLink]="['/products',product.product_id]" ><b style="color:black;"><strong>{{product.product_name}}</strong></b></span>
@@ -317,7 +319,7 @@
               <i _ngcontent-wdh-c94 class="tf-ion-android-star"></i> -->
              </span><br>
 
-          <span class="itemdata">{{product.product_description}}</span>
+          <span class="itemdata">{{product.product_category}}</span>
 
           <span><p><strong>Price:</strong>{{product.product_price | currency:'USD':'symbol-narrow':'4.2-2'}}</p></span>
          
@@ -336,6 +338,8 @@
   <div *ngIf="products?.length ==0" class="alert alert-warning col-md-12" role="alert">
     No Products Found.
   </div>
+
+  <!-- <pagination-controls (pageChange)="p = $event" style="font-size: 25px;"></pagination-controls> -->
 
 </div>
 

@@ -810,7 +810,7 @@ header{
 /* Offer CSS */
 
 .offers1{
-  padding-top:8.75rem;
+  /* padding-top:8.75rem; */
 }
 .offers1 .offer-box .offer-image::before{
   position:absolute;
@@ -889,4 +889,89 @@ header{
   background-color:rgb(188, 57, 57) !important;
 }
 
+/* Popup Modal BOx Design Starts here  */
+.contentBox{
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.modal-body .imgBx{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  margin: 1rem;
+}
+.modal-body .imgBx::before{
+  content:'';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #e7ffe0;
+  border-radius: 50%;
+}
+
+.modal-body .imgBx img{
+  position: relative;
+  max-width: 250px;
+  z-index: 1;
+}
+
+.modal-body .content{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+}
+
+.modal-body .content h2{
+  color: #333;
+  line-height: 1em;
+  font-weight:300;
+  font-size: 2em;
+}
+
+.modal-body .content h3{
+  font-size: 4em;
+  color: #ff4d54;
+  line-height: 1em;
+}
+
+.modal-body .content h3 span{
+  color: #333;
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+.modal-text{
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  background: #ff4d54;
+  color: #fff;
+  margin: 15px auto;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+::ng-deep ngb-modal-backdrop {
+  z-index: 0 !important;
+}

@@ -9,7 +9,7 @@
 <!-- List of categories -->
 <div class="container">
     <div class="row" *ngIf="products"> 
-      <ng-container *ngFor="let product of products | filter : searchText | customFilter:'Top' ">
+      <ng-container *ngFor="let product of products | filter : searchText | customFilter:'Top' | paginate: { itemsPerPage: 12, currentPage: p } ">
         <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
           <div class="product">
             <p class="itemdata" [routerLink]="['/products',product.product_id]" ><b>{{product.product_name}}</b></p>
@@ -29,5 +29,8 @@
     <div *ngIf="products?.length ==0" class="alert alert-warning col-md-12" role="alert">
       No Products Found.
     </div>
+
+    <pagination-controls (pageChange)="p = $event" style="font-size: 25px;"></pagination-controls>
+
   
   </div>

@@ -64,11 +64,12 @@
 <div class="cart-section">
    <div class="prodcut-list">
       <div class="product-list"><h4 class="mb-4 border-bottom pb-4" style="color: #fb5c42;">Your Items</h4></div>
-      <div class="cart">
-         <tr *ngFor="let temCartItem of cartItems" style="padding: 10px;">
-            <td><img src="assets/images/Men_Fashion/TShirts/{{temCartItem.product_img}}" class="img-responsive" width="50px" /> </td>
-               <td><p>{{temCartItem.product_name}}</p></td>
-               <td class="mt-2">Total: {{temCartItem.product_quanity * temCartItem.product_price | currency:'INR':'symbol-narrow':'1.2-2'}}</td>                       
+      <div class="cart" style="padding: 10px; border: 2px solid black;">
+         <tr *ngFor="let temCartItem of cartItems; let i=index;" >
+               <td width="30%">{{i+1}}.<img src="assets/images/Men_Fashion/TShirts/{{temCartItem.product_img}}" class="img-responsive" width="80px" style="padding: 10px;" /> </td>
+               <td width="30%"><p>{{temCartItem.product_name}}</p></td>
+               <td width="30%"><p>Quantity:{{temCartItem.product_quanity}}</p></td>
+               <td width="30" class="mt-2">Total: {{temCartItem.product_quanity * temCartItem.product_price | currency:'INR':'symbol-narrow':'1.2-2'}}</td>                       
          </tr>
       </div>
    </div>

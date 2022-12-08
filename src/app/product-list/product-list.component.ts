@@ -60,6 +60,9 @@ export class ProductListComponent implements OnInit {
   searchMode:boolean | undefined;
   selectedProduct;
   theKeyword?:string | null; 
+  // pageOfItems?:Array<any>;
+
+  p: number = 1;
 
   constructor(private apiService: CartapiService,
     private _productsService: ProductsService,
@@ -73,6 +76,7 @@ export class ProductListComponent implements OnInit {
     this.products = this._productsService.getProducts();
     this.filteredProducts = this._productsService.getProducts();
     
+    // this.filteredProducts = Array(126).fill(0).map((x,i)=>({product_id:(i+1),product_name:'',product_category:'',product_category_type:'',product_price:'',product_quanity:'',product_rating:'',product_description:'',product_img:'',product_img2:''}));
   }
 
   

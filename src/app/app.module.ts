@@ -74,11 +74,15 @@ import { PaymentComponent } from './payment/payment.component';
 import { BeautyService } from './services/beauty.service';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
+// Angular Pagination
+import { JwPaginationComponent } from 'jw-angular-pagination';
+
 // Angular Material Modules 
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { NgxStarRatingModule } from 'ngx-star-rating';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -125,7 +129,8 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
      UserAuthComponent,
      PaymentComponent,
      BeautyComponent,
-     OrderSummaryComponent
+     OrderSummaryComponent,
+     
   ],
   imports: [
     BrowserModule,
@@ -149,7 +154,9 @@ import { NgxStarRatingModule } from 'ngx-star-rating';
     MatCardModule,
     MatSlideToggleModule,
     MatToolbarModule,
-    NgxStarRatingModule
+    NgxStarRatingModule,
+    NgxPaginationModule,
+    
   ],
   bootstrap: [AppComponent],
 

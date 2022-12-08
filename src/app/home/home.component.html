@@ -46,6 +46,33 @@
 
 
 
+<button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)" >Open My Modal</button>
+<!-- Remember to minimize the z-index of the container taaki iske popup ke upr click cross work kar paae -->
+<ng-template style="z-index:0; width: 50%;" #mymodal let-modal >
+  <div class="modal-header" style="background-color:#fb5c42;">
+    <h4 class="modal-title" id="modal-basic-title">Welcome To NeelShop</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body" >
+    <div class="imgBx">
+      <img src="assets/images/gift.png">
+    </div>
+    <div class="content">
+      <div>
+      <h2>Special Offer</h2>
+      <h3>Upto. 50<sup>%</sup><span>Off</span></h3>
+    </div>
+    </div>
+  </div>
+  <p class="modal-text">Big Billion Winter Sale HURRY UP!!!</p>
+  <a class="modal-button" href="">Get The Deal Right Now</a>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+  </div>
+</ng-template>
+
 <!-- <div class="offer">
   <img  claa="rotate" src="assets/images/circle.jpg" width="170px">
     <div class="off">
@@ -70,7 +97,7 @@
 
 <div class="wrapper">
   <h1 aria-label="Hi! I'm a developer">
-    Hi! I'm  &nbsp;<span class="typewriter"></span>
+    Hi! I'm &nbsp;<span class="typewriter"></span>
   </h1>
 </div>
 
@@ -85,7 +112,7 @@
 
 <!-- New Second header design below home poage  -->
 
- <section class="categories">
+<section class="categories">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6 p-0">
@@ -144,12 +171,12 @@
               </div>
             </div>
           </div>
-        </div> 
         </div>
       </div>
-
     </div>
-</section> 
+
+  </div>
+</section>
 
 
 <!-- 50% off Banner Design -->
@@ -226,42 +253,42 @@
 </script>
 
 <section class="discount spad">
-    <div class="row" style="padding-left:10rem;">
-      <div class="col-lg-12 col-4 p-0">
-        <div class="discount_pic">
-          <img src="assets/images/discountMan.jpg" class="img-fluid">
-        </div>
+  <div class="row" style="padding-left:10rem;">
+    <div class="col-lg-12 col-4 p-0">
+      <div class="discount_pic">
+        <img src="assets/images/discountMan.jpg" class="img-fluid">
       </div>
-      <div class="col-lg-12 col-6 p-0">
-        <div class="discount_text">
-          <div class="discount_text_title">
-            <span>Discount</span>
-            <h2>Winter 2020</h2>
-            <h5><span>Sale</span> 60% OFF</h5>
+    </div>
+    <div class="col-lg-12 col-6 p-0">
+      <div class="discount_text">
+        <div class="discount_text_title">
+          <span>Discount</span>
+          <h2>Winter 2020</h2>
+          <h5><span>Sale</span> 60% OFF</h5>
+        </div>
+        <div class="discount_countdown" id="countdown-time">
+          <div class="countdown_item">
+            <span id="days"> {{daysToDday}} </span>
+            <p>Day</p>
           </div>
-          <div class="discount_countdown" id="countdown-time">
-            <div class="countdown_item">
-              <span id="days"> {{daysToDday}} </span>
-              <p>Day</p>
-            </div>
-            <div class="countdown_item">
-              <span id="hours">{{hoursToDday}} </span>
-              <p>Hour</p>
-            </div>
-            <div class="countdown_item">
-              <span id="minutes">{{minutesToDday}}</span>
-              <p>Min</p>
-            </div>
-            <div class="countdown_item">
-              <span id="seconds">{{secondsToDday}}</span>
-              <p>Sec</p>
-            </div>
+          <div class="countdown_item">
+            <span id="hours">{{hoursToDday}} </span>
+            <p>Hour</p>
           </div>
-          <div id="countdownTimerButton">
-            <button routerLink="/product-list"><b><strong>Buy now</strong></b></button>
+          <div class="countdown_item">
+            <span id="minutes">{{minutesToDday}}</span>
+            <p>Min</p>
+          </div>
+          <div class="countdown_item">
+            <span id="seconds">{{secondsToDday}}</span>
+            <p>Sec</p>
           </div>
         </div>
+        <div id="countdownTimerButton">
+          <button routerLink="/product-list"><b><strong>Buy now</strong></b></button>
+        </div>
       </div>
+    </div>
   </div>
 </section>
 
@@ -275,7 +302,7 @@
       <ng-template pTemplate="header">
         <h3><b> Women's Products </b></h3>
       </ng-template>
-      <ng-template let-products pTemplate="item">
+      <ng-template let-products pTemplate="item" ; let i=index; i=i+25 ;>
         <div class="product-item2">
           <div class="product-item-content">
             <div class="p-mb-3">
@@ -316,7 +343,7 @@
 
 
 <img src="assets/images/headers/brandAtSlashedPrice.png" height="150px">
-<div class="hbrand">
+<div class="hbrand" style="cursor: pointer;">
   <div class="highlander">
     <img src="assets/images/brand/highlander.jpg" height="238" width="217.5" routerLink="/highlander">
     <h5 routerLink="/highlander">Highlander</h5>
@@ -379,11 +406,56 @@
   </div>
 </div>
 
+<!-- Free Shipping / Support / Delivery -->
+
+<section class="features border-top" style="border: 2px solid #fb5c42; padding-top: 2px;">
+  <div class="container_featured">
+    <div class="row">
+      <div class="col-lg-3 col-sm-6 col-md-6">
+        <div class="feature-block">
+          <i class="tf-ion-android-bicycle"></i>
+          <div class="content">
+            <h5>Free Shipping</h5>
+            <p>On all order over $39.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-md-6">
+        <div class="feature-block">
+          <i class="tf-wallet"></i>
+          <div class="content">
+            <h5>30 Days Return</h5>
+            <p>Money back Guarantee</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-md-6">
+        <div class="feature-block">
+          <i class="tf-key"></i>
+          <div class="content">
+            <h5>Secure Checkout</h5>
+            <p>100% Protected by paypal</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 col-md-6">
+        <div class="feature-block">
+          <i class="tf-clock"></i>
+          <div class="content">
+            <h5>24/7 Support</h5>
+            <p>All time customer support </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- ----Animated Product Category ----------->
 
-<div class="offers1">
-  <div class="containerOffer">
+<div class="offers1" style="padding-top: 10px;">
+  <div class="containerOffer" style="padding: 10px;">
     <div class="row" style="width:80%; display: flex; margin-left: auto; margin-right: auto;">
       <!-- Offer Box One -->
       <div class="col-sm-6 col-lg-4 mb-lg-0 mb-4">
@@ -474,27 +546,27 @@
 <div class="brand">
   <img src="assets/images/ProductType/shop by categories.png" style="width:100%; height: auto; border: 2px solid red;">
   <div class="product_category">
-    <div class="shirts">
+    <div class="shirts" style="cursor: pointer;">
       <img src="assets/images/ProductType/Shirt.jpeg" height="238" width="193" routerLink="/shirts">
       <h5 routerLink="/shirts">Shirts</h5>
       <h6 routerLink="/shirts">Min.40% Off</h6>
     </div>
-    <div class="tshirts">
+    <div class="tshirts" style="cursor: pointer;">
       <img src="assets/images/ProductType/Tshirt.jpeg" height="238" width="193" routerLink="/tshirts">
       <h5 routerLink="/tshirts">T-Shirts</h5>
       <h6 routerLink="/tshirts">Upto 60% Off</h6>
     </div>
-    <div class="jackets">
+    <div class="jackets" style="cursor: pointer;">
       <img src="assets/images/ProductType/Jacket.jpeg" height="238" width="193" routerLink="/jackets">
       <h5 routerLink="/jackets">Jackets</h5>
       <h6 routerLink="/jackets">Min.50% Off</h6>
     </div>
-    <div class="top">
+    <div class="top" style="cursor: pointer;">
       <img src="assets/images/ProductType/Top.jpeg" height="238" width="193" routerLink="/top">
       <h5 routerLink="/top">Top</h5>
       <h6 routerLink="/top">30-45% Off</h6>
     </div>
-    <div class="blazers">
+    <div class="blazers" style="cursor: pointer;">
       <img src="assets/images/ProductType/Blazer.jpeg" height="238" width="193" routerLink="/blazers">
       <h5 routerLink="/blazers">Blazers</h5>
       <h6 routerLink="/blazers">Min.40% Off</h6>
@@ -537,7 +609,7 @@
 
 <!-- ===-------------------------------------------------------------------------------------------------------------------------------------- -->
 
-<div class="dealsOnTopBrands">
+<div class="dealsOnTopBrands" style="cursor: pointer;">
   <img src="assets/images/topBrands/dealsOnTopBrands.png" style="width:100%; height: auto; border: 2px solid red;">
   <div class="hereNow">
     <img src="assets/images/topBrands/here&now.png" routerLink="/here" width="227.85px" height="338px">
