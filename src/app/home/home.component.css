@@ -7,6 +7,13 @@
   position: relative;
 }
 
+.product_category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+ }
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 html, body {
   height: 100%;
@@ -349,13 +356,10 @@ header{
  }  */
 
  .product_category :after{
-  content: '';
-  position: absolute;
   background: linear-gradient(60deg,#f79533,#f37055,#ef4e7b,#a166ab,#5073b8,#1098ad,#07b39b,#6fba82);
   border-radius: calc(2 * 10px);
   z-index: -1;
   animation: animate 3s ease alternate infinite;
-  background-size: 300% 300%;
  }
 
 
@@ -366,14 +370,8 @@ header{
     /* padding:3px;  */
     margin:2px;
     text-align: center;
-    display:inline-block; 
+    /* display:inline-block;  */
     
-}
-
-.brand .product_category{
-  display:block;
-    width:100%;
-    height:100%;
 }
 
 
@@ -445,6 +443,8 @@ header{
   width: 100vw;
   height: 12.5vw;
  }
+
+ 
 
 
  /* ----------------------------------------Animation Sale Circle---------------------------------------- */

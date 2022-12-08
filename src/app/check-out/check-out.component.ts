@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormService } from '../services/form.service';
 import { Country } from '../models/country.model';
@@ -22,7 +22,8 @@ import Swal from 'sweetalert2';
 export class CheckOutComponent implements OnInit {
 
 
-  checkoutFormGroup!: FormGroup;  // Use of Safe Navigation bt using '?' and '!'
+@Input() checkoutFormGroup!: FormGroup;  // Use of Safe Navigation bt using '?' and '!'
+
   totalPrice: number = 0;
   totalQuantity: number=0;
   creditCardYears:number[]=[];
@@ -46,7 +47,8 @@ export class CheckOutComponent implements OnInit {
               private cartApi:CartapiService,
               private toastr:ToastrService,
               private checkoutService:CheckoutService,
-              private router:Router) { }
+              private router:Router
+              ) { }
 
   ngOnInit(): void {
 
@@ -182,18 +184,17 @@ export class CheckOutComponent implements OnInit {
   }
 
   onSubmit(){
-
-      // Now we will get the customer data from the checkoutFormGroup
+    // Now we will get the customer data from the checkoutFormGroup
     // We can Also modify according to our need to get the customer responses
     console.log(this.checkoutFormGroup.get('customer')?.value); // we have to use the dsafe navigation to target the customer in the form group to avoid the 'null Object' error
     console.log("email: "+ this.checkoutFormGroup.get('customer')?.value.email); // We will get the user's email Id
     console.log("The Shipping Country,State and City is"+ this.checkoutFormGroup.get('this.shippingAddressCountry') + this.checkoutFormGroup.get('this.shippingAddressState') + this.checkoutFormGroup.get('this.shippingAddressCity'))
  
 // Touching all fields triggers the display of the error messages
-    // if(this.checkoutFormGroup.invalid){
-    //   this.checkoutFormGroup.markAllAsTouched();
-    //   return;
-    // }
+    if(this.checkoutFormGroup.invalid){
+      this.checkoutFormGroup.markAllAsTouched();
+      return;
+    }
 
     // Set up Order
     let order = new Order(this.totalQuantity, this.totalPrice);

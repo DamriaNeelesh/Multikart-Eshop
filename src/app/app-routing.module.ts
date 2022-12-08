@@ -59,8 +59,9 @@ const routes: Routes = [
   {path:"blog/:id",component:BlogPostComponent},
   {path:"search/:keyword",component:ProductListComponent},
   {path:"order-summary/:payment",component:PaymentGatewayComponent},
-  {path:"payment",component:PaymentComponent},
   {path:'order-history',component:OrderHistoryComponent},
+
+
   {path:'order-summary',component:OrderSummaryComponent},
  
   {path:'login',component:LoginComponent},

@@ -1,5 +1,13 @@
+body {
+  background-image: url(/assets/images/background5.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
 .main-content.page-m{
-  padding: 10% 30% 10% 5%;
+  padding: 6rem 0;
 }
 
 .form-area{
@@ -113,4 +121,16 @@ select{
 .product-checkout-details{
   margin:10px;
   padding: 10px 10px 10px 10px;
+}
+/* yahan  se form ko hsndle kiya */
+form {
+  width: 60%;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
 }

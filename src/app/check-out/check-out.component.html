@@ -22,7 +22,7 @@
 
 
 
-<div class="checkout-final" style="border: 2px solid #fb5c42;">
+<!-- <div class="checkout-final" style="border: 2px solid #fb5c42;"> -->
 <div class="main-content page-m">
   <div class="section-content section-content-p30">
     <div class="container-fluid">
@@ -30,13 +30,13 @@
 
         <!-- customer form group -->
         <div formGroupName="customer" class="form-area">
-          <h3>Customer</h3>
+          <h3>Customer <i class="fa fa-user"></i></h3>
 
           <div class="row">
             <div class="col-md-2"><label>First Name</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="firstName" type="text">
+                <input formControlName="firstName" type="text" placeholder="ex: Ronny">
 
                 <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)"
                   class="alert alert-danger mt-1">
@@ -57,7 +57,7 @@
             <div class="col-md-9">
 
               <div class="input-space">
-                <input formControlName="lastName" type="text">
+                <input formControlName="lastName" type="text" placeholder="ex: Warne (surname)">
 
                 <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)"
                   class="alert alert-danger mt-1">
@@ -76,11 +76,11 @@
 
 
           <div class="row">
-            <div class="col-md-2"><label>Email</label></div>
+            <div class="col-md-2"><label>Email</label>&nbsp;<i class="fa fa-envelope"></i></div>
             <div class="col-md-9">
 
               <div class="input-space">
-                <input formControlName="email" type="text">
+                <input formControlName="email" type="text" placeholder="example@gmail.com">
 
                 <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger mt-1">
                   <div *ngIf="email?.errors?.['required']">
@@ -99,11 +99,11 @@
 
         <!-- Shipping Address -->
         <div formGroupName="shippingAddress" class="form-area">
-          <h3>Shipping Address</h3>
+          <h3>Shipping Address &nbsp;<i class="fa fa-address-card-o"></i></h3>
 
           <!-- Country -->
           <div class="row">
-            <div class="col-md-2"><label>Country</label></div>
+            <div class="col-md-2"><label>Country</label>&nbsp; &nbsp;<i class="fa fa-globe"></i></div>
             <div class="col-md-9">
               <div class="input-space">
                 <select formControlName="country" [(ngModel)]="countrySelected"
@@ -128,7 +128,7 @@
 
           <!-- State  -->
           <div class="row">
-            <div class="col-md-2"><label>State</label></div>
+            <div class="col-md-2"><label>State</label><i class="fa-solid fa-building-columns"></i></div>
             <div class="col-md-9">
               <div class="input-space">
                 <select formControlName="state" [(ngModel)]="selectedState" (ngModelChange)="onStateSelected()">
@@ -153,8 +153,8 @@
 
           <!-- City -->
           <div class="row">
-            <div class="col-md-2"><label>City</label></div>
-            <div class="col-md-9">
+            <div class="col-md-2"><label>City</label>&nbsp; &nbsp;</div>
+            <div class="col-md-9"><i class="far fa-city"></i>
               <div class="input-space">
                 <select formControlName="city" type="text">
                   <option *ngFor="let city of listCity" [value]="city.id">
@@ -183,7 +183,7 @@
             <div class="col-md-9">
 
               <div class="input-space">
-                <input formControlName="street" type="text">
+                <input formControlName="street" type="text" placeholder="ex: A-12 Times Colony">
 
                 <div
                   *ngIf="shippingAddressStreet?.invalid && (shippingAddressStreet?.dirty || shippingAddressStreet?.touched)"
@@ -203,7 +203,7 @@
             <div class="col-md-9">
 
               <div class="input-space">
-                <input formControlName="zipCode" type="text">
+                <input formControlName="zipCode" type="text" placeholder="ex: 324001">
                 <div
                   *ngIf="shippingAddressZipCode?.invalid && (shippingAddressZipCode?.dirty || shippingAddressZipCode?.touched)"
                   class="alert alert-danger mt-1">
@@ -231,11 +231,11 @@
 
         <!-- Billing Address -->
         <div formGroupName="billingAddress" class="form-area">
-          <h3>Billing Address</h3>
+          <h3>Billing Address &nbsp; <i class="fa fa-address-book"></i></h3>
 
           <!-- Country -->
           <div class="row">
-            <div class="col-md-2"><label>Country</label></div>
+            <div class="col-md-2"><label>Country</label>&nbsp; &nbsp;<i class="fa fa-globe"></i></div>
             <div class="col-md-9">
               <div class="input-space">
                 <select formControlName="country" [(ngModel)]="countrySelected"
@@ -287,7 +287,7 @@
 
           <!-- City -->
           <div class="row">
-            <div class="col-md-2"><label>City</label></div>
+            <div class="col-md-2"><label>City</label>&nbsp; &nbsp;<i class="fas fa-city"></i></div>
             <div class="col-md-9">
               <div class="input-space">
                 <select formControlName="city" type="text">
@@ -315,7 +315,7 @@
             <div class="col-md-2"> <label>Street</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="street" type="text">
+                <input formControlName="street" type="text" placeholder="ex: A-12 Times Colony">
 
                 <div
                   *ngIf="billingAddressStreet?.invalid && (billingAddressStreet?.dirty || billingAddressStreet?.touched)"
@@ -337,7 +337,7 @@
             <div class="col-md-2"> <label>Zip Code</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="zipCode" type="text">
+                <input formControlName="zipCode" type="text" placeholder="ex: 324001"> 
 
                 <div
                   *ngIf="billingAddressZipCode?.invalid && (billingAddressZipCode?.dirty || billingAddressZipCode?.touched)"
@@ -364,10 +364,10 @@
 
         <!--Credit Card Info  -->
         <div formGroupName="creditCard" class="form-area">
-          <h3>Credit Card</h3>
+          <h3>Credit Card <i class="fa fa-credit-card"></i></h3>
 
           <div class="row">
-            <div class="col-md-2"> <label>Card Type</label></div>
+            <div class="col-md-2"> <label>Card Type</label><i class="fa fa-cards-blank"></i></div>
             <div class="col-md-9">
               <div class="input-space">
                 <select formControlName="cardType">
@@ -392,7 +392,7 @@
             <div class="col-md-2"> <label>Name on Card</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="nameOnCard" type="text">
+                <input formControlName="nameOnCard" type="text" placeholder="ex: Ronny Warne">
 
                 <div
                   *ngIf="creditCardNameOnCard?.invalid && (creditCardNameOnCard?.dirty || creditCardNameOnCard?.touched)"
@@ -416,7 +416,7 @@
             <div class="col-md-2"> <label>Card Number</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="cardNumber" type="text">
+                <input formControlName="cardNumber" type="text" placeholder="1111-2222-3333-4444">
 
                 <div *ngIf="creditCardNumber?.invalid && (creditCardNumber?.dirty || creditCardNumber?.touched)"
                   class="alert alert-danger mt-1">
@@ -435,7 +435,7 @@
             <div class="col-md-2"> <label>CVV</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="securityCode" type="text">
+                <input formControlName="securityCode" type="text" placeholder="123">
 
                 <div
                   *ngIf="creditCardSecurityCode?.invalid && (creditCardSecurityCode?.dirty || creditCardSecurityCode?.touched)"
@@ -484,21 +484,152 @@
         </div>
 
       </form>
+      <section class="products-list">
+        <div class="container">
+          <div class="row" style="padding:0; display: flex; flex-direction: column; ">
+      
+            <div class="">
+              <div class="widget-featured-entries mt-5 mt-lg-0">
+                <h4 class="mb-4 pb-3">Best selllers</h4>
+      
+                <div class="media mb-3">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/Men_Fashion/TShirts/28.1.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/shirts"><a href="#"><b><strong>Trendy Shirts</strong></b></a></h6>
+                    <p class="featured-entry-meta">Starts at $10.99</p>
+                    <h6 class="viewProduct" routerLink="" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Products</h6>
+                  </div>
+                </div>
+      
+                <div class="media mb-3">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/Men_Fashion/TShirts/12.1.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/tshirts"><a href="#"><b><strong>New Collection T-Shirts</strong></b></a></h6>
+                    <p class="featured-entry-meta">Starts at $9.99</p>
+                    <h6 class="viewProduct" routerLink="" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Products</h6>
+                  </div>
+                </div>
+      
+                <div class="media mb-3">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/Men_Fashion/TShirts/62.1.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/blazers"><a href="#"><b><strong>Blazers for Women</strong></b></a></h6>
+                    <p class="featured-entry-meta">40% Off</p>
+                    <h6 class="viewProduct" routerLink="" style="cursor: pointer; color: #fb5c42; font-size: 15px;">View Products</h6>
+
+                  </div>
+                </div>
+      
+                <div class="media mb-3">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/Men_Fashion/TShirts/84.2.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/top"><a href="#"><b><strong>Trendy Tops</strong></b></a></h6>
+                    <p class="featured-entry-meta">$15.99 Onwards</p>
+                    <h6 class="viewProduct" routerLink="" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Products</h6>
+                  </div>
+                </div>
+      
+                <div class="media">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/Men_Fashion/TShirts/108.2.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/jackets"><a href="#"><b><strong>Latest Jackets</strong></b></a></h6>
+                    <p class="featured-entry-meta">Starting from $20.99</p>
+                    <h6 class="viewProduct" routerLink="" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Product</h6>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <div class="">
+              <div class="widget-featured-entries mt-5 mt-lg-0">
+                <h4 class="mb-4 pb-3">New Arrivals Brands</h4>
+      
+                <div class="media mb-3">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/p-7.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/zara"><a href="#"><b><strong>ZARA</strong></b></a></h6>
+                    <p class="featured-entry-meta">from $20.99 Onwards</p>
+                    <h6 class="viewProduct" routerLink="/zara" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Store</h6>
+                  </div>
+                </div>
+      
+                <div class="media mb-3">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/p-8.jpg" alt="Product thumb" width="64" class="img-fluid mr-3"></a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/denim"><a href="#"><b><strong>Denim</strong></b></a></h6>
+                    <p class="featured-entry-meta">Upto. $10.99</p>
+                    <h6 class="viewProduct" routerLink="/zara" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Store</h6>
+                  </div>
+                </div>
+      
+                <div class="media mb-3">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/p-1.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/mufti"><a href="#"><b><strong>Mufti</strong></b></a></h6>
+                    <p class="featured-entry-meta">50% Off.</p>
+                    <h6 class="viewProduct" routerLink="/zara" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Store</h6>
+                  </div>
+                </div>
+      
+                <div class="media mb-3">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/p-2.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/highlander"><a href="#"><b><strong>Highlander</strong></b></a></h6>
+                    <p class="featured-entry-meta">Starting from $10.99</p>
+                    <h6 class="viewProduct" routerLink="/zara" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Store</h6>
+                  </div>
+                </div>
+      
+                <div class="media">
+                  <a class="featured-entry-thumb" href="#">
+                    <img src="assets/images/p-4.jpg" alt="Product thumb" width="64" class="img-fluid mr-3">
+                  </a>
+                  <div class="media-body">
+                    <h6 class="featured-entry-title mb-0" routerLink="/here&Now"><a href="#"><b><strong>Here&Now</strong></b></a></h6>
+                    <p class="featured-entry-meta">$10.60 Off.</p>
+                    <h6 class="viewProduct" routerLink="/zara" style="cursor: pointer; color: #fb5c42;  font-size: 15px;">View Store</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 
   <div class="text-center">
-
-    <!-- <button type="submit" class="btn btn-info" (onclick)="onSubmit()">Purchase</button> -->
-
-    <button type="button" class="btn btn-info" routerLink ='/order-summary'>Order Summary</button>
+    <button type="button" class="btn btn-info" routerLink='/order-summary'>Order Summary</button>
   </div>
 </div>
 
 
+<!-- New Arrival Jo checkout ke bagal mai hoga for shop More  -->
+
+
+
 
 <!-- Order sidebar Summery -->
-<div class="col-md-6 col-lg-4">
+<!-- <div class="col-md-6 col-lg-4">
   <div class="product-checkout-details mt-5 mt-lg-0">
     <h4 class="mb-4 border-bottom pb-4">Order Summary</h4>
 
@@ -555,8 +686,8 @@
       Your personal data will be used to process your order, support your experience throughout this website, and for
       other purposes described in our <a href="#">privacy policy</a>.
     </div>
-    <a routerLink="/checkout" class="btn btn-main btn-small">Place Order</a>
+    <a routerLink="['/checkout','/order-summary]" class="btn btn-main btn-small">Place Order</a>
   </div>
-</div>
+</div> -->
 
-</div>
+<!-- </div> -->
