@@ -19,6 +19,9 @@
           <a><img class="img-fluid w-100 mb-3 img-second"
               src="/assets/images/Men_Fashion/TShirts/{{product.product_img2}}"
               [routerLink]="['/products',product.product_id]"></a>
+              <span class="rating" style="color: orange; font-size: 25px;">
+                <i _ngcontent-wdh-c94 class="tf-ion-android-star">{{product.product_rating}}</i>
+               </span><br>
           <p class="itemdata" ><b><strong>{{product.product_description}}</strong></b></p>
           <p><strong>Price:</strong>{{product.product_price | currency:'INR':'symbol-narrow':'4.2-2'}}</p>
           <!-- <p>{{product.product_category}}</p> -->

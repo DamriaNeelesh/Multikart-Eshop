@@ -306,31 +306,19 @@
 
       <div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5">
         <div class="product">
-          <span class="itemdata" [routerLink]="['/products',product.product_id]" ><b style="color:black;"><strong>{{product.product_name}}</strong></b></span>
+          <p class="itemdata" [routerLink]="['/products',product.product_id]" ><strong><b style="color:black;">{{product.product_name}}</b></strong></p>
           <a><img class="img-fluid w-100 mb-3 img-first" src="/assets/images/Men_Fashion/TShirts/{{product.product_img}}"
             [routerLink]="['/products',product.product_id]"/></a>
           <a><img class="img-fluid w-100 mb-3 img-second" src="/assets/images/Men_Fashion/TShirts/{{product.product_img2}}"
             [routerLink]="['/products',product.product_id]"></a>
-
             <span class="rating" style="color: orange; font-size: 25px;">
               <i _ngcontent-wdh-c94 class="tf-ion-android-star">{{product.product_rating}}</i>
-              <!-- <i _ngcontent-wdh-c94 class="tf-ion-android-star"></i>
-              <i _ngcontent-wdh-c94 class="tf-ion-android-star"></i>
-              <i _ngcontent-wdh-c94 class="tf-ion-android-star"></i> -->
              </span><br>
-
-          <span class="itemdata">{{product.product_category}}</span>
-
-          <span><p><strong>Price:</strong>{{product.product_price | currency:'USD':'symbol-narrow':'4.2-2'}}</p></span>
-         
-          <span><p>{{product.product_category}}</p></span><br>
-
-         
-           <button class="animate__backOutRight button" (click)="addToCart(product)">
-            <span>Add to cart</span>
-          </button>
-        
-      </div>
+          <p class="itemdata">{{product.product_description}}</p>
+          <p style="color:black;"><strong>Price:</strong>{{product.product_price | currency:'INR':'symbol-narrow':'4.2-2'}}</p>
+          <p>{{product.product_category}}</p>
+          <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+        </div>
       </div>
     </ng-container>
   </div>

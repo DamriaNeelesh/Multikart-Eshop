@@ -83,6 +83,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -130,6 +131,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
      PaymentComponent,
      BeautyComponent,
      OrderSummaryComponent,
+     AboutUsComponent,
      
   ],
   imports: [

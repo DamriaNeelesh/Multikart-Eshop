@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { AuthGuard } from './auth.guard';
 import { BagComponent } from './bag/bag.component';
 import { BeautyComponent } from './beauty/beauty.component';
@@ -60,6 +61,7 @@ const routes: Routes = [
   {path:"search/:keyword",component:ProductListComponent},
   {path:"order-summary/:payment",component:PaymentGatewayComponent},
   {path:'order-history',component:OrderHistoryComponent},
+  {path:'aboutUs',component:AboutUsComponent},
 
 
   {path:'order-summary',component:OrderSummaryComponent},

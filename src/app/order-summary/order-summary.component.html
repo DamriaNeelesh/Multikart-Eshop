@@ -1,8 +1,7 @@
-
 <!-- Order sidebar Summery -->
 <section class="order-summary">
 
-<div class="product-checkout-details mt-5 mt-lg-0">
+   <div class="product-checkout-details mt-5 mt-lg-0">
       <h4 class="mb-4 border-bottom pb-4" style="color: #fb5c42;"><b>Order Summary</b></h4>
 
       <div class="media product-card">
@@ -14,11 +13,11 @@
 
       <ul class="summary-prices list-unstyled mb-4">
          <li class="d-flex justify-content-between">
-            <span >Quantity:</span>
+            <span>Quantity:</span>
             <span class="h5">{{totalQuantity}}</span>
          </li>
          <li class="d-flex justify-content-between">
-            <span >Shipping:</span>
+            <span>Shipping:</span>
             <span class="h5">Free</span>
          </li>
          <li class="d-flex justify-content-between">
@@ -29,65 +28,81 @@
 
       <form action="#">
          <div class="form-check mb-3">
-         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-         <label class="form-check-label" for="exampleRadios1">
-            Direct bank transfer
-         </label>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+               checked>
+            <label class="form-check-label" for="exampleRadios1">
+               Direct bank transfer
+            </label>
 
-         <div class="alert alert-secondary mt-3" role="alert">
-            Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+            <div class="alert alert-secondary mt-3" role="alert">
+               Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your
+               order will not be shipped until the funds have cleared in our account.
             </div>
          </div>
 
          <div class="form-check mb-3">
-         <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-         <label class="form-check-label" for="exampleRadios2">
-            Check payments
-         </label>
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+               Check payments
+            </label>
          </div>
 
          <div class="form-check mb-3">
             <input type="checkbox" class="form-check-input" id="exampleCheck3">
-            <label class="form-check-label" for="exampleCheck3">I have read and agree to the website terms and conditions *</label>
+            <label class="form-check-label" for="exampleCheck3">I have read and agree to the website terms and
+               conditions *</label>
          </div>
       </form>
 
       <div class="info mt-4 border-top pt-4 mb-5">
-         Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="#">privacy policy</a>.
+         Your personal data will be used to process your order, support your experience throughout this website, and for
+         other purposes described in our <a href="#">privacy policy</a>.
       </div>
       <a [routerLink]="['/order-summary','/payment']" class="btn btn-main btn-small">Place Order</a>
-</div>
-
-
-<div class="cart-list">
-
-<div class="cart-section">
-   <div class="prodcut-list">
-      <div class="product-list"><h4 class="mb-4 border-bottom pb-4" style="color: #fb5c42;">Your Items</h4></div>
-      <div class="cart" style="padding: 10px; border: 2px solid black;">
-         <tr *ngFor="let temCartItem of cartItems; let i=index;" >
-               <td width="30%">{{i+1}}.<img src="assets/images/Men_Fashion/TShirts/{{temCartItem.product_img}}" class="img-responsive" width="80px" style="padding: 10px;" /> </td>
-               <td width="30%"><p>{{temCartItem.product_name}}</p></td>
-               <td width="30%"><p>Quantity:{{temCartItem.product_quanity}}</p></td>
-               <td width="30" class="mt-2">Total: {{temCartItem.product_quanity * temCartItem.product_price | currency:'INR':'symbol-narrow':'1.2-2'}}</td>                       
-         </tr>
-      </div>
    </div>
-</div>
 
-<div class="shippingDetails mt-5 mt-lg-0">
-   
-   <h4 class="mb-4 border-bottom pb-4" style="color: #fb5c42;"><b>Shipping Details</b></h4>
-   <div class="media product-card">
-         <!-- <app-check-out></app-check-out> -->
-      <!-- <h2><b>Customer Name:</b>{{customer}}</h2>
+
+   <div class="cart-list">
+
+      <div class="cart-section">
+         <div class="prodcut-list">
+            <div class="product-list">
+               <h4 class="mb-4 border-bottom pb-4" style="color: #fb5c42;">Your Items</h4>
+            </div>
+            <div class="cart" style="padding: 10px; border: 2px solid black;">
+               <tr *ngFor="let temCartItem of cartItems; let i=index;">
+                  <td width="30%">{{i+1}}.<img src="assets/images/Men_Fashion/TShirts/{{temCartItem.product_img}}"
+                        class="img-responsive" width="80px" style="padding: 10px;" /> </td>
+                  <td width="30%">
+                     <p>{{temCartItem.product_name}}</p>
+                  </td>
+                  <td width="30%">
+                     <p>Quantity:{{temCartItem.product_quanity}}</p>
+                  </td>
+                  <td width="30" class="mt-2">Total: {{temCartItem.product_quanity * temCartItem.product_price |
+                     currency:'INR':'symbol-narrow':'1.2-2'}}</td>
+               </tr>
+            </div>
+         </div>
+         <div class="btnEdits" style="margin:10px; padding:10px; display: flex;" >
+            <a routerLink="/cart" class="btn btn-main btn-small" style="margin-right:20px ;">Go To Cart</a>
+            <a routerLink="/home" class="btn btn-main btn-small">Shop More</a>
+         </div>
+      </div>
+
+      <div class="shippingDetails mt-5 mt-lg-0">
+
+         <h4 class="mb-4 border-bottom pb-4" style="color: #fb5c42;"><b>Shipping Details</b></h4>
+         <div class="media product-card">
+            <!-- <app-check-out></app-check-out> -->
+            <!-- <h2><b>Customer Name:</b>{{customer}}</h2>
       <h3><b>Shipping Address:</b>{{shippingAddressCountry}}</h3>
       <h3><b>Shipping State:</b>{{shippingAddressState}}</h3>
       <h4><b>Shipping City:</b>{{shippingAddressCity}}</h4> -->
-      <div class="media-body text-right">
-         <p class="h5"></p>
+            <div class="media-body text-right">
+               <p class="h5"></p>
+            </div>
+         </div>
       </div>
    </div>
-</div>
-</div>
 </section>
