@@ -1,6 +1,6 @@
 .main input:active .custom-control-input {
   background-color: blue;
-};
+}
 
 .custom-control-input:checked ~ .custom-control-label::before {
   background-color: blue !important;
