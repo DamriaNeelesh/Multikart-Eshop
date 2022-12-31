@@ -119,9 +119,10 @@
         <div class="categories_item categories_large_item">
           <img src="assets/images/womenCategory.jpg" alt="" class="img-fluid">
           <div class="categories_text">
-            <h1>Women's fashion</h1>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-              looking at its layout.</p>
+            <h4>Women's fashion</h4>
+            <p>75 items</p>
+            <!-- <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+              looking at its layout.</p> -->
             <a href="/women">Buy now</a>
           </div>
         </div>
@@ -133,7 +134,7 @@
               <img src="assets/images/menFashion.jpg" alt="" class="img-fluid">
               <div class="categories_text">
                 <h4>Men's fashion</h4>
-                <p>358 items</p>
+                <p>50 items</p>
                 <a href="/men">Buy now</a>
               </div>
             </div>
@@ -219,7 +220,7 @@
 
   <div class="carousel_products" style="margin-top: 20px;">
     <p-carousel [value]="products" [numVisible]="6" [numScroll]="1" [circular]="false" [autoplayInterval]="2000"
-      data-interval="4000" [responsiveOptions]="responsiveOptions">
+      data-interval="4000" [responsiveOptions]="responsiveOptions" [showIndicators]="false">
       <ng-template pTemplate="header">
         <h3><b>Men's Products</b></h3>
       </ng-template>
@@ -229,7 +230,7 @@
             <div class="p-mb-3">
               <img class="product_image" [routerLink]="['/products',products.product_id]"
                 src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}" alt={{products.product_name}
-                width="217" height="250">
+                width="auto" height="250">
             </div>
             <div>
               <h4 class="p-mb-1">{{products['product_name']}}</h4>
@@ -298,7 +299,7 @@
 
   <div class="carousel_products" style="margin-top: 20px;">
     <p-carousel [value]="products" [numVisible]="6" [numScroll]="1" [circular]="false" [autoplayInterval]="2000"
-      data-interval="4000" [responsiveOptions]="responsiveOptions">
+      data-interval="4000" [responsiveOptions]="responsiveOptions" [showIndicators]="false">
       <ng-template pTemplate="header">
         <h3><b> Women's Products </b></h3>
       </ng-template>

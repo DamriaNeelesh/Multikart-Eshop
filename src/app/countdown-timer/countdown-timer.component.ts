@@ -14,7 +14,7 @@ export class CountdownTimerComponent implements OnInit {
   private subscription?: Subscription;
   
     public dateNow = new Date('Nov 7 2022 00:00:00');
-    public dDay = new Date('Dec 31 2022 03:00:00');
+    public dDay = new Date('Dec 31 2023 03:00:00');
     milliSecondsInASecond = 1000;
     hoursInADay = 24;
     minutesInAnHour = 60;

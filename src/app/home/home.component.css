@@ -72,7 +72,7 @@ nav ul li{
 }
 
 .homeImg{
-  width: 80vw;
+  width: 100vw;
   margin: 12px 0;
 }
 
@@ -740,6 +740,7 @@ header{
   font-weight: 600;
 }
 
+
 .subscribe-sec input{
   padding: 25px;
   color: #495057;
@@ -938,7 +939,7 @@ header{
   justify-content: center;
   align-items:center ;
 }
-
+ 
 .modal-body .content h2{
   color: #333;
   line-height: 1em;
@@ -975,4 +976,78 @@ header{
 
 ::ng-deep ngb-modal-backdrop {
   z-index: 0 !important;
+}
+
+
+@media(max-width:720px){
+
+.wrapper{
+  background: #f5fbfb;
+  /* display: flex; */
+  height: 10vh;
+  margin: 0;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.wrapper h1{
+  font-size: 5vmin;
+  color: rgb(4, 4, 4);
+  text-align: left;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  margin: 1rem 0 1rem 2rem;
+ }
+
+ .homeImg{
+  width: 100vw;
+}
+
+/* Banneroff Content responsiveness starts here */
+.banneroff{
+  margin-bottom: 20px;
+  width: 100%;
+  /* height: 40px; */
+  margin-top: 30px;
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(/assets/images/bannerOff.jpg);
+}
+.banneroff .content{
+  text-align: center;
+  padding-top: 100px;
+}
+.banneroff .content h1{
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 3px;
+}
+.banneroff .content p{
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 3px;
+}
+
+#bannerbtn button{
+  margin-bottom: 2px;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.content * {
+  margin-bottom: 0;
+}
+
+.mens-banner{
+  width: auto;
+  height: 65px;
+}
+
+.product_image{
+   /* padding: 12px; */
+   width:100%;
+   height:260px;
+}
+
 }

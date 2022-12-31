@@ -12,3 +12,13 @@
   .timer{
     background-color: rgb(176, 244, 251);
   }
+
+  @media(max-width:720px){
+     .timer{
+      font-size: 1em;
+     }
+
+     .timer span{
+      font-size: 1.1em;
+     }
+  }
