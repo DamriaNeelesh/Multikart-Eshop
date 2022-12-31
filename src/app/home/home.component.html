@@ -220,17 +220,17 @@
 
   <div class="carousel_products" style="margin-top: 20px;">
     <p-carousel [value]="products" [numVisible]="6" [numScroll]="1" [circular]="false" [autoplayInterval]="2000"
-      data-interval="4000" [responsiveOptions]="responsiveOptions" [showIndicators]="false">
+      data-interval="4000" [responsiveOptions]="responsiveOptions" [showIndicators]="false" >
       <ng-template pTemplate="header">
         <h3><b>Men's Products</b></h3>
       </ng-template>
       <ng-template let-products | filter : women; pTemplate="item">
-        <div class="product-item">
+        <div class="product-item col-lg-6 col-md-6 col-12 p-0">
           <div class="product-item-content">
-            <div class="p-mb-3">
+            <div class="p-mb-3 ">
               <img class="product_image" [routerLink]="['/products',products.product_id]"
                 src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}" alt={{products.product_name}
-                width="auto" height="250">
+                width="217" height="250">
             </div>
             <div>
               <h4 class="p-mb-1">{{products['product_name']}}</h4>
@@ -304,7 +304,7 @@
         <h3><b> Women's Products </b></h3>
       </ng-template>
       <ng-template let-products pTemplate="item" ; let i=index; i=i+25 ;>
-        <div class="product-item2">
+        <div class="product-item2 col-lg-6 col-md-6 col-12 p-0">
           <div class="product-item-content">
             <div class="p-mb-3">
               <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
