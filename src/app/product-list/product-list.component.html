@@ -30,23 +30,22 @@
 
 
 
-<div  style="display:flex; padding: 0 3rem;">
+<div class="productData">
 
 <section style="margin: 0;" class="section-content">
   <div class="container">
-
-
+     <h2 style="margin-left:2em;"><b><strong> Apply Filter</strong></b></h2>
       <aside class="col-md-10">
 
         <div class="card">
           <article class="filter-group">
             <header class="card-header">
-              <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+              <a href="" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
                 <i class="icon-control fa fa-chevron-down"></i>
                 <h6 class="title">Product Category</h6>
               </a>
             </header>
-            <div class="filter-content collapse show" id="collapse_1">
+            <div class="filter-content collapse" id="collapse_1">
               <div class="card-body ">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" [(ngModel)]="filter.Men" (ngModelChange)="filterChange()"
@@ -67,12 +66,12 @@
           </article>
           <article class="filter-group">
             <header class="card-header">
-              <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
+              <a href="" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
                 <i class="icon-control fa fa-chevron-down"></i>
                 <h6 class="title">Product type</h6>
               </a>
             </header>
-            <div class="filter-content collapse show" id="collapse_1">
+            <div class="filter-content collapse" id="collapse_2">
               <div class="card-body ">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" [(ngModel)]="filter.TShirts" (ngModelChange)="filterChange()"
@@ -115,12 +114,12 @@
           </article> <!-- filter-group  .// -->
           <article class="filter-group">
             <header class="card-header">
-              <a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
+              <a href="" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
                 <i class="icon-control fa fa-chevron-down"></i>
                 <h6 class="title">Brands </h6>
               </a>
             </header>
-            <div class="filter-content collapse show" id="collapse_2">
+            <div class="filter-content collapse" id="collapse_2">
               <div class="card-body">
                 <label class="custom-control custom-checkbox">
                   <input type="checkbox" [(ngModel)]="filter.WROGN" (ngModelChange)="filterChange()"
@@ -206,12 +205,12 @@
           </article> <!-- filter-group .// -->
           <article class="filter-group">
             <header class="card-header">
-              <a href="#" data-toggle="collapse" data-target="#collapse_3" aria-expanded="true" class="">
+              <a href="" data-toggle="collapse" data-target="#collapse_3" aria-expanded="false" class="">
                 <i class="icon-control fa fa-chevron-down"></i>
                 <h6 class="title">Price range </h6>
               </a>
             </header>
-            <div class="filter-content collapse show" id="collapse_3">
+            <div class="filter-content collapse" id="collapse_3">
               <div class="card-body">
                 <input type="range" class="custom-range" min="0" max="100" name="">
                 <div class="form-row">
@@ -230,7 +229,7 @@
           </article> <!-- filter-group .// -->
           <article class="filter-group">
             <header class="card-header">
-              <a href="#" data-toggle="collapse" data-target="#collapse_4" aria-expanded="true" class="">
+              <a href="" data-toggle="collapse" data-target="#collapse_4" aria-expanded="false" class="">
                 <i class="icon-control fa fa-chevron-down"></i>
                 <h6 class="title">Sizes </h6>
               </a>
@@ -259,9 +258,9 @@
               </div><!-- card-body.// -->
             </div>
           </article> <!-- filter-group .// -->
-          <article class="filter-group">
+          <article class="filter-group collapse_05">
             <header class="card-header">
-              <a href="#" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" class="">
+              <a href="" data-toggle="collapse" data-target="#collapse_5" aria-expanded="false" class="">
                 <i class="icon-control fa fa-chevron-down"></i>
                 <h6 class="title">More filter </h6>
               </a>
@@ -311,14 +310,17 @@
             [routerLink]="['/products',product.product_id]"/></a>
           <a><img class="img-fluid w-100 mb-3 img-second" src="/assets/images/Men_Fashion/TShirts/{{product.product_img2}}"
             [routerLink]="['/products',product.product_id]"></a>
-            <span class="rating" style="color: orange; font-size: 25px;">
+            <p class="itemdata" style="color: orange; font-size: 25px;">
               <i _ngcontent-wdh-c94 class="tf-ion-android-star">{{product.product_rating}}</i>
-             </span><br>
+            </p><br> 
           <p class="itemdata">{{product.product_description}}</p>
           <p style="color:black;"><strong>Price:</strong>{{product.product_price | currency:'INR':'symbol-narrow':'4.2-2'}}</p>
           <p>{{product.product_category}}</p>
-          <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
-        </div>
+          <div _ngcontent-ixr-c150="" class="btn btn-primary btn-small" (click)="addToCart(product)">Add to cart</div>
+          <!-- <div class="col-sm-2">
+          <a id="new-board-btn" class="btn btn-primary" >Add to Cart</a>
+          </div> -->
+      </div>
       </div>
     </ng-container>
   </div>

@@ -7,6 +7,10 @@
   border-color: blue !important;
 }
 
+body{
+	line-height: 1 !important;
+}
+
 
 /*--------------------------ADD TO CART Button Design---------------- */
 
@@ -466,4 +470,48 @@
 
 .section-pagetop{
   width: 100% !important;
+}
+
+.productData{
+    display:flex; 
+	padding: 0 3rem;
+}
+
+/* #new-board-btn {
+    white-space: normal;
+} */
+
+@media(max-width:720px){
+	.title{
+		margin-bottom: 0;
+	}
+	.productData{
+		padding: 0;
+		display:contents;
+	}
+	.collapse_05{
+		display: none;
+	}
+	#collapse_4{
+		display: none;
+	}
+
+	body{
+		line-height: 1.0;
+	}
+	.product{
+		line-height: 1.0;
+	}
+
+	.img-fluid{
+		max-width: 40%;
+	}
+
+	.rating{
+		font-size: 20px;
+		
+	}
+
+	div{line-height: 1;}
+h1, p {margin: 0;}
 }
