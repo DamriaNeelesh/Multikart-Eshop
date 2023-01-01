@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
   cartItems:IProducts[]=[];
   totalPrice:number=0;
   totalQuantity: number=0;
-
+  mobile?:true;
   constructor(private api:ProductsService,
              private  cartApi:CartapiService,
              private toastr:ToastrService) {
@@ -33,6 +33,10 @@ export class CartComponent implements OnInit {
 
   ngOnInit(){
     this.listCartDetails();
+
+    if (window.screen.width === 360) { // 768px portrait
+      this.mobile = true;
+    }
   }
 
   listCartDetails(){

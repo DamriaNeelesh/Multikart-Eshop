@@ -225,10 +225,10 @@
         <h3><b>Men's Products</b></h3>
       </ng-template>
       <ng-template let-products | filter : women; pTemplate="item">
-        <div class="product-item col-lg-6 col-md-6 col-12 p-0">
+        <div class="product-item">
           <div class="product-item-content">
             <div class="p-mb-3 ">
-              <img class="img-fluid" [routerLink]="['/products',products.product_id]"
+              <img class="product_image" [routerLink]="['/products',products.product_id]"
                 src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}" alt={{products.product_name}
                 width="217" height="250">
             </div>
@@ -304,10 +304,10 @@
         <h3><b> Women's Products </b></h3>
       </ng-template>
       <ng-template let-products pTemplate="item" ; let i=index; i=i+25 ;>
-        <div class="product-item2 col-lg-6 col-md-6 col-12 p-0">
+        <div class="product-item2 ">
           <div class="product-item-content">
             <div class="p-mb-3">
-              <img class="img-fluid" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
+              <img class="product_image" src="/assets/images/Men_Fashion/TShirts/{{products.product_img}}"
                 [routerLink]="['/products',products.product_id]" alt={{products.product_name} width="217" height="250">
             </div>
             <div>

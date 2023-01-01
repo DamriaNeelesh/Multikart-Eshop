@@ -20,6 +20,110 @@
   </div> 
 </section>
 
+
+<!-- <section class="cart shopping page-wrapper" *ngIf="mobile">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+          <div class="product-list">
+            <form class="cart-form">
+                <table class="table shop_table shop_table_responsive cart" cellspacing="0">
+                    <thead>
+                      <tr>
+                          <th class="product-thumbnail"> </th>
+                          <th class="product-name">Product</th>
+                          <th class="product-price">Price</th>
+                          <th class="prodcut-add"></th>
+                          <th class="product-quantity">Quantity</th>
+                          <th class="product-subtotal">Subtotal</th>
+                          <th class="product-remove"> </th>
+                      </tr>
+                    </thead>
+
+                    <tbody>
+                      <tr class="cart_item"  *ngFor="let temCartItem of cartItems">
+                          <td class="product-thumbnail" data-title="Thumbnail">
+                              <a routerLink="/product-single"><img src="assets/images/Men_Fashion/TShirts/{{temCartItem.product_img}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt=""></a>
+                          </td>
+
+                          <td class="product-name" data-title="Product">
+                              <a href="#">{{temCartItem.product_name}}</a>
+                          </td>
+
+                          <td class="product-price" data-title="Price">
+                              <span class="amount"><span class="currencySymbol"><pre wp-pre-tag-3=""></pre>
+</span>{{temCartItem.product_price}}</span>
+                          </td>
+                          <td class="product-quantity" data-title="Quantity">
+                              <div class="quantity">
+                                  <label class="sr-only" >{{temCartItem.product_quanity}}</label>
+                                  <input type="number" id="qty" class="input-text qty text" step="1" min="0" max="9" value="1" title="Qty" size="4"  >
+                              </div>
+                          </td>
+                          <td class="product-subtotal" data-title="Total">
+                              <span class="amount">
+                                <span class="currencySymbol"><pre wp-pre-tag-3=""></pre>
+                                </span>{{totalPrice}}</span>
+                          </td>
+                           <td class="product-remove" data-title="Remove">
+                              <a href="#" class="remove" aria-label="Remove this item" data-product_id="30" data-product_sku="">×</a>
+                          </td>
+                      </tr>
+
+                      <tr>
+                          <td colspan="6" class="actions">
+                              <div class="coupon">
+                                <input type="text" name="coupon_code" class="input-text form-control" id="coupon_code" value="" placeholder="Coupon code"> 
+                                <button type="button" class="btn btn-black btn-small" name="apply_coupon" value="Apply coupon">Apply coupon</button>
+                                <span class="float-right mt-3 mt-lg-0">
+                                  <button type="button" class="btn btn-dark btn-small" name="update_cart" value="Update cart" disabled="">Update cart</button>
+                                </span>
+                              </div>
+                              <input type="hidden" id="woocommerce-cart-nonce" name="woocommerce-cart-nonce" value="27da9ce3e8">
+                              <input type="hidden" name="_wp_http_referer" value="/cart/">
+                            </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" data-title="orderSum"></td>
+                        <td style="font-weight:bold;">
+                          <p>Total Quantity: {{totalQuantity}}</p>
+                          <p>Shipping: FREE</p>
+                          <p>Total Price: {{totalPrice | currency:'INR':'symbol-narrow':'1.2-2' }}</p>
+                          <a routerLink="/checkout" class="btn btn-primary">Checkout</a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                </table>
+            </form>
+        </div>
+      </div>
+    </div>
+      <div class="row justify-content-end">
+        <div class="col-lg-4">
+          <div class="cart-info card p-4 mt-4">
+              <h4 class="mb-4">Cart totals</h4>
+              <ul class="list-unstyled mb-4">
+                <li class="d-flex justify-content-between pb-2 mb-3">
+                  <h5>Subtotal</h5>
+                  <span>$90.00</span>
+                </li>
+                 <li class="d-flex justify-content-between pb-2 mb-3">
+                  <h5>Shipping</h5>
+                  <span>Free</span>
+                </li>
+                 <li class="d-flex justify-content-between pb-2">
+                  <h5>Total</h5>
+                  <span>$90.00</span>
+                </li>
+              </ul>
+              <a href="#" class="btn btn-main btn-small">Proceed to checkout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section> -->
+
 <ng-container *ngIf="cartItems.length !=0">
 <table class="table table-bordered">
   <tr>
@@ -48,8 +152,8 @@
 
         <div class="row no-gutters">
           <div class="col">
-              <button (click)="incrementQuantity(temCartItem)" class="btn btn-primary btn-sm" style="padding: 10px 30px;">
-                  <span style="font-size: 1.2rem;">+</span>
+              <button (click)="incrementQuantity(temCartItem)" class="btn btn-primary btn-sm" style="padding: 2px 15px;">
+                  <span style="font-size: 1rem;">+</span>
               </button>
           </div>
 
@@ -58,8 +162,8 @@
           </div>
 
           <div class="col">
-              <button (click)="decrementQuantity(temCartItem)" class="btn btn-primary btn-sm" style="padding: 10px 30px;">
-                <span style="font-size: 1.2rem;">-</span>
+              <button (click)="decrementQuantity(temCartItem)" class="btn btn-primary btn-sm" style="padding: 2px 15px;">
+                <span style="font-size: 1rem;">-</span>
               </button>
           </div>
 
@@ -69,17 +173,17 @@
 
       </div>
 
-      <p class="mt-2">SubTotal: {{temCartItem.product_quanity * temCartItem.product_price |
+      <p class="items">SubTotal: {{temCartItem.product_quanity * temCartItem.product_price |
         currency:'INR':'symbol-narrow':'1.2-2'}}</p>
     </td>
   </tr>
 
   <tr>
     <td colspan="3"></td>
-    <td style="font-weight:bold;">
-      <p>Total Quantity: {{totalQuantity}}</p>
-      <p>Shipping: FREE</p>
-      <p>Total Price: {{totalPrice | currency:'INR':'symbol-narrow':'1.2-2' }}</p>
+    <td style="font-weight:bold; display: flex; flex-direction: column;">
+      <p style="flex-basis: 30%;">Total Quantity: {{totalQuantity}}</p>
+      <p style="flex-basis: 30%;">Shipping: FREE</p>
+      <p style="flex-basis: 40%;">Total Price: {{totalPrice | currency:'INR':'symbol-narrow':'1.2-2' }}</p>
       <a routerLink="/checkout" class="btn btn-primary">Checkout</a>
     </td>
   </tr>
@@ -100,7 +204,8 @@
             <h4 class="card-title">My Cart</h4>
         </div>
         <div class="center">
-            <img src="data:image/png;base64,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" alt="">
+            <img src="data:image/png;base64,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" 
+                 class="img-fluid" alt="">
             <h5>Your Cart is Empty!!</h5>
             <h6>Add items to it now</h6>
             <button routerLink="/product-list" class="btn btn-primary">Show Now</button>
